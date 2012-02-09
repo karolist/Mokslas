@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<a name="s"></a>
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<big><B>К</B></big>оманды быстрых приближенных вычислений 
+<code><a href="#s" onClick="top.state14=0;top.right.location='14r.htm';return false"><b>rcpps</b></a></code>,
+<code><a href="#s" onClick="top.state14=1;top.right.location='14r.htm';return false"><b>rsqrtps</b></a></code>,
+<code><a href="#s" onClick="top.state14=2;top.right.location='14r.htm';return false"><b>rcpss</b></a></code>,
+<code><a href="#s" onClick="top.state14=3;top.right.location='14r.htm';return false"><b>rsqrtss</b></a></code>
+
+используют внутренние справочные таблицы
+для приближенного нахождения обратных величин от данных
+и от квадратных корней из данных. Входные данные могут находиться
+в XMM-регистре или в памяти. Результаты всегда записываются в XMM-регистр.
+
+<p>
+<big><B>З</B></big>аменяя деление и извлечение корня на приближенные операции, 
+можно заметно повысить производительность программы ценой некоторого снижения точности. 
+Команды приближенных вычислений обеспечивают 
+<A target="right" HREF="glossary.htm#precision">точность не менее 11 бит</A>. 
+При работе этих команд
+<A target="right" HREF="glossary.htm#exception">арифметические исключения</A> не генерируются.
+
+
+</BODY>
+</HTML>

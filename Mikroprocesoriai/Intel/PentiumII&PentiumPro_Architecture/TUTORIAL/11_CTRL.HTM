@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 11. Control frame.</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+curstep=0;
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<script language="JavaScript">
+<!--
+function changeloc() {
+if (curstep==0) {
+parent.topframe.location="11_top2.htm"; 
+document.control.but.value ="С начала";
+curstep=1; 
+}
+else {
+parent.topframe.location="11_top1.htm"; 
+document.control.but.value ="Показать пересылку"; 
+curstep=0;
+}
+return true;
+}
+//-->
+</script>
+<center>
+<form name="control">
+<input name="but" type="button" value="Показать пересылку" onClick="changeloc()">
+</form>
+</center>
+</BODY>
+</HTML>
+

@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 22</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="0">
+<P><font size="+1"><b>П</b></font>роцессоры Pentium® II и Pentium Pro выполняют некоторые команды быстрее,
+нежели их предшественники.
+
+<P><font size="+1"><b>К</b></font>оманды, перечисленные здесь, следует использовать вместо соответствующих
+комбинаций команд, использовавшихся ранее для повышения скорости выполнения.
+<BR>&nbsp;
+<LI>
+<A HREF="javascript:parent.showglos('IMUL')"><FONT COLOR="#CC33CC">IMUL</FONT></A> вместо команд сдвига и сложения.</LI>
+<LI>
+<A HREF="javascript:parent.showglos('CDQ')"><FONT COLOR="#CC33CC">CDQ</FONT></A> вместо команд пересылки и сдвига.</LI>
+<LI>
+<A HREF="javascript:parent.showglos('MOVSX')"><FONT COLOR="#CC33CC">MOVSX</FONT></A> и 
+<A HREF="javascript:parent.showglos('MOVZX')"><FONT COLOR="#CC33CC">MOVZX</FONT></A>
+вместо команд пересылки и сдвига для предотвращения задержек при использовании
+регистров меньшей разрядности.</LI>
+
+<P><B>Примеры:</B>
+<BR>Приведенные здесь фрагменты <B>оптимизированного кода </B> занимают
+меньше места и выполняются быстрее на процессорах Pentium® II и Pentium
+Pro, чем на процессорах, выпускавшихся ранее.
+
+<P><font size="+1"><b>В</b></font>ыберите команду и нажмите на кнопку <B>Пояснить</B>, чтобы ознакомиться
+с комментариями по ее использованию.
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<a name="1">
+Команда <FONT COLOR="#3333FF"><CODE>IMUL</CODE></FONT> выполняется за один такт. <P>
+На более старых процессорах с архитектурой Intel эффективнее было заменять 
+команду <FONT COLOR="#3333FF"><CODE>IMUL</CODE></FONT> на последовательность команд, показанную
+ в <B>коде до оптимизации</B>. Теперь в целях уменьшения размера кода следует использовать 
+<FONT COLOR="#3333FF"><CODE>IMUL</CODE>.</FONT> 
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="2">
+Команда <FONT COLOR="#3333FF"><CODE>CDQ</CODE> </FONT>преобразуется в одну микрооперацию. Заменяя
+ комбинацию <FONT COLOR="#0000BF"><CODE>MOV</CODE></FONT><FONT COLOR="#000000"> и
+ </FONT><FONT COLOR="#0000BF"><CODE>SAR</CODE></FONT><FONT COLOR="#000000"> на
+ </FONT><FONT COLOR="#0000BF"><CODE>CDQ</CODE></FONT><FONT COLOR="#000000">, можно уменьшить размер 
+кода и повысить его быстродействие.</FONT>
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="3">
+Команды <FONT COLOR="#0000BF">MOVSX</FONT><FONT COLOR="#000000"> и 
+</FONT><FONT COLOR="#0000BF">MOVSX</FONT><FONT COLOR="#000000"> теперь выполняются быстрее, 
+чем н</FONT>а более старых процессорах с архитектурой Intel. <BR>использование
+ <FONT COLOR="#0000BF">MOVSX</FONT><FONT COLOR="#000000"> предотвращает</FONT> задержку при
+ использовании 8- и 16-разрядных регистров, которая возникает при выполнении <B>кода до 
+оптимизации</B>.
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BODY>
+</HTML>
+

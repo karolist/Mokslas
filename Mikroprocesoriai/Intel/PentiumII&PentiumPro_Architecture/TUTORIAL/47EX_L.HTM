@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>See It Work (topic 47)</TITLE>
+<script language="JavaScript">
+<!--
+checked_radio="optimized";
+
+function change_checked(value) {
+checked_radio=value;
+top.right.topframe.location="47ex_rm.htm"; 
+top.right.imageframe.location="47ex_rim.htm";
+top.right.ctrlframe.document.control.main.value="Запустить";
+}
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<table border=2 cellpadding=2 width="100%">
+<tr>
+<td bgcolor="#dddddd"><P><font size="+1"><b>Д</b></font>анный пример демонстрирует преимущества блочной организации цикла в задаче перемножения матриц. Такая оптимизация кода позволяет увеличить частоту попаданий в кэш в среднем в <b>1.38</b> раза.
+
+<br><font size="-1"><font size="+1"><b>Ч</b></font>тобы посмотреть,  как идет процесс вычислений, выберите образец кода и нажмите на кнопку <B>"Запустить"</B>. Кнопка <B>"Вернуться"</B> служит для возврата к текущей теме Курса.</font>
+</td>
+</tr>
+</table></center><form><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign=top><input type="radio" name="choice" value="original" onCLick="change_checked('original')"></td>
+<td>&nbsp;&nbsp;</td>
+<td><b><font color="#0000cc">До оптимизации</font></b>
+<table cellpadding="2" border="2" width="100%">
+<tr>
+<td bgcolor="white" width="100%">
+<pre><code>for (j=0;j&lt;M;j++) {
+ for (k=0;k&lt;N;k++) {
+  for (i=0;i&lt;L;i++) {
+   C[k][j]+=A[k][j]*B[j][i];</code></pre></td></tr></table>
+</td></tr>
+<tr>
+<td valign=top><input type="Radio" name="choice" value="optimized" checked onCLick="change_checked('optimized')"></td>
+<td>&nbsp;&nbsp;</td>
+<td><b><font color="#0000cc">Код с блочной организацией</code></b>
+<table cellpadding="2" border="2" width="100%"><tr><td bgcolor="white">
+<pre><code>for (j=0;j&lt;M;j+=4) {
+ for (k=0;k&lt;N;k++) {
+  for (i=0;i&lt;L;i++) {
+   C[k][i]+=A[k][j]*B[j][i]+
+        A[k][j+1]*B[j+1][i]+
+        A[k][j+2]*B[j+2][i]+
+        A[k][j+3]*B[j+3][i];</code></pre></td></tr></table>
+</td></tr></table>
+</form>
+</BODY>
+
+</HTML>

@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 62. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<CENTER>
+<TABLE ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Код до оптимизации</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>for (i=0;j&lt;100;i++)
+ a[i]=a[i]/y;</PRE>
+    </TD>
+  </TR>
+</TABLE>
+<P><P>
+<TABLE ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Код с блочной организацией</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE><font color="#0000CC">temp 1/y</font>
+for (i=0;i&lt;100;i++)
+  a[i]=a[i]*<font color="#0000CC">temp</font></PRE>
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML>

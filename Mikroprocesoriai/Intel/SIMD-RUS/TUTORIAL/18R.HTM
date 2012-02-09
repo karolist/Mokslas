@@ -1,0 +1,264 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<script language="JavaScript">
+<!--
+nSlots=4;
+imgDir="18images/";
+curTest=0;
+curTestGroup=0;
+blinking=3;
+
+userAnswer=new Array(-1,-1,-1,-1);
+
+instructions = new Array(
+  "shufps xmm1, xmm2, F6h"
+ ,"shufps xmm1, xmm2, 13h"
+ ,"shufps xmm1, xmm2, 4Eh"
+ ,"shufps xmm1, xmm2, 00h"
+ ,"shufps xmm1, xmm2, FFh"
+ ,"shufps xmm1, xmm2, BCh"
+ ,"shufps xmm1, xmm2, 12h"
+ ,"shufps xmm1, xmm2, 65h"
+ ,"shufps xmm1, xmm2, 43h"
+ ,"shufps xmm1, xmm2, B7h"
+ ,"shufps xmm1, xmm2, E1h"
+ ,"shufps xmm1, xmm2, 9Fh"
+ ,"shufps xmm1, xmm1, 93h"
+ ,"shufps xmm1, xmm1, 39h"
+ ,"shufps xmm1, xmm1, 4Eh"
+ ,"shufps xmm1, xmm1, 00h"
+ ,"shufps xmm1, xmm1, 55h"
+ ,"shufps xmm1, xmm1, AAh"
+ ,"shufps xmm1, xmm1, FFh"
+ ,"shufps xmm1, xmm1, 1Bh"
+);
+
+// Loading Images
+aImg=new Array();
+bImg=new Array();
+dImg=new Array();
+
+if (document.images) {
+ 
+ blinkImg=new Image(); blinkImg.src=imgDir+"blink.gif";
+ emptyImg=new Image(); emptyImg.src=imgDir+"empty.gif";
+
+ b_empImg=new Image(); b_empImg.src=imgDir+"b_emp.gif";
+ d_empImg=new Image(); d_empImg.src=imgDir+"d_emp.gif";
+ g_empImg=new Image(); g_empImg.src=imgDir+"g_emp.gif";
+
+ b_yesImg=new Image(); b_yesImg.src=imgDir+"b_yes.gif";
+ d_yesImg=new Image(); d_yesImg.src=imgDir+"d_yes.gif";
+ g_yesImg=new Image(); g_yesImg.src=imgDir+"g_yes.gif";
+
+ b_noImg=new Image(); b_noImg.src=imgDir+"b_no.gif";
+ d_noImg=new Image(); d_noImg.src=imgDir+"d_no.gif";
+ g_noImg=new Image(); g_noImg.src=imgDir+"g_no.gif";
+
+ for (n=0;n<nSlots;n++) {
+  aImg[n]=new Image(); aImg[n].src=imgDir+"a"+n+".gif";
+  bImg[n]=new Image(); bImg[n].src=imgDir+"b"+n+".gif";
+  dImg[n]=new Image(); dImg[n].src=imgDir+"d"+n+".gif";
+ }
+}
+
+function showAnswer() {
+ blinking=-1;
+ testTaken[curTest]=1;
+
+ if (document.images) {
+  eval("self.upper.document.L02.src=self.upper.document.L"+answers[curTest][0]+"0.src");
+  eval("self.upper.document.R02.src=self.upper.document.R"+answers[curTest][0]+"0.src");
+  eval("self.upper.document.L12.src=self.upper.document.L"+answers[curTest][1]+"0.src");
+  eval("self.upper.document.R12.src=self.upper.document.R"+answers[curTest][1]+"0.src");
+  eval("self.upper.document.L22.src=self.upper.document.L"+answers[curTest][2]+"1.src");
+  eval("self.upper.document.R22.src=self.upper.document.R"+answers[curTest][2]+"1.src");
+  eval("self.upper.document.L32.src=self.upper.document.L"+answers[curTest][3]+"1.src");
+  eval("self.upper.document.R32.src=self.upper.document.R"+answers[curTest][3]+"1.src");
+ }
+
+ top.state18=hexN[curTest]+binN[curTest];
+ if (navigator.appName=="Netscape" || parseInt(navigator.appVersion)>3) top.left.location="18l.htm";
+ else writeCommentIE3();
+}
+
+chkPrefix = new Array("g_","g_","g_","g_");
+corrRow   = new Array(0,0,10,10);
+
+function checkAnswer() {
+ if (blinking!=-1) {alert("Заполните BCE элементы регистра XMM1!"); return;}
+ if (testTaken[curTest]) return;
+
+ for (n=0;n<nSlots;n++) {
+    chkPrefix[n]="g_";
+  if (userAnswer[n]>9) {
+   chkPrefix[n]=(instructions[curTest].indexOf("xmm2")==-1) ? "d_" : "b_";
+  }
+ }
+ res="BEPHO!"
+ for (n=0;n<nSlots;n++) {
+  if (userAnswer[n]==answers[curTest][n]+corrRow[n]) {
+   if (document.images) eval("self.upper.document.L"+n+"2.src="+chkPrefix[n]+"yesImg.src"); 
+  }
+  else {
+   if (document.images) eval("self.upper.document.L"+n+"2.src="+chkPrefix[n]+"noImg.src")
+   res="HEBEPHO!"
+  }
+ }
+ testTaken[curTest]=1;
+ top.state18=hexN[curTest]+binN[curTest]+res;
+ if (navigator.appName=="Netscape" || parseInt(navigator.appVersion)>3) top.left.location="18l.htm";
+ else writeCommentIE3();
+}
+
+
+function userClicked(slot,row) {
+ if (row<2 && blinking!=-1) fillSlot(slot,row);
+ if (row==2 && !testTaken[curTest]) emptySlot(slot);
+ if (!document.images) alert ('Эта игра работает в следующих браузерах:\n\tNetscape Navigator 3.x или новее\n\tInternet Explorer 4.x или новее.\n\nНажмите OTBET или HOBЫЙ TECT');
+}
+
+
+function emptySlot(slot) {
+ userAnswer[slot]=-1;
+ if (document.images) {
+  if (blinking!=-1) {
+   eval("self.upper.document.L"+blinking+"2.src=g_empImg.src");
+   eval("self.upper.document.R"+blinking+"2.src=emptyImg.src");
+  }
+  blinking=slot;
+  eval("self.upper.document.L"+blinking+"2.src=g_empImg.src");
+  eval("self.upper.document.R"+blinking+"2.src=blinkImg.src");
+ }
+}
+
+function fillSlot(fromSlot,fromRow) {
+ userAnswer[blinking]=fromSlot+10*fromRow;
+
+ if (document.images) {
+  eval("self.upper.document.L"+blinking+"2.src=self.upper.document.L"+fromSlot+fromRow+".src");
+  eval("self.upper.document.R"+blinking+"2.src=self.upper.document.R"+fromSlot+fromRow+".src");
+  blinking=-1;
+  for (n=nSlots-1;n>=0;n--) {
+   if (eval("self.upper.document.R"+n+"2.src")==emptyImg.src) { 
+    blinking=n;
+    eval("self.upper.document.R"+blinking+"2.src=blinkImg.src");
+    break;
+   }
+  }
+  if (blinking==-1) checkAnswer();
+ }
+}
+
+jxHexDigits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+function jxDec2Bin(parN) {
+ jxQ=parN; 
+ parRadix=2;
+ jxBinN="";
+
+ while (true) {
+  jxR=jxQ%parRadix;
+  jxQ=(jxQ-jxR)/parRadix;
+  jxBinN = jxHexDigits.charAt(jxR)+jxBinN;
+  if (jxQ==0) break;
+ }
+ return jxBinN;
+}
+
+
+function writeRegs () {
+
+}
+
+
+pairs = new Array (
+ "<small>\&nbsp;(младша\я\&nbsp;пара)</small>"
+,"<small>\&nbsp;(втора\я\&nbsp;пара)</small>"
+,"<small>\&nbsp;(треть\я\&nbsp;пара)</small>"
+,"<small>\&nbsp;(старша\я\&nbsp;пара)</small>"
+);
+
+function writeCommentIE3 () { //executed only in IE3
+ if (top.state18==null) return;
+ hexN_=top.state18.substring(0,2);
+ binN_=top.state18.substring(2,10);
+ len=top.state18.length;
+ top.left.document.writeln('<html><head></head><body bgcolor="#FFFFEE">');
+ top.left.document.writeln('<p><center><table border=1 bgcolor=white cellspacing=0 cellpadding=4><tr><td>');
+ if (len>10) 
+   top.left.document.writeln('<font color=red><b><i>'+top.state18.substring(10,len)+'</i></b></font><br>');
+ top.left.document.writeln('<small>B операнде</small> <code><font color="#0000cc">'+hexN_+'h='+binN_+"</font></code> <small>пары разр\ядов соответствуют следующим элементам операндов-регистров:</small>");
+ top.left.document.writeln('<table border=0 cellspacing=5 cellpadding=0><tr><td>');
+ for (n=0;n<4;n++) {
+  top.left.document.writeln('<tr><td valign=top><code><font color="#0000cc">' + binN_.substring(6-2*n,8-2*n) + '</font></code>' + pairs[n] +" </td>");
+  top.left.document.writeln('<td><small>элемент </small><code>'+parseInt(binN_.substring(6-2*n,8-2*n),2)+"</code> <small>"+((n<2)?"из первого операнда":" из второго операнда")+"</small></td></tr>");
+ }
+ top.left.document.writeln('</td></tr></table>');
+ top.left.document.writeln('</td></tr></table></center></body></html>');
+ top.left.document.close();
+}
+
+function resetGame(arg) {
+ testTaken[curTest]=1;
+ for (n=0;n<nSlots;n++) userAnswer[n]=-1;
+
+ curTest++; if (curTest>=instructions.length) curTest=0;
+ if (resetGame.arguments.length==0) curTestGroup=testGroup[curTest];
+ else {
+  curTestGroup=arg;
+  while (testGroup[curTest]!=curTestGroup) {
+   curTest++; if (curTest>=instructions.length) curTest=0;
+  }
+ }
+
+ testTaken[curTest]=0;
+ blinking=3;
+
+ self.upper.location="18ru.htm";
+
+ if (top.state18!=null) {
+  top.state18=null;
+  top.left.location="18l.htm";
+ }
+}
+
+// Setting the correct answers
+answers=new Array();
+testGroup=new Array();
+testTaken=new Array();
+hexN = new Array();
+binN = new Array();
+
+for (i=0;i<instructions.length;i++) {
+ len = instructions[i].length;
+ hexN[i] = instructions[i].substring(len-3,len-1);
+ binN[i] = jxDec2Bin (parseInt(hexN[i],16)); while (binN[i].length<8) binN[i]="0"+binN[i];
+
+ answers[i]=new Array();
+ for (n=0;n<nSlots;n++) {
+  answers[i][n]=parseInt(binN[i].substring(6-2*n,8-2*n),2)
+ }
+
+ testGroup[i]=0;
+ if (instructions[i].indexOf("xmm2")==-1) {
+  if (hexN[i]=="93" || hexN[i]=="39" || hexN[i].toUpperCase()=="4E") testGroup[i]=1;
+  if (hexN[i].toUpperCase()=="1B") testGroup[i]=2; 
+  if (hexN[i]=="00" || hexN[i]=="55" || hexN[i].toUpperCase()=="AA" || hexN[i].toUpperCase()=="FF") testGroup[i]=3; 
+ }
+
+ testTaken[i]=0;
+}
+
+curTestGroup=testGroup[curTest];
+
+//-->
+</script>
+</HEAD>
+
+<FRAMESET rows="200,*" FRAMESPACING=0 FRAMEBORDER=NO BORDER=0 onUnload="top.state18=null">
+ <FRAME SRC="18ru.htm" NAME="upper" marginwidth=10 marginheight=6 scrolling="no">
+ <FRAME SRC="18rb.htm" NAME="lower" marginwidth=10 marginheight=2 scrolling="no">
+</FRAMESET>
+ 
+</HTML>

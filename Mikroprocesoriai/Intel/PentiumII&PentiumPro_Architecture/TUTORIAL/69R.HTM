@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 22</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<TABLE BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Текст на C до оптимизации</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>
+ for (i=0;i&lt;N;i++)
+   (long) a[i] = (float) f[i];      
+</PRE>
+    </TD>
+  </TR>
+</TABLE>
+<P><P>
+<TABLE  BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Текст на C после оптимизации</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>
+<b><font color="#0000FF"> start_chop();</font></b>
+ for (i=0;i&lt;N;i++)
+<font color="#0000FF"><b>   a[i] = f2i_CurrentRoundMode(f[i]);</b></font>
+<font color="#0000FF"><b> end_chop();</b></font>
+ ...
+ int f2i_CurrentRoundMode(double d){
+   __asm {
+   fld d
+   fistp temp_place
+   }
+   return temp_place
+  }
+</PRE>
+    </TD>
+  </TR>
+</TABLE>
+</center>
+
+</BODY>
+</HTML>
+

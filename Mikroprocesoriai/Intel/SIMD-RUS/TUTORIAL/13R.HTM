@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<script language="JavaScript">
+<!--
+names=new Array(
+  "sqrtps"
+ ,"sqrtss"
+);
+
+titles=new Array(
+  "Параллельное вычисление<br>квадратных корней"
+ ,"Скал\ярное вычисление корн\я"
+);
+
+comments=new Array(
+ 'Команда <code><font color="#0000cc">sqrtps xmm1,xmm2</font></code> '
++'вычисл\яет квадратный корень дл\я каждого из четырех чисел в регистре '
++'<code><font color="#0000cc">xmm2</font></code> и записывает результаты в '
++'<code><font color="#0000cc">xmm1</font></code>. '
+
+,'Команда <code><font color="#0000cc">sqrtss xmm1,xmm2</font></code> '
++'вычисл\яет квадратный корень из младшего элемента регистра <code><font color="#0000cc">xmm2</font></code> '
++'и записывает результат <font color="#0000cc">4.024</font> '
++'в младший элемент <code><font color="#0000cc">xmm1</font></code>. '
++'Остальные элементы регистра <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state13==null) top.state13=0;
+ document.write('<center><form><select onChange="top.state13=this.selectedIndex;self.location=\'13r.htm\'">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state13)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+ document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0>');
+ document.write('<br clear=all><tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state13]+'</b></font></tt>');
+ document.write('<IMG width=250 height=150 hspace=6 vspace=10 SRC="images/'+names[top.state13]+'.gif" border=0></center>');
+ document.write(comments[top.state13]);
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

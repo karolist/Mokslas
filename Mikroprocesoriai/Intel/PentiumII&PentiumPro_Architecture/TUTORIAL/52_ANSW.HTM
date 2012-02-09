@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 52. Answer frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (!top.state52) top.state52=0
+
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+else
+ {
+  if (top.state52 == "3") document.write('<B>Верно, но не оптимально!</B> <BR>Работа\я параллельно, три декодера обрабатывают данные команды за один такт. Попробуйте загружать декодеры оптимально, использу\я D0 дл\я обработки команд, преобразуемых более чем в одну микрооперацию.');
+  else if (top.state52 == "2") document.write('<B>Верно!</B> <BR>Только декодер D0 может генерировать более одной микрооперации за такт. D1 и D2 декодируют команды, кажда\я из которых преобразуетс\я в одну микрооперацию. За один такт может быть декодировано до трех команд и сгенерировано до шести микроопераций.');
+       else if (top.state52 == "1") document.write('<B>Неверно.</B> <BR>D1 и D2 могут декодировать только команды, преобразуемые в одну микрооперацию. D0 - единственный декодер, способный генерировать более одной микрооперации за такт.');
+            else document.write ('');
+ }
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

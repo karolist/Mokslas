@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 39 Ex.</TITLE>
+</HEAD>
+<BODY TEXT="#0000CC" LINK="#0000CC" VLINK="#0000CC" ALINK="#0000CC" BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<SCRIPT language="JavaScript">
+<!--
+var choice=0;
+var state="0";
+function esol()
+{
+  if(document.controlForm.sol.value=="Решение")
+  {
+    state=20;
+    parent.codeframe.location="39ex_rc1.htm";
+    top.window.left.location.hash="3";
+    document.controlForm.sol.value="С начала";
+  }
+  else
+  {
+    document.controlForm.sol.value="Решение";
+    state=0;
+    parent.codeframe.location="39ex_rc0.htm";
+    top.window.left.location.hash="0";
+  }
+}
+
+//-->
+</SCRIPT>
+<CENTER>
+<FORM name="controlForm">
+&nbsp;
+<INPUT NAME="run" TYPE="button" VALUE="Проверить" onClick="if(parent.codeframe.erun)parent.codeframe.erun()">&nbsp;&nbsp;
+<INPUT NAME="sol" TYPE="button" VALUE="Решение" onClick="esol()">&nbsp;&nbsp;
+<INPUT NAME="exit" TYPE="button" VALUE="Возврат" onClick="top.return_from_exercise()">&nbsp;
+</FORM>
+</CENTER>
+</BODY>
+</HTML>
+

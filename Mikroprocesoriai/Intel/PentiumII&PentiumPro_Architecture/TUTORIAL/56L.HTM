@@ -1,0 +1,16 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 56</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b> </b></font> <A HREF="javascript:parent.showglos('partregs')">младшим 16 разр€дам регистров  общего назначени€</a>, а также к старшим и младшим восьми из этих 16 разр€дов  можно обращатьс€ по именам, указанным в таблице.<P><font size="+1"><b>«</b></font>адержка при использовании 8- или 16-разр€дного регистра возникает при  чтении содержимого более широкого регистра сразу после записи в один извход€щих в его состав регистров меньшей разр€дности. „тение откладываетс€  до завершени€ записи;  задержка может возникать даже если команды не расположены  р€дом.<P><font size="+1"><b>ƒ</b></font>л€ предотвращени€ таких задержек избегайте использовани€ 8- или 16-разр€дных  регистров. ≈сли регистр меньшей разр€дности приходитс€  использовать, то  перед записью в него следует очистить более широкий  регистр при  помощи команд <A HREF="javascript:parent.showglos('XOR')"><code>XOR</code></a>   или   <A HREF="javascript:parent.showglos('SUB')"><code>SUB</code></a>.<P><font size="+1"><b>Ќ</b></font>ажмите на кнопку <B>"ѕоказать"</B>, чтобы посмотреть, как при выполнении  кода возникают подобные задержки.
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 72. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<TABLE ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Код до оптимизации</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE> movq mm1, qword ptr [esi] 
+ mov eax, dumpster0 
+ mov eax, dumpster0 
+ mov ebx, 0x1414 
+ emms 
+ ret 
+ ... 
+ fld </PRE>
+    </TD>
+  </TR>
+</TABLE>
+<TABLE ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Оптимизированный код</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE> movq mm1, qword ptr [esi]
+<font color="#0000CC"> emms</font>
+ mov eax, dumpster0 
+ mov eax, dumpster0 
+ mov ebx, 0x1414 
+ ret 
+ ... 
+ fld </PRE>
+    </TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

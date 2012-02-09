@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 27</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b> </b></font>оманда условного присваивани€ значени€ <code><A HREF="javascript:parent.showglos('SETcc')">SET<i>cc</i></a></code> может быть использована дл€ удалени€ ветвлений из ассемблерного кода.
+
+
+<P><B>ѕример:</B><BR>
+ѕриведенный здесь текст на C сравнивает значени€ выражений <FONT COLOR="#0000CC"><code>A</code></FONT> и <FONT COLOR="#0000CC"><code>B</code></FONT>:<BR><code><FONT COLOR="#0000CC">&nbsp;&nbsp;</FONT><FONT COLOR="#0000CC">&nbsp;ebx </FONT>=<FONT COLOR="#0000CC"> </FONT>(<FONT COLOR="#0000CC">A</FONT>&lt;<FONT COLOR="#0000CC">B</FONT>)<FONT COLOR="#0000CC"></FONT>?<FONT COLOR="#0000CC"> C1 </FONT>:<FONT COLOR="#0000CC"> C2</FONT>;</code>
+
+<BR>¬ случае истинного услови€ <FONT COLOR="#0000CC"><code>EBX</code></FONT> присваиваетс€значение <FONT COLOR="#0000CC"><code>C1</code></FONT>, иначе присваиваетс€ <FONT COLOR="#0000CC"><code>C2</code></FONT>.
+
+<P>Ёквивалентный код на €зыке ассемблера приведен под заглавием <B> од до оптимизации</B>. ¬ <B>ќптимизированном коде</B> команда <FONT COLOR="#0000CC"><code>XOR</code></FONT> предотвращает <A HREF="javascript:parent.showglos('partregstall')">задержку в св€зи с использованием 16-разр€дного регистра</a>, а команда <FONT COLOR="#0000CC"><code>SETGE</code></FONT> замен€ет оба перехода. ¬ зависимости от истинности услови€ <FONT COLOR="#0000CC"><code>EBX</code></FONT> присваиваетс€ либо значение <FONT COLOR="#0000CC"><code>C1</code></FONT>, либо <FONT COLOR="#0000CC"><code>C2</code></FONT>.
+
+<P><font size="+1"><b>¬</b></font>ыберите значение услови€ и нажмите на кнопку <B>"ќптимизировать"</B>, чтобы ознакомитьс€ с работой команды.
+</BODY>
+</HTML>
+

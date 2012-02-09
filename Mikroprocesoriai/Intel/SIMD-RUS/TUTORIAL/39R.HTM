@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "prefetcht0"
+ ,"prefetcht1(t2)"
+ ,"prefetchnta"
+ );
+
+files=new Array(
+  "fetch0"
+ ,"fetch1-2"
+ ,"fetchnta"
+ );
+
+sizes=new Array(
+  "width=265 height=257 "
+ ,"width=265 height=257 "
+ ,"width=255 height=256 "
+ );
+
+titles=new Array(
+  ""
+ ,""
+ ,""
+ );
+
+comments=new Array(
+ 'Команда <code><font color="#0000cc">prefetcht0</font></code> записывает кэшируемые данные из пам\яти в кэш всех уровней '
++'(L1 и L2 в архитектуре процессора Pentium&reg;&nbsp;<font face="sans-serif">III</font>).'
+
+,'Команды <code><font color="#0000cc">prefetcht1</font></code> и <code><font color="#0000cc">prefetcht2</font></code> '
++'в архитектуре процессора Pentium&reg;&nbsp;<font face="sans-serif">III</font> записывают кэшируемые данные из пам\яти в  кэш L2.'
+
+,'Команда <code><font color="#0000cc">prefetchnta</font></code> записывает кэшируемые данные из пам\яти в кэш дл\я данных со слабой локализацией.'
++'В архитектуре процессора Pentium&reg;&nbsp;<font face="sans-serif">III</font> данные обход\ят L2-кэш и перенос\ятс\я в L1-кэш, используемый дл\я этих целей.'
+
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state39==null) top.state39=0;
+ document.write('<center><form><select onChange="top.state39=this.selectedIndex;self.location=(\'\'+self.location)">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state39)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+ // document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+ document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state39]+'</b></font></tt>');
+ document.write('<IMG '+sizes[top.state39]+' hspace=6 vspace=10 SRC="images/'+files[top.state39]+'.gif" border=0></center>');
+ document.write(comments[top.state39]);
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

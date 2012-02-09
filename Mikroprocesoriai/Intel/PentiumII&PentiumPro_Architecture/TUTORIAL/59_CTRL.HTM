@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 59. Control frame.</TITLE>
+<script language="JavaScript">
+<!--
+var current="none";
+
+function change_checked(value) {
+parent.curchoice=value;
+parent.msgframe.location="17_msg0.htm";
+document.control.but.value="По" + top.ya + "снить";
+}
+
+function changeloc() {
+if (parent.curchoice=="c1" || parent.curchoice=="c2") {
+parent.msgframe.location="59_m"  + parent.curchoice + ".htm"; 
+}
+else {
+parent.msgframe.location="17_msg0.htm";
+document.control.but.value="По" + top.ya + "снить";
+   if (current=="c1" || current=="c2") {
+   parent.curchoice=current;
+}
+}
+
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif" bgcolor="#FFFFCC" text="#000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<center>
+<form name="control">
+<table cellspacing=5>
+<tr>
+<td>
+<b>
+<input name="choice" type="radio" value="c1" checked onCLick="change_checked('c1')">Случай 1 
+<input name="choice" type="radio" value="c2" onCLick="change_checked('c2')">Случай 2
+</b>
+</td>
+<td>&nbsp;
+</td>
+<td>
+<input name="but" type="button" value="   Пояснить   " onClick="changeloc()">
+</td>
+</tr>
+</table>
+</form>
+</BODY>
+</HTML>
+

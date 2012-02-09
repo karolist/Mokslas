@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<TITLE>See it work (topic 51)</TITLE>
+<script language="JavaScript">
+<!--
+checked_radio="reordered";
+
+var i=0; timer=0; delay=500;
+var working=false;
+var curval="";
+
+function blink() {
+if (working) {
+  if (document.main.elements[i].value!="") {
+	  curval=document.main.elements[i].value;
+	  document.main.elements[i].value="";
+  } 
+  else document.main.elements[i].value=curval; 
+  timer=setTimeout ("blink()",delay);
+}
+}
+
+function stop() {
+working=false;
+if (timer) clearTimeout(timer);
+timer=0;
+}
+
+function change_checked(value) {
+checked_radio=value;
+
+stop();
+parent.ctrlframe.stop();
+parent.curstep=0;
+
+document.main.cycle.value="";
+
+document.main.o0.value="1 add eax, 4";
+document.main.o1.value="2 add eax, ecx";
+document.main.o2.value="3 sub eax, mem2";
+document.main.o3.value="4 inc esi";
+document.main.o4.value="5 add ebx, edx";
+document.main.o5.value="6 sub ebx, mem3";
+
+document.main.no0.value="1 add eax, 4";
+document.main.no1.value="2 add eax, ecx";
+document.main.no2.value="3 sub eax, mem2";
+document.main.no3.value="4 inc esi";
+document.main.no4.value="5 add ebx, edx";
+document.main.no5.value="6 sub ebx, mem3";
+
+document.main.d0.value="";
+document.main.d0_1.value="";
+document.main.d0_2.value="";
+document.main.d0_3.value="";
+document.main.d0_4.value="";
+document.main.d1.value="";
+document.main.d2.value="";
+document.main.d1_1.value="";
+document.main.d2_1.value="";
+
+top.left.msgframe.location="35ex_lb.htm";
+top.right.ctrlframe.document.control.main.value="По шагам";
+}
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="main">
+<table>
+<tr>
+<td valign=top nowrap width="50%" align=center>
+<input type="radio" name="choice" value="original" onCLick="change_checked('original')">&nbsp;<b><font color="#0000cc">До группировки</font></b>
+<table cellpadding="2" border="2" cellspacing=0>
+<tr>
+<td align=center bgcolor=white>
+<input type="text" name="no0" size="16" value="1 add eax, 4"><br>
+<input type="text" name="no1" size="16" value="2 add eax, ecx"><br>
+<input type="text" name="no2" size="16" value="3 sub eax, mem2"><br>
+<input type="text" name="no3" size="16" value="4 inc esi"><br>
+<input type="text" name="no4" size="16" value="5 add ebx, edx"><br>
+<input type="text" name="no5" size="16" value="6 sub ebx, mem3"></td>
+</tr>
+</table>
+</td>
+<td valign=top nowrap width="50%" align=center>
+<input type="Radio" name="choice" value="reordered" checked onclick="change_checked('reordered')">&nbsp;<b><font color="#0000cc">После группировки</font></b><br>
+<table cellpadding="2" border="2" cellspacing=0>
+<tr>
+<td align=center bgcolor=white>
+<input type="text" name="o0" size="16" value="1 add eax, 4"><br>
+<input type="text" name="o1" size="16" value="2 add eax, ecx"><br>
+<input type="text" name="o2" size="16" value="3 sub eax, mem2"><br>
+<input type="text" name="o3" size="16" value="4 inc esi"><br>
+<input type="text" name="o4" size="16" value="5 add ebx, edx"><br>
+<input type="text" name="o5" size="16" value="6 sub ebx, mem3"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<center>
+<table cellpadding="3" cellspacing="5" border=0>
+<tr>
+<td>
+<table cellpadding="2" border="2" cellspacing=0>
+<tr><td bgcolor="#33CCFF" valign="middle">
+<b><font size="+1">DO</font></b>&nbsp;<input type="text" size="16" name="d0">
+</td>
+<td bgcolor="#33CCFF">
+<input type="Text" name="d0_1" value="" size="3"><br>
+<input type="text" value="" name="d0_2" size="3"><br>
+<input type="text" value="" name="d0_3" size="3"><br>
+<input type="text" value="" name="d0_4" size="3"></td>
+</tr>
+<tr><td bgcolor="#33CCFF" valign="middle">
+<b><font size="+1">D1</font></b>&nbsp;&nbsp;<input type="text" size="16" name="d1">
+</td>
+<td bgcolor="#33CCFF">
+<input type="Text" name="d1_1" value="" size="3"></td>
+</tr>
+<tr><td bgcolor="#33CCFF" valign="middle">
+<b><font size="+1">D2</font></b>&nbsp;&nbsp;<input type="text" size="16" name="d2">
+</td>
+<td bgcolor="#33CCFF">
+<input type="Text" name="d2_1" value="" size="3"></td>
+</tr>
+</table>
+</td>
+<td align="CENTER" valign="MIDDLE">
+<b><font color="#0000CC">Номер<br>такта</font></b>
+<table cellspacing="0" cellpadding="0" border="0" width="72">
+<tr>
+<td width="18"><img src="images/51_cl10.gif" width=18 height=35 border="0"></td>
+<td width="39"><img src="images/51_cl11.gif" width=39 height=35 border="0"></td>
+<td width="15"><img src="images/51_cl12.gif" width=15 height=35 border="0"></td>
+</tr>
+<tr>
+<td width="18" align="CENTER" bgcolor="White"><img src="images/51_cl20.gif" width=18 height=30 border=0></td>
+<td width="39" align="CENTER" valign="MIDDLE" bgcolor="White"><input type="text" size="1" name="cycle" value=""></td>
+<td align="center" bgcolor="White"><img src="images/51_cl21.gif" width=15 height=30 border=0></td>
+</tr>
+<tr>
+<td width="18"><img src="images/51_cl30.gif" width=18 height=21 border="0"></td>
+<td width="39"><img src="images/51_cl31.gif" width=39 height=21 border="0"></td>
+<td width="15"><img src="images/51_cl32.gif" width=15 height=21 border="0"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+</form>
+</BODY>
+</HTML>
+

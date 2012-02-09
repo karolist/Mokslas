@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 25. Answer frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+else
+ {
+  if (parent.ctrlframe.state == "2") document.write('При<FONT COLOR="#0000FF"> i </FONT>не равном 33 выполняется переход на оператор выбора. <BR>Варианты внутри оператора выбора следует упорядочивать так, чтобы более часто выполняемые варианты располагались перед менее часто выполняемыми.');
+  else if (parent.ctrlframe.state == "1") document.write('Вынесите наиболее часто выполняемый вариант (case 33) за пределы оператора выбора. Поместите его в оператор if. В случае истинного условия так можно избежать всех ветвлений, связанных с оператором выбора.');      
+       else document.write ('');
+
+ }
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

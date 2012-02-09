@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 53. Control frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+var choice="";
+var internal="";
+function showanswer(param) 
+{
+  if (param == "3") 
+  { 
+    choice=internal;
+    parent.answerframe.location = "53_answ.htm";
+  }
+  else
+  {
+    internal=param;
+    choice="";
+    parent.answerframe.location = "53_answ.htm";
+  }
+}
+//-->
+</SCRIPT>
+
+<FORM>
+<TABLE WIDTH="100%" ALIGN=center BORDER=0>
+<TR>
+ <TD>  <INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("1")'><b>Префикс указания разрядности операнда</b><BR>
+       <INPUT NAME="ch" TYPE=radio VALUE="2" onClick='showanswer("2")'><b>Префикс указания разрядности адреса</b>
+ </TD>
+ <TD VALIGN="middle">  <INPUT NAME="run" TYPE=button VALUE="Пояснить" onClick='showanswer("3")'>
+ </TD>
+</TR>
+</TABLE>
+</FORM>
+
+</BODY>
+</HTML>

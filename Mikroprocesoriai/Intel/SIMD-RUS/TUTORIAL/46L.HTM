@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>Д</B></big>ля выполнения новых SIMD-команд  требуется поддержка со стороны 
+процессора и операционной системы.
+<p>
+<big><B>П</B></big>рикладная программа может использовать новые команды 
+процессора Pentium&reg;&nbsp;III только в том случае, если выполнены следующие условия:
+<ul>
+<li> <A target="right" HREF="glossary.htm#cr0">CR0.EM</A>  (бит 2) 
+содержит нулевое значение; 
+<li> <A target="right" HREF="glossary.htm#cr4">CR4.OSFXSR</A> (бит 9) 
+установлен в единицу;
+<li> <A target="right" HREF="glossary.htm#cpuid">CPUID.XMM</A> (бит 25 регистра EDX) 
+установлен в единицу.
+</ul>
+<p>
+<big><B>В</B></big>ы можете также воспользоваться фрагментами кода, приведенными справа, 
+как для проверки поддержки новых команд процессором, так и для проверки
+ поддержки программной обработки немаскированных исключений со стороны 
+операционной системы.
+
+<p>
+<big><B>О</B></big>бращайтесь к Руководствам для Разработчиков Программ в 
+Архитектуре Intel за дополнительной информацией  о проверке процессорной поддержки.
+
+
+</BODY>
+</HTML>

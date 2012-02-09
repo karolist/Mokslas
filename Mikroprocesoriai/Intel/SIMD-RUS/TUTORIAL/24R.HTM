@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "andps"
+ ,"xorps"
+);
+
+titles=new Array(
+  "Поразр\ядное логическое И"
+ ,"Поразр\ядное исключающее ИЛИ"
+);
+
+comments=new Array(
+ 'Если в <code><font color="#0000cc">xmm2</font></code> '
++'содержатс\я нули в знаковых разр\ядах и единицы во всех остальных разр\ядах, '
++'то команда <code><font color="#0000cc">andps</font></code> возвратит абсолютные значени\я четырех элементов операнда <code><font color="#0000cc">xmm1</font></code>. '
++'Нулевые разр\яды <code><font color="#0000cc">xmm2</font></code> '
++'обнул\яют знаковые разр\яды элементов <code><font color="#0000cc">xmm1</font></code>, '
++'а все остальные разр\яды <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+
+,'Чтобы инвертировать знаки всех четырех FP-элементов в регистре <code><font color="#0000cc">xmm1</font></code>, следует применить команду '
++'<code><font color="#0000cc">xorps</font></code> с вторым  операндом <code><font color="#0000cc">xmm2</font></code>, '
++'у которого в знаковых разр\ядах всех элементов записаны единицы, а во всех остальных разр\ядах <code><big>-</big></code> нули. '
+
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state24==null) top.state24=0;
+ document.write('<center><form><select onChange="top.state24=this.selectedIndex;self.location=\'24r.htm\'">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state24)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+// document.write('<br clear=all><tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state24]+'</b></font></tt>');
+ document.write('<IMG width=255 height=170 hspace=6 vspace=10 SRC="images/'+names[top.state24]+'.gif" border=0></center>');
+ document.write(comments[top.state24]);
+}
+//-->
+</SCRIPT>
+
+
+</BODY>
+</HTML>

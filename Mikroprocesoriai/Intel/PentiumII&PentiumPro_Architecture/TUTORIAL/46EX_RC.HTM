@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>See it work, Control Frame (topic 46)</TITLE>
+<script language="JavaScript">
+<!--
+var no_misses= new Array(16);
+var o_misses= new Array(16);
+var no_iter = new Array(16);
+var o_iter = new Array(16);
+
+no_misses[0]=' 1';
+no_misses[1]=' 2';
+no_misses[2]=' 3';
+no_misses[3]=' 4';
+no_misses[4]=' 5';
+no_misses[5]=' 6';
+no_misses[6]=' 7';
+no_misses[7]=' 8';
+no_misses[8]=' 9';
+no_misses[9]=' 10';
+no_misses[10]=' 11';
+no_misses[11]=' 12';
+no_misses[12]=' 13';
+no_misses[13]=' 14';
+no_misses[14]=' 15';
+no_misses[15]=' 16';
+
+o_misses[0]=' 1';
+o_misses[1]=' 1';
+o_misses[2]=' 2';
+o_misses[3]=' 2';
+o_misses[4]=' 3';
+o_misses[5]=' 3';
+o_misses[6]=' 4';
+o_misses[7]=' 4';
+o_misses[8]=' 5';
+o_misses[9]=' 5';
+o_misses[10]=' 6';
+o_misses[11]=' 6';
+o_misses[12]=' 7';
+o_misses[13]=' 7';
+o_misses[14]=' 8';
+o_misses[15]=' 8';
+
+o_iter[0]='a[0][0]=2*a[0][0]';  no_iter[0]='a[0][0]=2*a[0][0]';
+o_iter[1]='a[0][1]=2*a[0][1]';  no_iter[1]='a[1][0]=2*a[1][0]';
+o_iter[2]='a[0][2]=2*a[0][2]';	no_iter[2]='a[2][0]=2*a[2][0]';
+o_iter[3]='a[0][3]=2*a[0][3]';	no_iter[3]='a[3][0]=2*a[3][0]';
+o_iter[4]='a[1][0]=2*a[1][0]';	no_iter[4]='a[0][1]=2*a[0][1]';
+o_iter[5]='a[1][1]=2*a[1][1]';	no_iter[5]='a[1][1]=2*a[1][1]';
+o_iter[6]='a[1][2]=2*a[1][2]';	no_iter[6]='a[2][1]=2*a[2][1]';
+o_iter[7]='a[1][3]=2*a[1][3]';	no_iter[7]='a[3][1]=2*a[3][1]';
+o_iter[8]='a[2][0]=2*a[2][0]';	no_iter[8]='a[0][2]=2*a[0][2]';
+o_iter[9]='a[2][1]=2*a[2][1]';	no_iter[9]='a[1][2]=2*a[1][2]';
+o_iter[10]='a[2][2]=2*a[2][2]';	no_iter[10]='a[2][2]=2*a[2][2]';
+o_iter[11]='a[2][3]=2*a[2][3]';	no_iter[11]='a[3][2]=2*a[3][2]';
+o_iter[12]='a[3][0]=2*a[3][0]';	no_iter[12]='a[0][3]=2*a[0][3]';
+o_iter[13]='a[3][1]=2*a[3][1]';	no_iter[13]='a[1][3]=2*a[1][3]';
+o_iter[14]='a[3][2]=2*a[3][2]';	no_iter[14]='a[2][3]=2*a[2][3]';
+o_iter[15]='a[3][3]=2*a[3][3]';	no_iter[15]='a[3][3]=2*a[3][3]';
+
+function changeloc() {
+if (parent.topframe.checked_radio=="no"){
+if (parent.curstep<16) {
+parent.imageframe.location="46eino" + (parent.curstep+1) + ".htm"; 
+top.left.msgframe.location="46exno"+(parent.curstep+1) + ".htm";
+parent.topframe.document.main.no_iter.value=no_iter[parent.curstep];
+parent.cachemiss.document.cachemiss.cm.value=no_misses[parent.curstep];
+}
+else {
+parent.topframe.change_checked('no');
+}
+}
+else {
+//optimized
+if (parent.curstep<16) {
+parent.imageframe.location="46eino" + (parent.curstep+1) + ".htm"; 
+top.left.msgframe.location="46exo"+(parent.curstep+1) + ".htm";
+parent.topframe.document.main.o_iter.value=o_iter[parent.curstep];
+parent.cachemiss.document.cachemiss.cm.value=o_misses[parent.curstep];
+}
+else {
+parent.topframe.change_checked('o');
+}
+}
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="control"><nobr><input type="button" name="step" value="По шагам" onClick="changeloc()"><input type="button" name="return" value="Вернуться" onClick="top.return_from_exercise();"></nobr></form>
+</center>
+</BODY>
+</HTML>

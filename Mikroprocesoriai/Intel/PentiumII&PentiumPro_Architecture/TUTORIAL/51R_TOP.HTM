@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 51</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<P>
+<TABLE WIDTH=100% BORDER=2 cellspacing=1 cellpadding=1>
+  <TR>
+    <TD ALIGN=center VALIGN=middle width="80%"><font color="#0000CC"><b>Код до оптимизации</b></font></TD>
+    <TD ALIGN=center VALIGN=middle width="20%"><small><b>Микро-<br>операции</b></small></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+1 add eax, 4</code></TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>1</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+2 add eax, ecx</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle ><b>1</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+3 sub eax, mem2</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle ><b>2</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+4 inc esi </TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle  ><b>1</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+5 add ebx, edx </TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle ><b>1</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+6 sub ebx, mem3</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>2</TD>
+  </TR>
+</TABLE>
+<P><P>
+<TABLE  WIDTH=100% BORDER=2 cellspacing=1 cellpadding=1>
+  <TR>
+    <Th width="80%"><font color="#0000CC">Оптимизированный код</font></Th>
+    <Th width="20%"><small>Микро-<br>операции</small></Th>
+  </TR>
+
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+<font color="#0000FF"><b>3</b></font> sub eax, mem2</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>2</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+<font color="#0000FF"><b>5</b></font> add ebx, edx</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>1</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+<font color="#0000FF"><b>2</b></font> add eax, ecx</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>1</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+<font color="#0000FF"><b>6</b></font> sub ebx, mem3</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>2</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+<font color="#0000FF"><b>4</b></font> inc esi</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>1</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle><code>
+<font color="#0000FF"><b>1</b></font> add eax, 4</TD>
+    <TD BGCOLOR="orange" ALIGN=center VALIGN=middle><b>1</TD>
+  </TR>
+</TABLE>
+
+</center>
+</BODY>
+</HTML>
+

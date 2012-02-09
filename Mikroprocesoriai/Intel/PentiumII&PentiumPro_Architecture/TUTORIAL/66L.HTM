@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 66</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<font size="+1"><b>И</b></font>спользуйте самую 
+<A HREF="javascript:parent.showglos('lowprec')"><FONT COLOR="#CC33CC">низкую точность</FONT></A>,
+которую позволяют требования к вычислениям. Обработка данных с одинарной
+точностью (32 разряда) происходит не менее чем в два раза быстрее, чем
+с двойной точностью (64 разряда) или с расширенными (extended) числами
+(80 разрядов); данные с одинарной точностью занимают в два раза меньше
+памяти.
+
+<P>При обработке данных с двойной точностью команды <FONT COLOR="#0000cc"><code>FDIV</code></FONT>
+и <FONT COLOR="#0000cc"><code>FSQRT</code></FONT> вызывают более продолжительные
+<A HREF="javascript:parent.showglos('latency')"><FONT COLOR="#CC33CC">задержки</FONT></A>.
+
+<P><font size="+1"><b>Е</b></font>сли вычисления с плавающей точкой приходится проводить из-за требований
+к точности или скорости выполнения (иногда команды для работы с плавающей
+точкой быстрее выполняются), используйте по возможности самую низкую точность.
+Где возможно, работайте с целыми числами.
+
+<P><font size="+1"><b>И</b></font>спользование более громоздких вычислений приводит к значительным затратам
+времени при большом числе итераций.
+
+<P><font size="+1"><b>П</b></font>риведенный здесь <B>оптимизированный код</B> выполняется быстреее и
+требует меньше памяти, поскольку в нем используются данные с более низкой
+точностью.
+
+</BODY>
+</HTML>
+

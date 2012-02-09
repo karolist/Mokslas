@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>—</B></big> помощью команд <code><font color="#0000cc">shufps</font></code>
+можно строить любые комбинации из элементов 
+первого и второго операндов
+(использу€ подход€щее значение третьего операнда).
+
+<p>
+<big><B>„</B></big>тобы получить произвольную перестановку из четырех элементов
+одного регистра, задайте им€ этого регистра в качестве 
+одновременно входного и выходного операнда команды <code><font color="#0000cc">shufps</font></code>.
+“аким способом можно осуществить операции
+<A target="right" HREF="glossary.htm#brcast">размножени€</A>, 
+<A target="right" HREF="glossary.htm#rotate">циклического сдвига</A>
+и <A target="right" HREF="glossary.htm#swap">зеркального отражени€</A> 
+элементов. 
+<p>
+<big><B>ƒ</B></big>л€ размножени€ элемента можно использовать непосредственный операнд 
+<code><font color="#0000cc">00h</font></code>,
+<code><font color="#0000cc">55h</font></code>,
+<code><font color="#0000cc">AAh</font></code>
+или <code><font color="#0000cc">FFh</font></code>, 
+
+дл€ циклического сдвига <big><code>-</code></big> 
+<code><font color="#0000cc">39h</font></code>,
+<code><font color="#0000cc">4Eh</font></code>
+или <code><font color="#0000cc">93h</font></code>, 
+
+дл€ зеркального отражени€ <big><code>-</code></big> 
+<code><font color="#0000cc">1Bh</font></code>.
+
+</BODY>
+</HTML>

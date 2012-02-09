@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<TITLE>Pentium(R) III Processor tutorial. Buttons frame</TITLE>
+<script language="JavaScript">
+<!--
+whi_src="white.gif";
+gry_src="button/666666.gif";
+di1_src="button/diag1.gif";
+di2_src="button/diag2.gif";
+
+if (document.images) {
+ var whi=new Image(); whi.src=whi_src;
+ var gry=new Image(); gry.src=gry_src;
+ var di1=new Image(); di1.src=di1_src;
+ var di2=new Image(); di2.src=di2_src;
+
+ var prv1=new Image(); prv1.src="button/prev.gif";
+ var prv2=new Image(); prv2.src="button/noprev.gif";
+ var nxt1=new Image(); nxt1.src="button/next.gif";
+ var nxt2=new Image(); nxt2.src="button/nonext.gif";
+ var bk1= new Image(); bk1.src= "button/back.gif";
+ var bk2= new Image(); bk2.src= "button/noback.gif";
+}
+
+function upd() {
+ thistopic=top.isFirstOrLast();
+ if (thistopic!=1 && document.pr.src!=prv1.src) document.pr.src=prv1.src;
+ if (thistopic==1 && document.pr.src!=prv2.src) document.pr.src=prv2.src;
+ if (thistopic!=2 && document.nx.src!=nxt1.src) document.nx.src=nxt1.src;
+ if (thistopic==2 && document.nx.src!=nxt2.src) document.nx.src=nxt2.src;
+ if (top.hindex!=0 && document.bk.src!=bk1.src) document.bk.src=bk1.src;
+ setTimeout("upd()",1500);
+}
+
+function prev() {}
+function next() {}
+function showlr() {}
+function showmap(){}
+function help() {}
+function gloss(){}
+function exit() {}
+function isFirstOrLast() {}
+
+jxBuf='';
+jxButtonBorder=2;
+if (!document.images) jxButtonBorder=2;
+
+function jxGifButton(name,src,W,H,alt,hrf,onClk) {
+ var B=jxButtonBorder;
+ jxBuf+='<nobr><IMG name="'+name+'TL" SRC="'+whi_src+'" border=0 width='+(W+B)+' height='+B+' ';
+ jxBuf+='><IMG name="'+name+'TR" SRC="'+di1_src+'" border=0 width='+B    +' height='+B+' \n><br\n';
+ jxBuf+='><IMG name="'+name+'L"  SRC="'+whi_src+'" border=0 width='+B    +' height='+H+' ';
+
+ jxBuf+='><A HREF="'+hrf+'" onClick="'+onClk+'" ';
+ jxBuf+='onMouseOver="jxPress(\''+name+'\');return true;" '
+ jxBuf+='onMouseOut="jxRelease(\''+name+'\');return true;" \r\n'
+ jxBuf+='><IMG name="'+name+'"   SRC="'+src+    '" border=0 width='+W+    ' height='+H+' alt="'+alt+'" \n></A\n';
+
+ jxBuf+='><IMG name="'+name+'R"  SRC="'+gry_src+'" border=0 width='+B+    ' height='+H+' \n><br\n';
+ jxBuf+='><IMG name="'+name+'BL" SRC="'+di1_src+'" border=0 width='+B+    ' height='+B+' ';
+ jxBuf+='><IMG name="'+name+'BR" SRC="'+gry_src+'" border=0 width='+(W+B)+' height='+B+' ></nobr>';
+ document.write(jxBuf);jxBuf='';
+}
+
+function jxPress(par) {
+ if (document.images) {
+  eval('document.'+par+'TL.src=gry_src');
+  eval('document.'+par+'TR.src=di2_src');
+  eval('document.'+par+'L.src=gry_src');
+  eval('document.'+par+'R.src=whi_src');
+  eval('document.'+par+'BL.src=di2_src');
+  eval('document.'+par+'BR.src=whi_src');
+ }
+}
+
+function jxRelease(par) {
+ if (document.images) {
+  eval('document.'+par+'TL.src=whi_src');
+  eval('document.'+par+'TR.src=di1_src');
+  eval('document.'+par+'L.src=whi_src');
+  eval('document.'+par+'R.src=gry_src');
+  eval('document.'+par+'BL.src=di1_src');
+  eval('document.'+par+'BR.src=gry_src');
+ }
+}
+
+//-->
+</script>
+
+</HEAD>
+
+<BODY BGCOLOR="#CCCCCC" onLoad="if(document.images&&(top.location!=location)){document.bk.src=bk2.src;upd()}">
+<a name="s"></a>
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+else {
+ document.write('<center>');
+ jxGifButton('nx','button/next.gif',40,43,'Следующа\я страница','#s','top.next();return false;');
+ document.write('<BR><IMG SRC="space.gif" width=44 height=8 border=0><BR>');
+ jxGifButton('pr','button/prev.gif',40,43,'Предыдуща\я страница','#s','top.prev();return false;');
+ document.write('<BR><IMG SRC="space.gif" width=44 height=8 border=0><BR>');
+ jxGifButton('bk','button/back.gif',40,43,'Возврат','#s','top.showlr();return false;');
+ document.write('<BR><IMG SRC="space.gif" width=44 height=8 border=0><BR>');
+ jxGifButton('mp','button/map.gif',40,43, 'План','#s','top.showmap();return false;');
+ document.write('<BR><IMG SRC="space.gif" width=44 height=8 border=0><BR>');
+ jxGifButton('hlp','button/help.gif',40,43,'Справка','#s','top.help();return false;');
+ document.write('<BR><IMG SRC="space.gif" width=44 height=8 border=0><BR>');
+ jxGifButton('gls','button/book.gif',40,43,'Словарь','glossary.htm#russian" target="right"','document.bk.src=bk1.src;return true;');
+ document.write('<BR><IMG SRC="space.gif" width=44 height=8 border=0><BR>');
+ jxGifButton('ex','button/exit.gif',40,43,'Выход','#s','top.exit();return false;');
+ document.write('</center>');
+}
+//-->
+</SCRIPT>
+
+
+
+<!--
+<center><A HREF="#s" onClick="top.next();if(ie4)this.blur();return false;"><IMG NAME="nx" SRC="button/next.gif" ALT="Новая страница" width=44 height=47 border=0></A><BR><IMG SRC="space.gif" width=44 height=8 border=0><BR><A
+HREF="#s" onClick="top.prev();if(ie4)this.blur();return false;" onMouseDown="document.pr.src=prv2.src"><IMG    NAME="pr" SRC="button/prev.gif" ALT="Прошлая тема" width=44 height=47 border=0></A><BR><IMG SRC="space.gif" width=44 height=8 border=0><BR><A
+HREF="#s" onClick="top.showlr();if(ie4)this.blur();return false;"><IMG  NAME="bk" SRC="button/back.gif" ALT="Вернуться" width=44 height=47 border=0></A><BR><IMG SRC="space.gif" width=44 height=8 border=0><BR><A
+HREF="#s" onClick="top.showmap();if(ie4)this.blur();return false;"><IMG SRC="button/map.gif"  ALT="План" width=44 height=47 border=0></A><BR><IMG SRC="space.gif" width=44 height=8 border=0><BR><A
+HREF="#s" onClick="top.help();if(ie4)this.blur();return false;"><IMG    SRC="button/help.gif" ALT="Справка" width=44 height=47 border=0></A><BR><IMG SRC="space.gif" width=44 height=8 border=0><BR><A
+HREF="glossary.htm" target="right" onClick="if(ie4)this.blur();return true;"><IMG   SRC="button/book.gif" ALT="Словарь" width=44 height=47 border=0></A><BR><IMG SRC="space.gif" width=44 height=8 border=0><BR><A
+HREF="#s" onClick="top.exit();if(ie4)this.blur();return false;"><IMG    SRC="button/exit.gif" ALT="Выход"   width=44 height=47 border=0></A
+></center>
+-->
+</BODY>
+</HTML>

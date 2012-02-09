@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+
+<p>
+<big><B>К</B></big> этой группе относятся команды
+<A target="right" HREF="glossary.htm#comiss">comiss</A>   и 
+<A target="right" HREF="glossary.htm#ucomiss">ucomiss</A>,
+ которые выполняют арифметическое сравнение двух младших 
+элементов операндов и устанавливают для них одно из соотношений:
+ «меньше», «равны», «больше», <A target="right" HREF="glossary.htm#unordered">«несравнимы»</A>.
+
+<p>
+<big><B>П</B></big>о результатам сравнения устанавливаются значения флагов
+<code><font color="#0000cc">ZF</font></code>, 
+<code><font color="#0000cc">PF</font></code> и 
+<code><font color="#0000cc">CF</font></code> в 
+<A target="right" HREF="glossary.htm#eflags">регистре EFLAGS</A>. Флаги 
+<code><font color="#0000cc">OF</font></code>, 
+<code><font color="#0000cc">SF</font></code> и 
+<code><font color="#0000cc">AF</font></code> обнуляются.
+
+<p>
+<big><B>Р</B></big>азница между двумя этими командами заключается в том, 
+что команда <code><font color="#0000cc">comiss</font></code> генерирует
+<A target="right" HREF="glossary.htm#exception">арифметическое исключение</A> , 
+когда хотя бы один из операндов содержит любое из значений 
+<A target="right" HREF="glossary.htm#qnan">QNaN</A> или 
+<A target="right" HREF="glossary.htm#snan">SNaN</A>, 
+а команда <code><font color="#0000cc">ucomiss</font></code> делает это только в том случае, когда 
+встречает SNaN в каком-либо операнде.
+
+
+
+</BODY>
+</HTML>

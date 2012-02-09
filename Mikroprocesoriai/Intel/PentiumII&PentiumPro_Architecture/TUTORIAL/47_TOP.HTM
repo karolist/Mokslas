@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 47</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<P>
+<TABLE ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Код до оптимизации</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>for (j=0;j&lt;M;j++)
+  for (k=0;k&lt;N;k++)
+    for (i=0;i&lt;L;i++)
+      C[k][i]+=A[k][j]*B[j][i]; </PRE>
+    </TD>
+  </TR>
+</TABLE>
+<P><P>
+<TABLE ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Код с блочной организацией</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>for (j=0;j&lt;M;<font color="#0000FF"><b>j+=4</b></font>)
+  for (k=0;k&lt;N;k++)
+    for (i=0;i&lt;500;i++)
+      C[k][i]+=A[k][j]*B[j][i]+
+<font color="#0000FF"><b>        A[k][j+1]*B[j+1][i]+
+        A[k][j+2]*B[j+2][i]+
+        A[k][j+3]*B[j+3][i];</b></font>
+ </PRE>
+    </TD>
+  </TR>
+</TABLE>
+
+</center>
+</BODY>
+</HTML>
+

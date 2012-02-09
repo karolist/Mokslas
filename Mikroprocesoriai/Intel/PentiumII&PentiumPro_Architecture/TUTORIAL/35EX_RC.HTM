@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>Try it (topic 35)</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+var oncemore = false;
+function but_action() {
+if (!oncemore) {
+parent.imageframe.location="35ex_rmc.htm";
+top.left.msgframe.location="35ex_lc1.htm";
+document.control.main.value = "Повторить попытку";
+oncemore = true;
+parent.topframe.working = false;
+parent.topframe.document.answer.elements[0].value = 'double b';
+parent.topframe.document.answer.elements[1].value = 'int d';
+parent.topframe.document.answer.elements[2].value = 'char c';
+parent.topframe.document.answer.elements[3].value = 'char a';
+}
+else {
+//reset game
+parent.imageframe.location="35ex_rm.htm";
+top.left.msgframe.location="35ex_lb.htm";
+//parent.topframe.resetGame();
+parent.topframe.location="35ex_rt.htm";
+oncemore = false;
+document.control.main.value = "Ответ";
+}
+return true;
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="control">
+<input type="button" name="main" value="              Ответ               " onClick="but_action()">
+<input type="button" name="return" value="Вернуться" onClick="top.return_from_exercise();">
+</form>
+</center>
+</BODY>
+</HTML>

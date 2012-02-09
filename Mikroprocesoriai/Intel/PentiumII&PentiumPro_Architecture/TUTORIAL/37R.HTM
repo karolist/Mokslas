@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 37. Control frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif"  bgcolor="#FFFFCF">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+
+<FORM>
+<CENTER>
+<font color="#OOOOCC"><b>Исходный текст на C</b></font>
+<TABLE ALIGN=center BORDER=2>
+  <TR><TD BGCOLOR="White"><code> double main(){ <BR>    double a; <BR>    ... <BR>    return a*a; <BR> } </code></TD></TR>
+</TABLE>
+<font color="#OOOOCC"><b>Оптимизированный ассемблерный код</b></font>
+<TABLE  ALIGN=center BORDER=2>
+<TR><TD VALIGN=top>
+<TABLE CELLSPACING=0 ALIGN=center BORDER=1>
+  <TR><TD BGCOLOR="White"><code>main:</code></TD></TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#1"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  push ebp</code></TD>
+  </TR>
+  <TR>
+
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#2"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  mov esp, ebp</code></TD>
+  </TR>
+  <TR>
+
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#3"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  and ebp, -8</code></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#4"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  sub esp, 12</code></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#5"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  ...</code></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#6"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  mov DWORD PTR[-4+ebp], eax <BR></code>
+    <IMG border=0 width=17 height=10 SRC="space.gif"> <code>  mov DWORD PTR[-8+ebp], edx</code>
+    </TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#7"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  fld QWORD PTR[-8+ebp]</code></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#8"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  fmul st(0), st</code></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#9"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  add esp, 12</code></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White"><A target="left" HREF="37l.htm#10"><IMG width=17 height=15 border=0 SRC="images/bluarrow.gif"></A> <code>  pop ebp <BR></code>
+    <IMG border=0 width=17 height=10 SRC="space.gif"> <code>  ret</code>
+    </TD>
+  </TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+
+</CENTER>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+top.state18=null;
+
+thistopic=1;
+nt=1;
+
+if (document.location==parent.document.location) {
+ document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>");
+}
+else {
+ thistopic=top.curtopic();
+ document.write("<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 width=\"100%\">");
+ document.write("<TR><TD valign=top align=left width=\"92%\">");
+ for (k=1;k<=top.lsnNum;k++) {
+  if (top.kbound[k-1]<=thistopic && thistopic<top.kbound[k]) {
+   document.write("<font size=5 color=\"#0000CC\"><B><I>"+top.lessons[k-1]+"</I></B></font>");
+   break;
+  }
+ }
+ nt=thistopic; while (nt>1 && top.topics[nt]=="") {nt--}
+ document.write("<BR><font size=4 color=\"#0000CC\"4>"+top.topics[nt]+((nt==thistopic)?"":" (продолжение)")+"</font><BR></TD>");
+ document.write("<TD width=40 align=right><small>Стр."+thistopic+"</small></TD>");
+ document.write("</TR></TABLE>");
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>И</B></big>спользуйте новые SIMD-команды  для устранения ветвлений в программе.
+В приведенном ниже фрагменте программы на языке <b>C</b> выполняется сравнение с нулем 
+каждого из четырех FP–чисел в XMM-регистре:<br>
+<table border=0 width=200>
+<tr><td align="left"><code><font color="#0000cc">if (xmm[i]&gt;0)</font></code></td></tr>	
+<tr><td align="center"><code><font color="#0000cc">xmm[i]= xmm[i]+1.0</font></code></td></tr>
+<tr><td align="left"><code><font color="#0000cc">else</font></code></td></tr>	
+<tr><td align="center"><code><font color="#0000cc">xmm[i]= xmm[i]-1.0</font></code></td></tr>
+</table>
+		
+Если условие выполнено, значение увеличивается на 
+<code><font color="#0000cc">1</font></code>; в противном случае – уменьшается на 
+<code><font color="#0000cc">1</font></code>.
+<p>
+<big><B>Э</B></big>квивалент этого фрагмента на языке ассемблера показан  справа. 
+В нем выполняются SIMD SPFP-команды сравнения и логических операций, причем ветвление
+ полностью устранено.
+Если использовать скалярный код IAх87, то для аналогичных действий потребовались 
+бы четыре команды сравнения и условного перехода. 
+
+</BODY>
+</HTML>

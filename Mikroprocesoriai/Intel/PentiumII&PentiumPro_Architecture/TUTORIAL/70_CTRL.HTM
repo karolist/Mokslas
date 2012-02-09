@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 70. Control frame.</TITLE>
+<script language="JavaScript">
+<!--
+function changeloc() {
+ if (parent.curstep==0) {
+  parent.topframe.location="70r_top1.htm"; 
+  parent.msgframe.location="70r_msg.htm"; 
+ }
+ else {
+  parent.topframe.location="70r_top0.htm"; 
+  parent.msgframe.location="17_msg0.htm";
+  document.control.but.value="Оптимизировать";
+ }
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif" bgcolor="#FFFFCC" text="#000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<center>
+<form name="control">
+<input name="but" type="button" value="Оптимизировать" onClick="changeloc()">
+</form>
+</BODY>
+</HTML>
+

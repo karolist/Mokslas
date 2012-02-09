@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 44</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="msg0"></a>
+<p><font size="+1"><b>Ч</b></font>тобы гарантировать выровненность   структур,  память  под них следует выделять динамически.<P><B>Пример:</B><BR>Чтобы выровнять структуры, входящие в данный массив,  измените  значение  указателя на первую структуру так, чтобы он  указывал на границу 32-байтной  области.
+<p><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать"</B>, чтобы посмотреть, как заполненные    и выровненные структуры размещаются в кэш-памяти.<P><B>Замечание:</B><BR>При выравнивании выделяется память, которая затем не используется.
+
+<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+
+<a name="msg1"></a>
+<br>
+<P>Данный вызов функции выделяет область памяти, размер которой равен  суммарному  размеру   пяти  структур + 31 дополнительный байт. Указатель  
+<FONT COLOR="#0000cc"><code>p</code></FONT>  ссылается на первую структуру массива.        Дополнительные байты обеспечивают    возможность   сдвигать структуры при  выравнивании. 
+<p>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="msg2"></a>
+<br>
+<P>Данный вызов функции выравнивает структуры по границе 32-байтной области:
+<center>
+<table cellspacing=0 cellpadding=0>
+<tr>
+<td align=left>
+<FONT COLOR="#0000cc"><code>p
+</td>
+<td><FONT COLOR="#0000cc"><code>00801028
+</td>
+</tr>
+<tr>
+<td>
+<FONT COLOR="#0000cc"><code>+
+</td>
+<td>&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<U><FONT COLOR="#0000cc"><code>31</u>
+</td>
+<td>
+<u><FONT COLOR="#0000cc"><code>0000001F</u>
+</td>
+</tr>
+<tr>
+<td>
+<FONT COLOR="#0000cc"><code>(p+31)
+</td>
+<td>
+<FONT COLOR="#0000cc"><code>00801047
+</td>
+</tr>
+<tr>
+<td>
+<FONT COLOR="#0000cc"><code>&amp;
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<U><FONT COLOR="#0000cc"><code>~31</u>
+</td>
+<td>
+<FONT COLOR="#0000cc"><code><u>FFFFFFE0
+</td>
+</tr>
+<tr>
+<td>
+<FONT COLOR="#0000cc"><code>(p+31)&amp;~31
+</td>
+<td>
+<FONT COLOR="#0000cc"><code>00801040
+</td>
+<tr>
+</table>
+</center>
+<P>Теперь указатель <FONT COLOR="#0000cc"><code>new_p</code></FONT> ссылается на первую структуру.  Следует отметить, что 31-байтная   область памяти  в  дальнейшем  никак  не  используется.
+
+<p>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="msg3"></a>
+<br>
+<P>Теперь каждая из структур отображается  только в одну кэш-линию. 
+<p>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</BODY>
+</HTML>
+

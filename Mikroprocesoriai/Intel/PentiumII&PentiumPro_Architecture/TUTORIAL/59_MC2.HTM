@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 59. Message frame, 2.</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+parent.ctrlframe.document.control.but.value ="С начала";
+parent.ctrlframe.current ="c2";
+parent.curchoice='none';
+//-->
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="ffffff" text="000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location){
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");}
+//-->
+</SCRIPT>
+<p>Команда <FONT COLOR="#0000cc"><code>SAL</code></FONT> (арифметический  сдвиг влево) считывает данные из регистра <FONT COLOR="#0000cc"><code>CL</code></FONT>.  В <B>коде до оптимизации</B>  команда  <FONT COLOR="#0000cc"><code>JZ</code></FONT>  считывает флаг <FONT COLOR="#0000cc"><code>ZF</code></FONT>, что вызывает задержку.<p>В <B>оптимизированном коде</B> команда <FONT COLOR="#0000cc"><code>CMP</code></FONT> производит запись во все флаги, так что  <FONT COLOR="#0000cc"><code>JZ</code></FONT>  считывает флаг <FONT COLOR="#0000cc"><code>ZF</code></FONT> без задержки.
+
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "–егистр "
+ ,"ѕам\€ть "
+ );
+
+files=new Array(
+  "pinsrwr"
+ ,"pinsrwm"
+ );
+
+sizes=new Array(
+  "width=212 height=249 "
+ ,"width=261 height=247 "
+ );
+
+titles=new Array(
+  "–егистр"
+  ,"ѕам\€ть"
+ );
+
+comments=new Array(
+ ' оманда <code><font  color="#0000cc">pinsrw </font></code> копирует 16-разр\€дное слово '
++'<code><font  color="#0000cc">b0</font></code> из регистра <code><font  color="#0000cc">eax</font></code> '
++'в 3-е слово регистра <code><font  color="#0000cc">mm1</font></code>, на которое указывают два младших разр\€да '
++'<code><font  color="#0000cc">10</font></code> непосредственного операнда <code><font  color="#0000cc">2h</font></code>.'
+
+,' оманда <code><font  color="#0000cc">pinsrw </font></code> копирует 16 разр\€дов данных из пам\€ти по адресу '
++'<code><font  color="#0000cc">0х4060 </font></code> (этот адрес содержитс\€ в регистре <code><font  color="#0000cc">eax</font></code>) '
++'во 2-е слово регистра <code><font  color="#0000cc">mm1</font></code>, на которое указывают два младших разр\€да '
++'<code><font  color="#0000cc">01</font></code> непосредственного операнда <code><font  color="#0000cc">1h</font></code>. '
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state31==null) top.state31=0;
+ document.write('<center><form><select onChange="top.state31=this.selectedIndex;self.location=(\'\'+self.location)">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state31)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+// document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+// document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state31]+'</b></font></tt>');
+ document.write('<IMG '+sizes[top.state31]+' hspace=0 vspace=3 SRC="images/'+files[top.state31]+'.gif" border=0></center>');
+ document.write(comments[top.state31]);
+}
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

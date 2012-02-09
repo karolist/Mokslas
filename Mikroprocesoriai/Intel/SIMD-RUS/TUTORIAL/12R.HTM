@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "Параллельное сложение: addps &nbsp; &nbsp;"
+ ,"Параллельное вычитание: subps &nbsp; &nbsp;"
+ ,"Параллельное умножение: mulps &nbsp; &nbsp;"
+ ,"Параллельное деление: divps"
+ ,"Скал\ярное сложение: addss"
+ ,"Скал\ярное вычитание: subss"
+ ,"Скал\ярное умножение: mulss"
+ ,"Скал\ярное деление: divss"
+);
+
+files=new Array(
+  "addps"
+ ,"subps"
+ ,"mulps"
+ ,"divps"
+ ,"addss"
+ ,"subss"
+ ,"mulss"
+ ,"divss"
+);
+
+titles=new Array(
+  "Параллельное сложение"
+ ,"Параллельное вычитание"
+ ,"Параллельное умножение"
+ ,"Параллельное деление"
+ ,"Скал\ярное сложение"
+ ,"Скал\ярное вычитание"
+ ,"Скал\ярное умножение"
+ ,"Скал\ярное деление"
+);
+
+comments=new Array(
+ 'Команда <code><font color="#0000cc">addps xmm1,xmm2</font></code> '
++'попарно складывает упакованные элементы регистра <code><font color="#0000cc">xmm1</font></code> '
++'с упакованными элементами регистра <code><font color="#0000cc">xmm2</font></code> '
++'и записывает суммы в соответствующие элементы регистра <code><font color="#0000cc">xmm1</font></code>. '
+
+,'Команда <code><font color="#0000cc">subps xmm1,xmm2</font></code> '
++'вычитает элементы регистра <code><font color="#0000cc">xmm2</font></code> '
++'из элементов регистра <code><font color="#0000cc">xmm1</font></code> '
++'и записывает полученные разности в соответствующие элементы регистра <code><font color="#0000cc">xmm1</font></code>. '
+
+,'Команда <code><font color="#0000cc">mulps xmm1,xmm2</font></code> '
++'попарно перемножает упакованные элементы регистров <code><font color="#0000cc">xmm1</font></code> '
++'и <code><font color="#0000cc">xmm2</font></code>. '
++'Произведени\я записываютс\я в соответствующие элементы регистра <code><font color="#0000cc">xmm1</font></code>. '
+
+,'Команда <code><font color="#0000cc">divps xmm1,xmm2</font></code> '
++'делит элементы регистра <code><font color="#0000cc">xmm1</font></code> '
++'на соответствующие элементы регистра <code><font color="#0000cc">xmm2</font></code>. '
++'Результаты делени\я записываютс\я в регистр <code><font color="#0000cc">xmm1</font></code> на место делимых. '
+
+,'Команда <code><font color="#0000cc">addss xmm1,xmm2</font></code> складывает <b>младшие</b> элементы регистров '
++'<code><font color="#0000cc">xmm1</font></code> и <code><font color="#0000cc">xmm2</font></code> '
++'и записывает результат (<font color="#0000cc">9.3</font>) в младший элемент  регистра <code><font color="#0000cc">xmm1</font></code>. '
++'Остальные элементы регистра <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+
+,'Команда <code><font color="#0000cc">subss xmm1,xmm2</font></code> вычитает <b>младший</b> элемент регистра '
++'<code><font color="#0000cc">xmm2</font></code> из соответствующего элемента <code><font color="#0000cc">xmm1</font></code> '
++'и записывает разность (<font color="#0000cc">5.1</font>) в младший элемент <code><font color="#0000cc">xmm1</font></code>. '
++'Остальные элементы регистра <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+
+,'Команда <code><font color="#0000cc">mulss xmm1,xmm2</font></code> перемножает <b>младшие</b> элементы регистров '
++'<code><font color="#0000cc">xmm1</font></code> и <code><font color="#0000cc">xmm2</font></code> '
++'и записывает результат (<font color="#0000cc">15.1</font>) в младший элемент <code><font color="#0000cc">xmm1</font></code>. '
++'Остальные элементы регистра <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+
+,'Команда <code><font color="#0000cc">divss xmm1,xmm2</font></code> делит <b>младший</b> элемент регистра <code><font color="#0000cc">xmm1</font></code> '
++'на соответствующий элемент регистра <code><font color="#0000cc">xmm2</font></code> и записывает результат (<font color="#0000cc">3.4</font>) в младший элемент '
++'<code><font color="#0000cc">xmm1</font></code>. Остальные элементы регистра <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state12==null) top.state12=0;
+ document.write('<center><form><select onChange="top.state12=this.selectedIndex;self.location=\'12r.htm\'">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state12)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+ document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+ // document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state12]+'</b></font></tt>');
+ document.write('<IMG width=250 height=150 hspace=6 vspace=10 SRC="images/'+files[top.state12]+'.gif" border=0></center>');
+ document.write(comments[top.state12]);
+}
+//-->
+</SCRIPT>
+
+
+</BODY>
+</HTML>

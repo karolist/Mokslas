@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "pminsw"
+ ,"pmaxsw"
+ ,"pminub"
+ ,"pmaxub"
+);
+
+files=new Array(
+  "pminsw"
+ ,"pmaxsw"
+ ,"pminub"
+ ,"pmaxub"
+);
+
+sizes=new Array(
+  "width=250 height=200 "
+ ,"width=250 height=200 "
+ ,"width=250 height=205 "
+ ,"width=250 height=205 "
+);
+
+titles=new Array(
+  ""
+ ,""
+ ,""
+ ,""
+);
+
+comments=new Array(
+ ' оманда <code><font color="#0000cc">pminsw</font></code> попарно сравнивает четыре слова со знаком в регистре '
++'<code><font color="#0000cc">mm1</font></code> с четырьм\€ словами со знаком в <code><font color="#0000cc">mm2</font></code>. '
++'ћинимальные значени\€ записываютс\€ в <code><font color="#0000cc">mm1</font></code>.'
+
+,' оманда <code><font color="#0000cc">pmaxsw</font></code> попарно сравнивает четыре слова со знаком в регистре '
++'<code><font color="#0000cc">mm1</font></code> с четырьм\€ словами со знаком в <code><font color="#0000cc">mm2</font></code>. '
++'ћаксимальные значени\€ записываютс\€ в <code><font color="#0000cc">mm1</font></code>.'
+
+,' оманда <code><font color="#0000cc">pminub</font></code> попарно сравнивает восемь байтов без знака в регистре '
++'<code><font color="#0000cc">mm1</font></code> с восемью байтами без знака в <code><font color="#0000cc">mm2</font></code>. '
++'ћинимальные значени\€ записываютс\€ в <code><font color="#0000cc">mm1</font></code>.'
+
+
+,' оманда <code><font color="#0000cc">pmaxub</font></code> попарно сравнивает восемь байтов без знака в регистре '
++'<code><font color="#0000cc">mm1</font></code> с восемью байтами без знака в <code><font color="#0000cc">mm2</font></code>. '
++'ћаксимальные значени\€ записываютс\€ в <code><font color="#0000cc">mm1</font></code>.'
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state32==null) top.state32=0;
+ document.write('<center><form><select onChange="top.state32=this.selectedIndex;self.location=(\'\'+self.location)">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state32)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+ // document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+ document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state32]+'</b></font></tt>');
+ document.write('<IMG '+sizes[top.state32]+' hspace=6 vspace=10 SRC="images/'+files[top.state32]+'.gif" border=0></center>');
+ document.write(comments[top.state32]);
+}
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

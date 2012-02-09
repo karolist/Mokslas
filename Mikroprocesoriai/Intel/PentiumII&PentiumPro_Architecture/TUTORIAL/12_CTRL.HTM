@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 12. Control frame.</TITLE>
+<script language="JavaScript">
+<!--
+checked_radio="static";
+
+function change_checked(value) {
+checked_radio=value;
+parent.topframe.location="12_top0.htm"; 
+document.control.but.value="Показать";
+top.left.location="12l.htm";
+}
+function changeloc() {
+if (checked_radio=="static"){
+if (parent.curstep<6) {
+parent.topframe.location="12_tops" + (parent.curstep+1) + ".htm"; 
+top.left.location.hash="s_msg"+(parent.curstep+1);
+}
+else {
+parent.topframe.location="12_top0.htm"; 
+document.control.but.value="Показать";
+top.left.location.hash="top";
+}
+}
+else {
+//dynamic
+if (parent.curstep<5) {
+parent.topframe.location="12_topd" + (parent.curstep+1) + ".htm"; 
+top.left.location.hash="d_msg"+(parent.curstep+1);
+}
+else {
+parent.topframe.location="12_top0.htm"; 
+document.control.but.value="Показать";
+top.left.location.hash="top";
+}
+}
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif" bgcolor="#FFFFCC" text="#000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="control">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="middle" nowrap><input name="choice" type="radio" value="static" checked onCLick="change_checked('static')"><b><font size="-1">Статическое</font></b>&nbsp;<input name="choice" type="radio" value="dynamic" onCLick="change_checked('dynamic')"><b><font size="-1">Динамическое</font></b></td><td>&nbsp;</td>
+<td valign="middle"><input name="but" type="button" value="   Показать   " onClick="changeloc()"></td>
+</tr>
+</table>
+</form>
+</center>
+</BODY>
+</HTML>
+

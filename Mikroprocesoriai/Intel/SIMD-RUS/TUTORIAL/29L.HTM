@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>ј</B></big>налогично командам технологии MMX&#153,  новые SIMD-команды обработки целочисленных данных:
+<ul>
+<li> ¬ыполн€ют <A target="right" HREF="glossary.htm#simd">SIMD-операции</A> над несколькими 
+<A target="right" HREF="glossary.htm#integer">целочисленными элементами данных</A>,
+ упакованными в 64-разр€дные группы (как показано на рисунке справа)
+<li> «агружают и хран€т упакованные данные в 64-разр€дных 
+<A target="right" HREF="glossary.htm#mmx-reg">MMX-регистрах</A> (отдельно
+ от 128-разр€дных XMM-регистров данных с плавающей зап€той).
+</ul>
+
+<big><B>ћ</B></big>немоника имен новых целочисленных SIMD-команд включает префикс и суффиксы, указывающие на 
+характер выполн€емой операции и тип используемых данных:
+<ul>
+<li> ѕрефикс  <code><font  color="#0000cc"><b>p</b></font></code> указывает на то, 
+что команда выполн€ет параллельные операции над несколькими элементами данных;
+<li> —уффиксы <code><font  color="#0000cc"><b>b,w,d</b></font></code>  и 
+<code><font  color="#0000cc"><b>q</b></font></code> указывают на используемый
+ <A target="right" HREF="glossary.htm#datatype">тип данных</A>;
+<li> —уффиксы <code><font  color="#0000cc"><b>u</b></font></code>  
+или <code><font  color="#0000cc"><b>s</b></font></code>  указывают на использование данных
+ <A target="right" HREF="glossary.htm#signed">со знаком</A> или 
+<A target="right" HREF="glossary.htm#unsigned">без знака</A>, соответственно.
+</ul>
+<p>
+<big><B>“</B></big>ак, например, команда умножени€
+ <A target="right" HREF="glossary.htm#pmulhuw"><b>p</b>mulh<b>uw</b></A> работает с данными типа Ђупакованные 16-разр€дные 
+слова без знакаї.
+
+
+
+
+
+</BODY>
+</HTML>

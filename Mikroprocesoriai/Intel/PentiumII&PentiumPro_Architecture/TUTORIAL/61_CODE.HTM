@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 61. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<TABLE WIDTH="100%" ALIGN=center BORDER=0>
+  <TR>
+     <TD ALIGN=center><font color="#0000CC"><b>Код до оптимизации</b></font></TD>
+     <TD ALIGN=center><font color="#0000CC"><b>Оптимизированный код</b></font><TD/>
+  </TR>
+
+  <TR>
+    <TD ALIGN=center COLSPAN=2><font color="#0000CC"><b>IMUL</b></font></TD>
+  </TR>
+  <TR>
+    <TD>
+      <TABLE ALIGN=center BORDER=2>
+      <TR><TD BGCOLOR="White"><PRE> mov ecx, eax <BR> shl eax,4 <BR> add eax, ecx <BR> shl eax, 1     </PRE></TD></TR>
+      </TABLE>
+    </TD>
+    <TD>
+      <TABLE ALIGN=center BORDER=2>
+      <TR><TD BGCOLOR="White"><PRE><font color="#0000CC"> imul eax, 34    </font></PRE></TD></TR>
+      </TABLE>
+    </TD>
+  </TR>
+
+  <TR>
+    <TD ALIGN=center COLSPAN=2><font color="#0000CC"><b>CDQ</b></font></TD>
+  </TR>
+  <TR>
+    <TD>
+      <TABLE ALIGN=center BORDER=2>
+      <TR><TD BGCOLOR="White"><PRE> mov edx, eax <BR> sar edx, 31    </PRE></TD></TR>
+      </TABLE>
+    </TD>
+    <TD>
+      <TABLE ALIGN=center BORDER=2>
+      <TR><TD BGCOLOR="White"><PRE><font color="#0000CC"> cdq             </font></PRE></TD></TR>
+      </TABLE>
+    </TD>
+
+  </TR>
+
+  <TR>
+    <TD ALIGN=center COLSPAN=2><font color="#0000CC"><b>MOVcc</b></font></TD>
+  </TR>
+  <TR>
+    <TD>
+      <TABLE ALIGN=center BORDER=2>
+      <TR><TD BGCOLOR="White"><PRE> mov ax, mem16 <BR> shl eax, 16 <BR> sar eax, 16    </PRE></TD></TR>
+      </TABLE>
+    </TD>
+    <TD>
+      <TABLE ALIGN=center BORDER=2>
+      <TR><TD BGCOLOR="White"><PRE> mov<font color="#0000CC">sx e</font>ax, mem16<BR></PRE></TD></TR>
+      </TABLE>
+    </TD>
+  </TR>
+
+</TABLE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>See it work, Control Frame (topic 45)</TITLE>
+<script language="JavaScript">
+<!--
+var no_misses= new Array(28);
+var o_misses= new Array(28);
+var no_iter = new Array(28);
+var o_iter = new Array(28);
+
+no_misses[0]=' 2';
+no_misses[1]=' 2';
+no_misses[2]=' 3';
+no_misses[3]=' 3';
+no_misses[4]=' 4';
+no_misses[5]=' 4';
+no_misses[6]=' 5';
+no_misses[7]=' 5';
+no_misses[8]=' 6';
+no_misses[9]=' 6';
+no_misses[10]=' 7';
+no_misses[11]=' 7';
+no_misses[12]=' 8';
+no_misses[13]=' 8';
+no_misses[14]=' 9';
+no_misses[15]=' 9';
+no_misses[16]=' 10';
+no_misses[17]=' 10';
+no_misses[18]=' 11';
+no_misses[19]=' 11';
+no_misses[20]=' 12';
+no_misses[21]=' 12';
+no_misses[22]=' 13';
+no_misses[23]=' 13';
+no_misses[24]=' 14';
+no_misses[25]=' 14';
+no_misses[26]=' 15';
+no_misses[27]=' 15';
+
+o_misses[0]=' 2';
+o_misses[1]=' 2';
+o_misses[2]=' 2';
+o_misses[3]=' 2';
+o_misses[4]=' 3';
+o_misses[5]=' 3';
+o_misses[6]=' 3';
+o_misses[7]=' 3';
+o_misses[8]=' 4';
+o_misses[9]=' 4';
+o_misses[10]=' 4';
+o_misses[11]=' 4';
+o_misses[12]=' 5';
+o_misses[13]=' 5';
+o_misses[14]=' 5';
+o_misses[15]=' 5';
+o_misses[16]=' 6';
+o_misses[17]=' 6';
+o_misses[18]=' 6';
+o_misses[19]=' 6';
+o_misses[20]=' 7';
+o_misses[21]=' 7';
+o_misses[22]=' 7';
+o_misses[23]=' 7';
+o_misses[24]=' 8';
+o_misses[25]=' 8';
+o_misses[26]=' 8';
+o_misses[27]=' 8';
+
+o_iter[0]='Min=a[0]';  no_iter[0]='Min=a[0]';
+o_iter[1]='Max=a[0]';  no_iter[1]='Min=min(Min,a[1])';
+o_iter[2]='Min=min(Min,a[1])';	no_iter[2]='Min=min(Min,a[2])';
+o_iter[3]='Max=max(Max,a[1])';	no_iter[3]='Min=min(Min,a[3])';
+o_iter[4]='Min=min(Min,a[2])';	no_iter[4]='Min=min(Min,a[4])';
+o_iter[5]='Max=max(Max,a[2])';	no_iter[5]='Min=min(Min,a[5])';
+o_iter[6]='Min=min(Min,a[3])';	no_iter[6]='Min=min(Min,a[6])';
+o_iter[7]='Max=max(Max,a[3])';	no_iter[7]='Min=min(Min,a[7])';
+o_iter[8]='Min=min(Min,a[4])';	no_iter[8]='Min=min(Min,a[8])';
+o_iter[9]='Max=max(Max,a[4])';	no_iter[9]='Min=min(Min,a[9])';
+o_iter[10]='Min=min(Min,a[5])';	no_iter[10]='Min=min(Min,a[10])';
+o_iter[11]='Max=max(Max,a[5])';	no_iter[11]='Min=min(Min,a[11])';
+o_iter[12]='Min=min(Min,a[6])';	no_iter[12]='Min=min(Min,a[12])';
+o_iter[13]='Max=max(Max,a[6])';	no_iter[13]='Min=min(Min,a[13])';
+o_iter[14]='Min=min(Min,a[7])';	no_iter[14]='Max=a[0]';
+o_iter[15]='Max=max(Max,a[7])';	no_iter[15]='Max=max(Max,a[1])';
+o_iter[16]='Min=min(Min,a[8])';	no_iter[16]='Max=max(Max,a[2])';
+o_iter[17]='Max=max(Max,a[8])';	no_iter[17]='Max=max(Max,a[3])';
+o_iter[18]='Min=min(Min,a[9])';	no_iter[18]='Max=max(Max,a[4])';
+o_iter[19]='Max=max(Max,a[9])';	no_iter[19]='Max=max(Max,a[5])';
+o_iter[20]='Min=min(Min,a[10])';	no_iter[20]='Max=max(Max,a[6])';
+o_iter[21]='Max=max(Max,a[10])';	no_iter[21]='Max=max(Max,a[7])';
+o_iter[22]='Min=min(Min,a[11])';	no_iter[22]='Max=max(Max,a[8])';
+o_iter[23]='Max=max(Max,a[11])';	no_iter[23]='Max=max(Max,a[9])';
+o_iter[24]='Min=min(Min,a[12])';	no_iter[24]='Max=max(Max,a[10])';
+o_iter[25]='Max=max(Max,a[12])';	no_iter[25]='Max=max(Max,a[11])';
+o_iter[26]='Min=min(Min,a[13])';	no_iter[26]='Max=max(Max,a[12])';
+o_iter[27]='Max=max(Max,a[13])';	no_iter[27]='Max=max(Max,a[13])';
+
+function changeloc() {
+if (parent.topframe.checked_radio=="no"){
+if (parent.curstep<28) {
+parent.imageframe.location="45eino" + (parent.curstep+1) + ".htm"; 
+top.left.msgframe.location="45exno"+(parent.curstep+1) + ".htm";
+parent.topframe.document.main.no_iter.value=no_iter[parent.curstep];
+parent.cachemiss.document.cachemiss.cm.value=no_misses[parent.curstep];
+}
+else {
+parent.topframe.change_checked('no');
+}
+}
+else {
+//optimized
+if (parent.curstep<28) {
+parent.imageframe.location="45eino" + (parent.curstep+1) + ".htm"; 
+top.left.msgframe.location="45exo"+(parent.curstep+1) + ".htm";
+parent.topframe.document.main.o_iter.value=o_iter[parent.curstep];
+parent.cachemiss.document.cachemiss.cm.value=o_misses[parent.curstep];
+}
+else {
+parent.topframe.change_checked('o');
+}
+}
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="control"><nobr><input type="button" name="step" value="По шагам" onClick="changeloc()"><input type="button" name="return" value="Вернуться" onClick="top.return_from_exercise();"></nobr></form>
+</center>
+</BODY>
+</HTML>

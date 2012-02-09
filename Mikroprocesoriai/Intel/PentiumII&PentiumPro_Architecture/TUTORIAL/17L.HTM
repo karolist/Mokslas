@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 17</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="msg0"></a>
+<P><font size="+1"><b>В</b></font> процессе последовательного выполнения команд даже те команды, которые не зависят от предыдущих, должны ждать разрешения зависимостей, содержащихся
+в предыдущих командах.
+<P><font size="+1"><b>П</b></font>ри <A HREF="javascript:parent.showglos('oooexec')">внеочередном выполнении</a> микрооперации, не содержащие зависимостей, выполняются сразу после освобождения необходимых устройств выполнения, без учета исходного порядка команд в программе.
+<P>Только микрооперации, содержащие зависимости, ожидают доступности необходимых данных. Это одна из причин, по которым эффективность доступа в кэш и основную память играет важную роль во внеочередном выполнении.
+<p><font size="+1"><b>Щ</b></font>елкните на кнопку "<b>Показать</b>", чтобы сравнить внеочередное и последовательное выполнения. Просмотрев эту демонстрацию, Вы поймете, почему внеочередное выполнение работает настолько быстрее.
+
+<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+
+<a name="msg1"></a>
+<br>
+<p>Микрооперация 2 зависит от микрооперации 1 по регистру <code><font color="#0000CC">r1</font></code>  и не может выполняться до завершения выполнения микрооперации 1.</p>
+
+<p>При внеочередном выполнении простаивают только микрооперации, содержащие
+зависимости. При последовательном выполнении простаивают все микрооперации,
+следующие за содержащей зависимость.<br>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="msg2"></a>
+<br>
+<p>Как при последовательном, так и при внеочередном выполнении микрооперация 2
+теперь может выполняться, так как выполнение микрооперации 1 завершено.<br>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="msg3"></a>
+<br>
+<p>Внеочередное выполнение завершено.</p>
+
+<p>Для последовательного выполнения той же последовательности микроопераций нужен один дополнительный такт.
+<br>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</BODY>
+</HTML>
+

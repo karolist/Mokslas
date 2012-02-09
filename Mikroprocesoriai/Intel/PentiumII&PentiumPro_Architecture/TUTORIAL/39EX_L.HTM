@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 39 Ex.</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="0">
+Выстройте элементы в структуре так, чтобы они остались выровненными,
+а доступ к ним был максимально эффективным.
+
+<P>Закономерности доступа к элементам:
+<BR>Обращения к элементам <FONT COLOR="#3333FF">priority</FONT>, <FONT COLOR="#3333FF">place_in_list</FONT>
+и <FONT COLOR="#3333FF">next*</FONT> расположены близко; <FONT COLOR="#3333FF">name</FONT>,
+<FONT COLOR="#3333FF">priority</FONT> и <FONT COLOR="#3333FF">place_in_list</FONT>
+часто используются.
+
+<P>Перетащите каждый элемент на нужную позицию в структуре.
+
+<P>Нажмите на кнопку <B>Проверить</B>, чтобы получить оценку оптимальности
+текущего расположения. Кнопка <B>Решение</B> покажет оптимальный порядок
+расположения элементов в структуре, а кнопка <B>Возврат</B> вернет Вас
+в основное окно Курса.
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<a name="1">
+<B><I>Неверно.</I></B> <BR><FONT COLOR="#000000">Подсказка: Указатель
+ </FONT><FONT COLOR="#0000BF"><CODE>*next</CODE></FONT><FONT COLOR="#000000"> изменяется 
+при изменении приоритета&nbsp; </FONT><FONT COLOR="#0000BF">(<CODE>priority</CODE>)</FONT> и места записи в 
+списке. Попробуйте разместить рядом те элементы, обращение к которым происходит 
+одновременно.<BR>Подсказка: Располагайте часто используемые элементы вместе.<BR>Подсказка:
+ Выравнивайте каждый элемент по границе, соответствующей его размеру.
+<BR><B><I><FONT COLOR="#000000">Попытайтесь еще раз.</FONT></I></B>
+
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="2">
+<B><I>Верно<FONT COLOR="#000000">!</FONT></I></B> <BR><FONT COLOR="#0000BF"><CODE>priority</CODE></FONT>
+<FONT COLOR="#000000"> и </FONT><FONT COLOR="#0000BF"><CODE>place_in_list</CODE></FONT>
+<FONT COLOR="#000000"> должны следовать за </FONT><FONT COLOR="#0000BF"><CODE>*next</CODE></FONT>
+<FONT COLOR="#000000">, поскольку обращения к данным трем элементам происходят близко во 
+времени. </FONT><FONT COLOR="#0000BF"><CODE>name</CODE></FONT><FONT COLOR="#000000"> должен
+ следовать за&nbsp; </FONT><FONT COLOR="#0000BF"><CODE>priority</CODE></FONT>
+<FONT COLOR="#000000">и </FONT><FONT COLOR="#0000BF"><CODE>place_in_list</CODE></FONT>
+<FONT COLOR="#000000">, поскольку эти три элемента часто используются.
+&nbsp;</FONT> <BR><FONT COLOR="#0000BF"><CODE>id</CODE></FONT><FONT COLOR="#000000"> должен 
+следовать за </FONT><FONT COLOR="#0000BF"><CODE>name</CODE></FONT><FONT COLOR="#000000">; иначе нарушится 
+выравнивание из-за смещения </FONT><FONT COLOR="#0000BF"><CODE>id</CODE> </FONT><FONT COLOR="#000000">с
+ границы, кратной четырем байтам.</FONT>
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="3">
+Закономерности доступа к элементам: <BR>Обращения к элементам 
+<FONT COLOR="#3333FF"><CODE>priority</CODE></FONT>, <FONT COLOR="#3333FF"><CODE>place_in_list</CODE></FONT> 
+и <FONT COLOR="#3333FF"><CODE>next*</CODE></FONT> расположены близко; 
+<FONT COLOR="#3333FF"><CODE>name</CODE></FONT>, <FONT COLOR="#3333FF"><CODE>priority</CODE></FONT>
+ и <FONT COLOR="#3333FF"><CODE>place_in_list</CODE></FONT> часто используются. 
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BODY>
+</HTML>

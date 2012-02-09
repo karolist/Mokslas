@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>Ц</B></big>елочисленная команда
+<code><font  color="#0000cc">pshufw </font></code> выбирает четыре 16-разрядных слова 
+(не обязательно различных) из входного 
+операнда и записывает их в определенном порядке в выходной операнд.
+Порядок записи слов задается 2-разрядными полями 8-разрядного 
+<A target="right" HREF="glossary.htm#8imm_i">непосредственного операнда</A>.
+<p><big><B>В</B></big>ходной операнд может располагаться либо в MMX&#153; регистре, либо в  памяти.
+ Выходной операнд должен находиться в MMX-регистре.
+<p>
+<big><B>К</B></big>ак и аналогичная команда 
+<code><font  color="#0000cc">shufps </font></code> для SPFP-данных, 
+<code><font  color="#0000cc">pshufw </font></code> может использоваться 
+для операций типа
+<A target="right" HREF="glossary.htm#brcast">размножения</A>, 
+<A target="right" HREF="glossary.htm#rotate">циклического сдвига</A> и 
+<A target="right" HREF="glossary.htm#swap">зеркального отражения</A>, но применительно к
+целочисленным элементам данных. 
+
+
+</BODY>
+</HTML>

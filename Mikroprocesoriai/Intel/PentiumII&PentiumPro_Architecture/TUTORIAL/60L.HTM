@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 60</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<P><font size="+1"><b>Е</b></font>сли выполнение данной команды зависит от результата выполнения предыдущей,
+имеет место цепочка зависимостей. Устранение цепочек зависимостей в Вашем
+коде повысить эффективность параллельной обработки команд.
+
+<P>Данный прием оптимизации особенно эффективен для процессоров Pentium®
+II и Pentium Pro, поскольку они снабжены несколькими функциональными устройствами
+для работы с целыми числами, числами с плавающей точкой и командами MMX™.
+
+<P><B>Пример:</B>
+<BR>Приведенный здесь код до оптимизации содержит цепочку зависимостей.
+Значение <FONT COLOR="#3333FF">tmp</FONT> всегда зависит от результатов
+выполнения предыдущей итерации.
+
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>Оптимизировать</B>, чтобы посмотреть, каким образом
+можно устранить цепочку зависимостей при помощи введения временных накопителей.
+
+</BODY>
+</HTML>
+

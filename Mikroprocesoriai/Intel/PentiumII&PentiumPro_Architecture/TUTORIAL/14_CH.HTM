@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 14. Choice frame.</TITLE>
+<script language="JavaScript">
+<!--
+var useransw="";
+answers = new Array ('BT','BNT','BT','BNT','BT','BT');
+function checkansw (answ) {
+if (useransw == "") {
+if (answ == answers[parent.curgame]) {
+useransw = "correct";
+}
+else {
+useransw = "incor";
+}
+parent.answerframe.location = "14_answ.htm";
+}
+return true;
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#0000CC" text="#ffffff">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<form name="choices">
+<input type="radio" name="ch" value="chkd" onClick="checkansw('BT');"><b>Переход выполнен<br>
+<input type="radio" name="ch" value="chkd" onClick="checkansw('BNT');">Переход не выполнен</b>
+</form>
+</BODY>
+</HTML>
+
+

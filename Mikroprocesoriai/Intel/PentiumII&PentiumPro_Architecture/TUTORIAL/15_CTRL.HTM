@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 15. Control frame.</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<script language="JavaScript">
+<!--
+labels = new Array ("   Показать   ", "   Продолжить   ", "   Продолжить   ", "C начала");
+
+function step() {
+if (parent.curstep < 3) {
+parent.curstep ++;
+}
+else {
+parent.curstep = 0;
+} 
+parent.topframe.location="15_top" + parent.curstep + ".htm"; 
+document.control.but.value =labels[parent.curstep];
+//setTimeout("mes()",6000);
+parent.messageframe.location="15_msg" + parent.curstep + ".htm"; 
+
+return true;
+}
+//-->
+</script>
+<center>
+<form name="control">
+<SCRIPT language="JavaScript">
+<!--
+document.write ("<input name=\"but\" type=\"button\" value=\"" + labels[parent.curstep] + "\" onClick=\"step()\">");
+//-->
+</SCRIPT>
+
+</form>
+</center>
+</BODY>
+</HTML>
+

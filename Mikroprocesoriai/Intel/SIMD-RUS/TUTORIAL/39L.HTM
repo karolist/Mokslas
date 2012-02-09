@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<a name="s"></a>
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>К</B></big>оманды этой группы позволяют кэшировать нужные данные заранее.
+За счет этого уменьшаются задержки, связанные с доступом к основной памяти. 
+Рассматриваемые команды не влияют на ход выполнения программы 
+с функциональной точки зрения.
+
+<p>
+<big><B>О</B></big>беспечивается возможность записи данных
+в кэш-память различных уровней. 
+Имена команд кэширования содержат  
+<A target="right" HREF="glossary.htm#cachehints">суффиксы</A>,
+указывающие нужный уровень кэш-памяти. 
+
+
+<p>
+<big><B>К</B></big>оманды
+<code><font color="#0000CC">prefetcht0</font></code>,
+<code><font color="#0000CC">prefetcht1</font></code>
+ и <code><font color="#0000CC">prefetcht2</font></code>
+предназначены для кэширования часто используемых данных 
+(с <A target="right" HREF="glossary.htm#temporal">временной</A> или 
+<A target="right" HREF="glossary.htm#spatial">пространственной</A> локализацией).
+
+<p>
+<big><B>К</B></big>оманда <code><font color="#0000CC">prefetchnta</font></code>
+предназначена для кэширования данных со <A target="right" HREF="glossary.htm#nontemporal">слабой локализацией</A>. 
+В архитектуре процессора Pentium&reg;&nbsp;<font face="sans-serif">III</font> 
+<code><font color="#0000CC">prefetchnta</font></code> помещает данные в L1-кэш.
+
+
+
+
+
+</BODY>
+</HTML>

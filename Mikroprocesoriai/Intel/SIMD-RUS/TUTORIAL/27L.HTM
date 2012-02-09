@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<STYLE TYPE="text/css">
+<!--
+small { font-size: 10pt; font-family="sans-serif"}
+-->
+</STYLE>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+corrAnswers=new Array(0,2,1,3);
+corrComments=new Array(
+  '<small>Команда</small> <code><font color="#0000cc">cvtss2si eax,xmm1</font></code> <small>преобразует младший FP-элемент регистра</small> '
+ +'<code><font color="#0000cc">xmm1</font></code> <small>в целое число в регистре</small> <code><font color="#0000cc">eax</font></code>. '
+ +'<small>Способ округлени\я задаетс\я полем RC в регистре</small> <code><font color="#0000cc">MXCSR</font></code>.'
+
+ ,'<small>Команда</small> <code><font color="#0000cc">cvttps2pi mm1,xmm1</font></code> <small>преобразует упакованные FP-элементы регистра</small> '
+ +'<code><font color="#0000cc">xmm1</font></code> <small>в упакованные целые в регистре</small> <code><font color="#0000cc">mm1</font></code>. '
+ +'<small>Дробные части отбрасываютс\я. Обращени\я к регистру</small> <code><font color="#0000cc">MXCSR</font></code> <small>не происходит</small>. '
+
+ ,'<small>Команда</small> <code><font color="#0000cc">cvtps2pi mm1,xmm1</font></code> <small>преобразует упакованные FP-элементы регистра</small> '
+ +'<code><font color="#0000cc">xmm1</font></code> <small>в упакованные целые в регистре</small> <code><font color="#0000cc">mm1</font></code>. '
+ +'<small>Способ округлени\я задаетс\я полем RC в регистре</small> <code><font color="#0000cc">MXCSR</font></code>.'
+
+ ,'<small>Команда</small> <code><font color="#0000cc">cvtsi2ss xmm1,eax</font></code> <small>преобразует целое число из регистра </small>'
+ +'<code><font color="#0000cc">eax</font></code> <small>в младший FP-элемент регистра</small> <code><font color="#0000cc">xmm1</font></code>. '
+);
+
+hints=new Array (
+  '<small><b>Подсказка:</b> требуетс\я <i>скал\ярна\я</i> команда преобразовани\я младшего FP-элемента из регистра</small> '
+ +'<code><font color="#0000cc">xmm1</font></code> <small>в целое число в регистре</small> <code><font color="#0000cc">eax</font></code>. '
+ +'<small><i>Способ округлени\я</i> должен задаватьс\я полем RC в регистре</small> <code><font color="#0000cc">MXCSR</font></code>.'
+
+ ,'<small><b>Подсказка:</b> требуетс\я команда преобразовани\я <i>упакованных</i> FP-элементов из регистра</small> '
+ +'<code><font color="#0000cc">xmm1</font></code> <small>в упакованные целые в регистре</small> <code><font color="#0000cc">mm1</font></code>. '
+ +'<small>Дробные части должны <i>отбрасыватьс\я.</i></small>'
+
+ ,'<small><b>Подсказка:</b> требуетс\я команда преобразовани\я <i>упакованных</i> FP-элементов из регистра</small> '
+ +'<code><font color="#0000cc">xmm1</font></code> <small>в упакованные целые в регистре</small> <code><font color="#0000cc">mm1</font></code>. '
+ +'<small><i>Способ округлени\я</i> должен задаватьс\я полем RC в регистре</small> <code><font color="#0000cc">MXCSR</font></code>.'
+
+ ,'<small><b>Подсказка:</b> требуетс\я команда преобразовани\я целого числа из регистра</small> '
+ +'<code><font color="#0000cc">eax</font></code> <small>в младший FP-элемент регистра</small> <code><font color="#0000cc">xmm1</font></code>.'
+);
+
+
+
+
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+else {
+ if (top.state27==null) {
+  document.write('<p><big><b>И</b></big>мена команд преобразовани\я типов начинаютс\я с букв <code><font  color="#0000cc"><b>cvt</b></font></code>, '); 
+  document.write('за которыми следует комбинаци\я <A target="right" HREF="glossary.htm#suffix">суффиксов</a>: ');
+  document.write('<code><font color="#0000cc"><b>pi</b></font></code>, ');
+  document.write('<code><font color="#0000cc"><b>ps</b></font></code>, ');
+  document.write('<code><font color="#0000cc"><b>si</b></font></code>, ');
+  document.write('<code><font color="#0000cc"><b>ss</b></font></code> и ');
+  document.write('<code><font color="#0000cc"><b>t</b></font></code>.');
+
+  document.write('<TABLE border=1 cellspacing=0 cellpadding=1 bgcolor="#FFFFCC" width="97%">');
+  document.write('<TR><TH>Им\я команды</TH><TH>Округ-<br>ление</TH><TH>Отбра-<br>сывание</TH></TR>');
+  document.write('<TR><TD><code><font color="#0000cc">cvt<A target="right" HREF="glossary.htm#suffix"><b><i>pi</i></b></A>2<A target="right" HREF="glossary.htm#suffix"><b><i>ps</i></b></A></font></code></TD>');
+  document.write('<TD align="center"><IMG width=18 height=14 SRC="check.gif"></TD><TD>&nbsp;</TD></TR>');
+  document.write('<TR><TD><code><font color="#0000cc">cvt<b><i>ps</i></b>2<b><i>pi</i></b></font></code></TD>');
+  document.write('<TD align="center"><IMG width=18 height=14 SRC="check.gif"></TD><TD>&nbsp;</TD></TR>');
+  document.write('<TR><TD><code><font color="#0000cc">cvt<A target="right" HREF="glossary.htm#suffix"><b><i>t</b></A><b>ps</i></b>2<b><i>pi</i></b></font></code></TD>');
+  document.write('<TD>&nbsp;</TD><TD align="center"><IMG width=18 height=14 SRC="check.gif"></TD></TR>');
+  document.write('<TR><TD><code><font color="#0000cc">cvt<A target="right" HREF="glossary.htm#suffix"><b><i>ss</i></b></A>2<A  target="right" HREF="glossary.htm#suffix"><b><i>si</i></b></A></font></code></TD>');
+  document.write('<TD align="center"><IMG width=18 height=14 SRC="check.gif"></TD><TD>&nbsp;</TD></TR>');
+  document.write('<TR><TD><code><font color="#0000cc">cvt<b><i>tss</i></b>2<b><i>si</i></b></font></code></TD>');
+  document.write('<TD>&nbsp;</TD><TD align="center"><IMG width=18 height=14 SRC="check.gif"></TD></TR>');
+  document.write('<TR><TD><code><font color="#0000cc">cvt<b><i>si</i></b>2<b><i>ss</i></b></font></code></TD>');
+  document.write('<TD align="center"><IMG width=18 height=14 SRC="check.gif"></TD><TD>&nbsp;</TD></TR>');
+  document.write('</TABLE>');
+
+  document.write('<p><big><b>В</b></big>ы хорошо усвоили команды преобразовани\я типов? Проверьте себ\я: выберите команду, выполнившую преобразование на рисунке справа. ');
+  document.write('Чтобы увидеть правильный ответ, нажмите кнопку <b>OTBET</b>.');
+  document.bgColor="#FFFFFF";
+ }
+ else {
+  len=(""+top.state27).length;
+  curTest=parseInt(""+top.state27);
+  document.writeln('<p><center><table border=1 bgcolor=white cellspacing=0 cellpadding=4><tr><td>');
+  if (len>1) 
+    top.left.document.writeln('<font color=red><b><i>'+(''+top.state27).substring(1,len)+'</i></b></font><br>');
+  document.writeln(''+(((''+top.state27).indexOf('HE')==-1)?corrComments[curTest]:hints[curTest]));
+  if (parseInt(navigator.appVersion)>3) document.writeln('<a href="javascript:top.state27=null;top.left.location=\'27l.htm\'"><img src="button/glosback.gif" width=15 height=15 border=0></a>');
+  document.writeln('</td></tr></table></center></body></html>');
+ }
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

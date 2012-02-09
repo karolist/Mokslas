@@ -1,0 +1,23 @@
+[shared-]
+	pmark=
+	version=2
+[cv]
+	wndstate=0 2 0 1 0 0 0 0 0 1 254
+	tilestate=1 24 0 80 0 0 0 0 20 8 0 0 0 0 16 0 0 254
+	command=use auto
+	command=n10
+	command=s1
+	command=oc+
+	command=of+
+	command=o3-
+[debug-]
+	target="c:\intel\cv3\demo.exe"
+[cv3]
+	wndstate=0 1 1 1 1 1 1 1 1 2 254
+	tilestate=1 49 0 80 0 0 0 67 0 3 9 16 22 30 35 0 34 254
+	command=use auto
+	command=n10
+	command=s2
+	command=oc+
+	command=of+
+	command=o3-

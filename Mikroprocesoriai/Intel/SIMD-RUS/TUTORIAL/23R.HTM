@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "cmpltps"
+ ,"cmpltss"
+);
+
+files=new Array(
+  "cmpltps"
+ ,"cmpltss"
+);
+
+titles=new Array(
+  "Параллельное сравнение"
+ ,"Скал\ярное сравнение"
+);
+
+comments=new Array(
+ 'Команда <code><font color="#0000cc">cmpltps xmm1, xmm2</font></code> попарно сравнивает числа в соответствующих элементах операндов, провер\я\я выполнение услови\я <i>меньше</i>. '
++'Дл\я младших элементов <code><font color="#0000cc">7.2 < 8.6 = TRUE</font></code>, поэтому младший элемент <code><font color="#0000cc">xmm1</font></code> '
++'заполн\яетс\я единицами. В следующий элемент <code><font color="#0000cc">xmm1</font></code> записываетс\я маска из всех нулей, т.к. <code><font color="#0000cc">6.1 < 2.4 = FALSE</font></code>, и т.д. '
+
+,'Команда <code><font color="#0000cc">cmpltss xmm1, xmm2</font></code> сравнивает два числа <code><font color="#0000cc">7.2</font></code> и <code><font color="#0000cc">8.6</font></code>, '
++'провер\я\я выполнение услови\я <i>меньше</i>. Поскольку условие выполнено, в соответствующий элемент операнда '
++'<code><font color="#0000cc">xmm1</font></code> записываетс\я маска из всех единиц. Содержимое трех старших элементов <code><font color="#0000cc">xmm1</font></code> сохран\яетс\я. '
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state23==null) top.state23=0;
+ document.write('<center><form><select onChange="top.state23=this.selectedIndex;self.location=(\'\'+self.location)">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state23)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+ // document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+ // document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state23]+'</b></font></tt>');
+ document.write('<IMG width=250 height=170 hspace=6 vspace=6 SRC="images/'+files[top.state23]+'.gif" border=0></center>');
+ document.write(comments[top.state23]);
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

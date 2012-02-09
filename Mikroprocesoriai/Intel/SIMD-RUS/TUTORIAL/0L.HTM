@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<TITLE>Pentium(R) III Processor Tutorial. Map</TITLE>
+
+<script language="JavaScript">
+<!--
+whi_src="white.gif";
+gry_src="button/666666.gif";
+di1_src="button/diag1.gif";
+di2_src="button/diag2.gif";
+
+if (document.images) {
+ var whi=new Image(); whi.src=whi_src;
+ var gry=new Image(); gry.src=gry_src;
+ var di1=new Image(); di1.src=di1_src;
+ var di2=new Image(); di2.src=di2_src;
+}
+
+jxBuf='';
+jxButtonBorder=2;
+if (!document.images) jxButtonBorder=2;
+
+function jxGifButton(name,src,W,H,alt,hrf,onClk) {
+ var B=jxButtonBorder;
+ jxBuf+='<nobr><IMG name="'+name+'TL" SRC="'+whi_src+'" border=0 width='+(W+B)+' height='+B+' ';
+ jxBuf+='><IMG name="'+name+'TR" SRC="'+di1_src+'" border=0 width='+B    +' height='+B+' \r\n><br\r\n';
+ jxBuf+='><IMG name="'+name+'L"  SRC="'+whi_src+'" border=0 width='+B    +' height='+H+' ';
+
+ jxBuf+='><A HREF="'+hrf+'" onClick="'+onClk+'" ';
+ jxBuf+='onMouseOver="jxPress(\''+name+'\');return true;" '
+ jxBuf+='onMouseOut="jxRelease(\''+name+'\');return true;" \r\n'
+ jxBuf+='><IMG name="'+name+'"   SRC="'+src+'"     border=0 width='+W+    ' height='+H+' alt="'+alt+'" \r\n></A\r\n';
+
+ jxBuf+='><IMG name="'+name+'R"  SRC="'+gry_src+'" border=0 width='+B+    ' height='+H+' \r\n><br\r\n';
+ jxBuf+='><IMG name="'+name+'BL" SRC="'+di1_src+'" border=0 width='+B+    ' height='+B+' ';
+ jxBuf+='><IMG name="'+name+'BR" SRC="'+gry_src+'" border=0 width='+(W+B)+' height='+B+' ></nobr>';
+ document.write(jxBuf);jxBuf='';
+}
+
+function jxPress(par) {
+ if (document.images) {
+  eval('document.'+par+'TL.src=gry_src');
+  eval('document.'+par+'TR.src=di2_src');
+  eval('document.'+par+'L.src=gry_src');
+  eval('document.'+par+'R.src=whi_src');
+  eval('document.'+par+'BL.src=di2_src');
+  eval('document.'+par+'BR.src=whi_src');
+ }
+}
+
+function jxRelease(par) {
+ if (document.images) {
+  eval('document.'+par+'TL.src=whi_src');
+  eval('document.'+par+'TR.src=di1_src');
+  eval('document.'+par+'L.src=whi_src');
+  eval('document.'+par+'R.src=gry_src');
+  eval('document.'+par+'BL.src=di1_src');
+  eval('document.'+par+'BR.src=gry_src');
+ }
+}
+//-->
+</script>
+
+</HEAD>
+
+
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC">
+<a name="s"></a>
+
+<SCRIPT language="JavaScript">
+<!--
+ie4=(navigator.appName!="Netscape" && parseInt(navigator.appVersion)>3)?true:false;
+
+if (document.location==top.document.location) {
+ document.write('<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>');
+}
+else {
+ document.write('<a name=s></a><center><h3>План обучени\я</h3></center><center>');
+ jxGifButton('les1','button/lesbut1.gif',242,26,'Введение', '0r.htm#1" target="right"','return true;');
+ document.write('<BR><IMG SRC="space.gif" width=244 height=8 border=0><BR>');
+ jxGifButton('les2','button/lesbut2.gif',242,26,'Команды SIMD c плавающей зап\ятой', '0r.htm#2" target="right"','return true;');
+ document.write('<BR><IMG SRC="space.gif" width=244 height=8 border=0><BR>');
+ jxGifButton('les3','button/lesbut3.gif',242,26,'Целочисленные команды SIMD', '0r.htm#3" target="right"','return true;');
+ document.write('<BR><IMG SRC="space.gif" width=244 height=8 border=0><BR>');
+ jxGifButton('les4','button/lesbut4.gif',242,26,'Команды управлени\я кэшированием', '0r.htm#4" target="right"','return true;');
+ document.write('<BR><IMG SRC="space.gif" width=244 height=8 border=0><BR>');
+ jxGifButton('les5','button/lesbut5.gif',242,26,'Сохранение и восстановление состо\яни\я', '0r.htm#5" target="right"','return true;');
+ document.write('<BR><IMG SRC="space.gif" width=244 height=8 border=0><BR>');
+ jxGifButton('les6','button/lesbut6.gif',242,26,'Примеры использовани\я новых команд', '0r.htm#6" target="right"','return true;');
+ document.write('<BR><IMG SRC="space.gif" width=244 height=16 border=0><BR>');
+
+ jxGifButton('ver','button/version.gif',110,18,'Верси\я','version.htm" target="right"','return true;');
+ document.write('<BR><IMG SRC="space.gif" width=244 height=5 border=0><BR>');
+ jxGifButton('dsc','button/disclaim.gif',110,18,'Предупреждение','disclaim.htm" target="right"','return true;');
+ document.write('</center>');
+}
+
+//-->
+</SCRIPT>
+
+<CENTER>
+<p>&nbsp;<br>
+<font size=2>&#169; 1999 Intel Corporation</font>
+</CENTER>
+
+</BODY>
+</HTML>

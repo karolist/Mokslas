@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 31</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="top"></a>
+<P><font size="+1"><b>В</b></font> ассемблерном коде каждой команды  <code><A HREF="javascript:parent.showglos('CALL')">CALL</a></code> следует сопоставлять  команду  <A HREF="javascript:parent.showglos('RET')"><code>RET</code></a>.<P><font size="+1"><b>Д</b></font>ля каждой команды <code><FONT COLOR="#0000cc">CALL</FONT></code> процессор предсказывает  <A HREF="javascript:parent.showglos('retaddress')">адрес возврата</a>  и помещает его на верхушку стека  <A HREF="javascript:parent.showglos('RSB')">буфера адресов возврата</a>.  Затем происходит выполнение команд вызванной подпрограммы.
+
+<P>Когда команды, находящиеся по адресу возврата, предсказанному буфером адресов возврата, готовы к выполнению, они выполняются вне очереди. Буфер адресов возврата способен правильно обрабатывать до 12 уровней вложенности вызовов.<P><font size="+1"><b>П</b></font>ри выполнении команды <code><FONT COLOR="#0000cc">RET</FONT></code> процессор выталкивает значение с верхушки стека буфера адресов возврата. Завершение вызванной подпрограммы каким-либо другим способом нарушает правильность данных в буфере адресов возврата, что может привести к ошибке при предсказании адреса возврата для остальных подпрограмм.<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать по шагам"</B>, чтобы посмотреть, как работает буфер  адресов возврата.
+<br>
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a name="msg1"></a>
+<p>Производится вызов подпрограммы   <FONT COLOR="#0000cc"><code>def()</code></FONT>. Адрес возврата из     <FONT COLOR="#0000cc"><code>def()</code></FONT> предсказывается как равный <FONT COLOR="#0000cc"><code>next1</code></FONT>, и  <FONT COLOR="#0000cc"><code>next1</code></FONT> заносится на верхушку  стека  буфера  адресов возврата.<P>После того, как команды из     <FONT COLOR="#0000cc"><code>def()</code></FONT>  войдут в конвейер, процессор начнет предварительную выборку и  упреждающее  выполнение команд, располагающихся по адресу  <FONT COLOR="#0000cc"><code>next1</code></FONT>, который     берется с верхушки  стека  буфера адресов возврата.
+<p>
+<a href="#top" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+<a name="msg2"></a>
+<p>Производится вызов подпрограммы  <FONT COLOR="#0000cc"><code>ghi()</code></FONT>. Адрес возврата из  <FONT COLOR="#0000cc"><code>ghi()</code></FONT>  предсказывается как равный <FONT COLOR="#0000cc"><code>next2</code></FONT>,  и <FONT COLOR="#0000cc"><code>next2</code></FONT>  заносится на верхушку  стека  буфера адресов возврата.<P>После того, как команды из  <FONT COLOR="#0000cc"><code>ghi()</code></FONT>  войдут в конвейер, процессор начнет предварительную выборку и  упреждающее  выполнение команд, располагающихся по адресу  <FONT COLOR="#0000cc"><code>next2</code></FONT>, который  берется с верхушки  стека  буфера адресов возврата.
+<p>
+<a href="#top" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a name="msg3"></a>
+<p>Когда управление будет передано из подпрограммы <FONT COLOR="#0000cc"><code>ghi()</code></FONT> на предсказанный   адрес  <FONT COLOR="#0000cc"><code>next2</code></FONT>,  <FONT COLOR="#0000cc"><code>next2</code></FONT> выталкивается из  стека  буфера адресов возврата.<P>Предсказание, основанное на содержимом буфера адресов возврата, оказалось верным, так что команды,  располагающиеся по адресу  <FONT COLOR="#0000cc"><code>next2</code></FONT>,  <B><FONT COLOR="#FF0000">уже были выполнены!</FONT></B>
+<p>
+<a href="#top" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+<a name="msg4"></a>
+<p>Когда управление передается с  <FONT COLOR="#0000cc"><code>next2</code></FONT>  на  предсказанный  адрес <FONT COLOR="#0000cc"><code>next1</code></FONT>, <FONT COLOR="#0000cc"><code>next1</code></FONT>  выталкивается  из  стека  буфера адресов возврата.<P>Предсказание, основанное на содержимом  буфера  адресов возврата, оказалось     верным, так что команды, располагающиеся по адресу <FONT COLOR="#0000cc"><code>next1</code></FONT>,   <B><FONT COLOR="#FF0000">уже были выполнены!</FONT></B>
+<p>
+<a href="#top" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+</BODY>
+</HTML>
+

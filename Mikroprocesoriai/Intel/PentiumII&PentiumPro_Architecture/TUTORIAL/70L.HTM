@@ -1,0 +1,16 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 70</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>П</b></font>ервые пять команд тела цикла в <B>ассемблерном коде до оптимизации</B>  устанавливают режим <A HREF="javascript:parent.showglos('choproundmode')">округления с отбрасыванием  дробной части</a>. Следующая за ними команда <A HREF="javascript:parent.showglos('FLDCW')"><code>FLDCW</code></a>  восстанавливает режим <A HREF="javascript:parent.showglos('nearoundmod')">округления до ближайшего  целого</a>.<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Оптимизировать"</B>, чтобы вынести эти команды за  пределы цикла с тем, чтобы снизить затраты на переключение режима округления.<P><font size="+1"><b>Д</b></font>анные команды можно выделить в отдельные ассемблерные подпрограммы  и вызывать их до и после всех выполнений команды <A HREF="javascript:parent.showglos('FISTP')"><code>FISTP</code></a>  (подобно тому, как это сделано в тексте на C на предыдущей странице).
+
+</BODY>
+</HTML>
+

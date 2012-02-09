@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>Н</B></big>овые SIMD-команды
+используют новый тип данных&nbsp;<code><big>-</big></code> 128-разрядное значение, 
+содержащее четыре последовательно расположенных («упакованных»)
+32-разрядных числа с плавающей запятой.
+
+<P>
+<font size=+1><B>В</B></font> предшествующих поколениях процессоров Intel 
+для внутреннего представления чисел с плавающей запятой используется 
+80-разрядный формат расширенной точности 
+(<a target="right" href="glossary.htm#x87">архитектура х87</a>). 
+Этот формат сохранен и в процессоре Pentium&reg;&nbsp;<font face="sans-serif">III</font>,  
+однако для <i>упакованных</i> чисел с плавающей запятой 
+ в Pentium&nbsp;<font face="sans-serif">III</font> используется представление
+в 32-разрядном формате с одинарной точностью. 
+Поэтому в отдельных случаях результаты вычислений с плавающей запятой 
+в архитектуре х87 могут отличаться  от результатов таких же вычислений, 
+использующих новые SIMD SPFP-команды.
+
+
+
+
+</BODY>
+</HTML>

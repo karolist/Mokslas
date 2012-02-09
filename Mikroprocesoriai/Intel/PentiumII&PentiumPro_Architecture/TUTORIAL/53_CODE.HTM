@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 53. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<TABLE ALIGN=center BORDER=0 WIDTH=100%>
+  <TR>
+    <TD COLSPAN=2><font size="+1">Префикс указания разрядности операнда</b></font></TD>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Код до оптимизации</b></font></TD>
+    <TD BGCOLOR="White"><code>mov word ptr mem, 0x77</code></TD>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Оптимизированный код</b></font>
+    <TD BGCOLOR="White"><code><font color="#0000FF"><b>mov eax, 0x77</b></font><br>mov word ptr mem, ax</code></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN=2><font size="+1">Префикс указания разрядности адреса</b></font>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Код до оптимизации</b></font></TD>
+    <TD BGCOLOR="White"><code>mov dword ptr mem[ax], edx</code></TD>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Оптимизированный код</b></font></TD>
+    <TD BGCOLOR="White"><code><font color="#0000FF"><b>add ax, offset mem</b></font><br>mov dword ptr [ax], edx</code></TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>

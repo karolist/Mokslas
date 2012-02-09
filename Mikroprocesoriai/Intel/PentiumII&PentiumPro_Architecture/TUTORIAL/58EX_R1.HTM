@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 58 Ex.</TITLE>
+</HEAD>
+<BODY TEXT="#0000CC" LINK="#0000CC" VLINK="#0000CC" ALINK="#0000CC" BACKGROUND="images/backgr_t.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<SCRIPT language="JavaScript">
+<!--
+function esol()
+{
+  // Try again
+  self.location="58ex_r.htm";
+  top.window.left.location.hash="0";
+  return true;
+}
+//-->
+</SCRIPT>
+<CENTER>
+<FORM name="controlForm">
+<TABLE ALIGN=center BORDER=0 WIDTH=100%>
+  <TR>
+    <TD ALIGN=center VALIGN=top>
+      <font color="#0000CC"><b>Код до оптимизации</b></font>
+      <TABLE ALIGN=center BGCOLOR="White" BORDER=2><TR><TD ALIGN=left><PRE> mov eax, ebx <BR> mov al, imm8 <BR> add eax, ecx <BR> </PRE></TD></TR></TABLE>
+    </TD>
+    <TD ALIGN=center VALIGN=top>
+      <font color="#0000CC"><b>Оптимизированный код</b></font>
+      <TABLE ALIGN=center BGCOLOR="White" BORDER=2><TR><TD ALIGN=left><PRE> mov eax, ebx <BR> and eax, 0xFFFFFF00 <BR> or eax, imm8 <BR> add eax, ecx </PRE></TD></TR></TABLE>
+    </TD>
+  </TR>
+  <TR>
+   <TD COLSPAN=2 align=center>
+    &nbsp;
+    <INPUT NAME="sol" TYPE="button" VALUE="С начала" onClick="esol()">&nbsp;&nbsp;
+    <INPUT NAME="exit" TYPE="button" VALUE="Возврат" onClick="top.return_from_exercise()">&nbsp;
+   </TD>
+  </TR>
+</TABLE>
+</FORM>
+</CENTER>
+</BODY>
+</HTML>
+

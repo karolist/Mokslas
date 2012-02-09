@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 57. Control frame.</TITLE>
+<script language="JavaScript">
+<!--
+var current="none";
+
+function change_checked(value) {
+parent.curchoice=value;
+parent.msgframe.location="17_msg0.htm";
+document.control.but.value="По" + top.ya + "снить";
+}
+
+function changeloc() {
+if (parent.curchoice=="xor" || parent.curchoice=="sub") {
+parent.msgframe.location="57_m"  + parent.curchoice + ".htm"; 
+}
+else {
+parent.msgframe.location="17_msg0.htm";
+document.control.but.value="По" + top.ya + "снить";
+   if (current=="xor" || current=="sub") {
+   parent.curchoice=current;
+}
+}
+
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif" bgcolor="#FFFFCC" text="#000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<center>
+<form name="control">
+<table cellspacing=5>
+<tr>
+<td>
+<b>
+<input name="choice" type="radio" value="xor" checked onCLick="change_checked('xor')">Использование XOR<br><input name="choice" type="radio" value="sub" onCLick="change_checked('sub')">Использование SUB
+</b>
+</td>
+<td>&nbsp;
+</td>
+<td>
+<input name="but" type="button" value="   Пояснить   " onClick="changeloc()">
+</td>
+</tr>
+</table>
+</form>
+</BODY>
+</HTML>
+

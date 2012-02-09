@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 8</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<P><font size="+1"><b>П</b></font>роцессоры Pentium® II и Pentium Pro снабжены раздельными кэшами команд
+и данных первого уровня. Кэш данных имеет два порта, через которые могут
+одновременно осуществляться чтение и запись.
+<p>Процессоры снабжены объединенными кэшами второго уровня, где могут
+хранится и данные, и команды (на картинке не показаны).
+<p><font size="+1"><b>Д</b></font>лина кэш-линий в кэшах обоих уровней равна 32 байтам. 32-байтная строка
+считывается или записывается в память целиком, когда любая ее часть считывается
+или записывается в память.
+<p>При возникновении <A HREF="javascript:parent.showglos('cachemiss')">промаха в кэш</a> первого уровня процессор вначале
+пытается найти информацию в кэше второго уровня, затем - в основной памяти.
+<p>Вы можете учитывать то, что длина кэш-линии равна 32 байтам, для повышения
+частоты <A HREF="javascript:parent.showglos('cachehit')">попаданий в кэш</a>.
+<p align=right><B>продолжение следует...</B>
+
+</BODY>
+</HTML>
+

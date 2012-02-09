@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "cvtps2pi"
+ ,"cvtss2si"
+ ,"cvttps2pi"
+ ,"cvttss2si"
+ ,"cvtpi2ps"
+ ,"cvtsi2ss"
+);
+
+files=new Array(
+  "cvtps2pi"
+ ,"cvtss2si"
+ ,"cvttpspi"
+ ,"cvttsssi"
+ ,"cvtpi2ps"
+ ,"cvtsi2ss"
+);
+
+if (document.location==parent.document.location)
+ document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+else {
+ if (top.state26==null) top.state26=0;
+ document.write('<center><form><select onChange="top.state26=this.selectedIndex;self.location=\'26r.htm\'">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state26)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+ document.write('<IMG width=267 height=336 hspace=0 vspace=0 SRC="images/'+files[top.state26]+'.gif" border=0></center>');
+}
+
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

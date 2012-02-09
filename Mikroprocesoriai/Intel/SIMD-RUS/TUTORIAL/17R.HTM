@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "shufps xmm1, xmm1, 55h &nbsp; "
+ ,"shufps xmm1, xmm1, 39h &nbsp; "
+ ,"shufps xmm1, xmm1, 1Bh &nbsp; "
+);
+
+files=new Array(
+  "brcast"
+ ,"rotate"
+ ,"swap"
+);
+
+comments=new Array(
+ 'Команда <code><font color="#0000cc">shufps</font></code> с параметром <code><font color="#0000cc">55h</font></code> (<code><font color="#0000cc">01010101b</font></code>)  '
++'размножает значени\я <code><font color="#0000cc">a1</font></code> во все элементы выходного операнда. В качестве входного и выходного операнда используетс\я один и тот же регистр '
++'<code><font color="#0000cc">xmm1</font></code>. '
+
+,'Команда <code><font color="#0000cc">shufps</font></code> с параметром <code><font color="#0000cc">39h</font></code> (<code><font color="#0000cc">00111001b</font></code>) '
++'сдвигает <code><font color="#0000cc">a1</font></code> на место <code><font color="#0000cc">a0</font></code>, '
++'<code><font color="#0000cc">a2</font></code> на место <code><font color="#0000cc">a1</font></code>, '
++'а <code><font color="#0000cc">a3</font></code> на место <code><font color="#0000cc">a2</font></code>. '
++'Младший элемент <code><font color="#0000cc">a0</font></code> перемещаетс\я в <code><font color="#0000cc">a3</font></code>. '
++'В качестве входного и выходного операнда используетс\я один и тот же регистр <code><font color="#0000cc">xmm1</font></code>. '
+
+,'Команда <code><font color="#0000cc">shufps</font></code> с параметром <code><font color="#0000cc">1Bh</font></code> (<code><font color="#0000cc">00011011b</font></code>)  '
++'располагает элементы регистра <code><font color="#0000cc">xmm1</font></code> в обратном пор\ядке (переставл\яет старший элемент с младшим, а второй с третьим). '
++'В качестве входного и выходного операнда используетс\я один и тот же регистр <code><font color="#0000cc">xmm1</font></code>. '
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state17==null) top.state17=0;
+ document.write('<center><form><select onChange="top.state17=this.selectedIndex;self.location=\'17r.htm\'">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state17)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+ document.write('<IMG width=250 height=222 hspace=0 vspace=0 SRC="images/'+files[top.state17]+'.gif" border=0></center>');
+ document.write(comments[top.state17]);
+}
+//-->
+</SCRIPT>
+
+
+</BODY>
+</HTML>

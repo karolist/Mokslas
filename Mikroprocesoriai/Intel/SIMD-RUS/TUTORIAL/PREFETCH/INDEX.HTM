@@ -1,0 +1,199 @@
+<HTML>
+<HEAD>
+<title>Программа без упреждающего кэширования</title>
+<script language="JavaScript">
+<!--
+// This script is for Netscape 3/newer and Internet Explorer 4/newer!
+
+codeLines=new Array(
+  "loop:"
+ ,"  movaps xmm1, [edx+ebx]"
+ ,"  movaps xmm2, [edx+ebx+16]"
+ ,"  ..."
+ ,"  add ebx, 32"
+ ,"  cmp ebx, buff_size"
+ ,"jl loop"
+ ,"..."
+);
+
+function Scenario() {
+ defStep(-1, 0, 0,  -1);  // (line,message GIF,picture GIF,delay)
+ defStep( 1,-1, 1,5000);  // 
+ defStep( 1, 1,-1,  -1);  // -1 means:   
+ defStep( 2, 2, 2,  -1);  //   for line:  remove line frame;
+ defStep( 3, 3,-1,  -1);  //   for GIFs:  do not change GIFs; 
+ defStep( 4, 4, 3,  -1);  //   for delay: after this step, stop until click
+ defStep( 5, 5,-1,  -1);
+ defStep( 6, 6,-1, 800);
+ defStep( 0,-1,-1,  -1);
+ defStep( 1, 7, 4,7500);
+ defStep( 2,-1,-1,4500);
+ defStep( 3,-1,-1, 500);
+ defStep( 4,-1,-1, 500);
+ defStep( 5,-1,-1, 500);
+ defStep( 6,-1,-1,  -1);
+ defStep( 1, 8, 5,7500);
+ defStep( 2,-1,-1,4500);
+ defStep( 3,-1,-1, 500);
+ defStep( 4,-1,-1, 500);
+ defStep( 5,-1,-1, 500);
+ defStep( 6,-1,-1, 500);
+ defStep(-1, 9,-1,  -1);
+}
+
+lineW=2;
+codeH=18;
+codeW=220;
+backgr="../white.gif";
+foregr="../magenta.gif";
+
+rnames="regs";
+regsW=275;
+regsH=305;
+
+mnames="mesg";
+mesgW=320;
+mesgH=140;
+
+lineNum = new Array();
+mesgNum = new Array(); maxM=0;
+regsNum = new Array(); maxR=0;
+delayMS = new Array();
+
+nSteps=0;
+function defStep(L,M,R,D) {
+ lineNum[nSteps]=L;
+ mesgNum[nSteps]=M; if (maxM<M) maxM=M;
+ regsNum[nSteps]=R; if (maxR<R) maxR=R;
+ delayMS[nSteps]=D;
+ nSteps++;
+}
+
+// Loading Images
+
+msgImg=new Array();
+
+function LoadImages() {
+ if (document.images) {
+  blurImg=new Image(); 
+  foc_Img=new Image(); 
+  blurImg.src=backgr;
+  foc_Img.src=foregr;
+ 
+  for (n=0;n<=maxM;n++) {
+   msgImg[n]=new Image(mesgW,mesgH);
+   msgImg[n].src=mnames+n+".gif";
+  }
+ }
+} 
+
+function focusLine(par) {
+ if (document.images && 0<=par && par<codeLines.length) {
+  eval("top.code.document.L"+par+".src=foc_Img.src"); 
+  eval("top.code.document.R"+par+".src=foc_Img.src"); 
+  eval("top.code.document.HL"+par+".src=foc_Img.src"); 
+  eval("top.code.document.HR"+par+".src=foc_Img.src"); 
+  eval("top.code.document.HL"+(par+1)+".src=foc_Img.src"); 
+  eval("top.code.document.HR"+(par+1)+".src=foc_Img.src"); 
+ }
+}
+
+function blurLine(par) {
+ if (document.images && 0<=par && par<codeLines.length) {
+  eval("top.code.document.L"+par+".src=blurImg.src"); 
+  eval("top.code.document.R"+par+".src=blurImg.src"); 
+  eval("top.code.document.HL"+par+".src=blurImg.src"); 
+  eval("top.code.document.HR"+par+".src=blurImg.src"); 
+  eval("top.code.document.HL"+(par+1)+".src=blurImg.src"); 
+  eval("top.code.document.HR"+(par+1)+".src=blurImg.src"); 
+ }
+}
+
+curStep=0;
+timerID=0; 
+isTimerSet=0;
+userClicked=0;
+
+function nextStep() {
+ if ((isTimerSet && userClicked) || curStep==nSteps-1) {userClicked=0; return;}
+ userClicked=0;
+ isTimerSet=0;
+ if (0<=curStep && curStep<nSteps) blurLine(lineNum[curStep]);
+ curStep++;
+ if (curStep<nSteps) {
+  focusLine(lineNum[curStep]);
+  if (document.images && mesgNum[curStep]>-1) code.document.MESG.src=msgImg[mesgNum[curStep]].src; 
+  if (regsNum[curStep]>-1) writeRegs(regsNum[curStep]); 
+  dly=delayMS[curStep];
+  if (dly>0) {
+   isTimerSet=1; 
+   timerID=setTimeout("nextStep()",dly);
+  }  
+ }
+ else {
+  if (0<=curStep && curStep<nSteps) blurLine(lineNum[curStep]);
+  curStep=0;
+  isTimerSet=0;
+  if (document.images) top.code.document.MESG.src=msgImg[initMesg].src; 
+  writeRegs(initRegs);   
+ }
+}
+
+function init() {
+ clearTimeout(timerID);
+ isTimerSet=0;
+ if (0<=curStep && curStep<nSteps) blurLine(lineNum[curStep]);
+ curStep=0;
+ if (document.images) top.code.document.MESG.src=msgImg[initMesg].src; 
+ writeRegs(initRegs); 
+}
+
+function putNBSP(par) {
+ var s=par; m=s.indexOf(" ");
+ while (m!=-1) { s=s.substring(0,m)+"\&nbsp;"+s.substring(m+1,s.length); m=s.indexOf(" "); }
+ return s;
+}
+
+for (n=0;n<codeLines.length;n++) {
+ codeLines[n]=putNBSP(codeLines[n]);
+}
+
+function writeRegs(par) {
+ z='';
+ z+='<html><head><base href="'+top.location+'"></head><body bgcolor=white><center><p>\n';
+ z+='<img border=0 width='+regsW+' height='+regsH+' src="'+rnames+par+'.gif">';
+ z+='</center></body></html>\n';
+
+ if (top.page) {
+  if (top.page.document) {
+   top.page.document.writeln(z); z='';
+   top.page.document.close();
+  }
+ }
+}
+
+for (n=0;n<codeLines.length;n++) {
+ codeLines[n]=putNBSP(codeLines[n]);
+}
+
+Scenario();
+LoadImages();
+initMesg=mesgNum[0];
+initRegs=regsNum[0];
+
+//-->
+</script>
+
+<script language="JavaScript1.2">
+<!--
+
+//-->
+</script>
+</head>
+
+<FRAMESET cols="335,*" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0" onLoad="init();self.focus()">
+<FRAME SRC="message.htm"  NAME="code" scrolling="no" marginwidth=10 marginheight=10>
+<FRAME SRC="../blank.htm" NAME="page" scrolling="no" marginwidth=1 marginheight=20>
+</FRAMESET>
+</HTML>
+

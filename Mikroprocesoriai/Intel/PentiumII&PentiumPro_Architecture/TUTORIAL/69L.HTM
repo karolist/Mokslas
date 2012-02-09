@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 22</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<font size="+1"><b>Е</b></font>сли необходимо выполнить несколько преобразований чисел с плавающей
+точкой в целые в режиме 
+<A HREF="javascript:parent.showglos('choproundmode')"><FONT COLOR="#CC33CC">отбрасывания дробной части</FONT></A>,
+выносите за границы цикла команлы переключения режима округления и оставляйте
+в теле цикла команду 
+<A HREF="javascript:parent.showglos('FISTP')"><FONT COLOR="#CC33CC"><code>FISTP</code></FONT></A>, выполняющую
+преобразование.
+
+<P><font size="+1"><b>Д</b></font>анный прием реализован в <B>тексте на С после оптимизации</B> при помощи
+вызовов следующих функций:
+<BR>&nbsp;
+<LI>
+<A HREF="javascript:parent.showglos('start_chop')"><FONT COLOR="#CC33CC"><code>start_chop()</code></FONT></A> вызывается один раз до входа
+в цикл и устанавливает режим округления с отбрасыванием дробной части.</LI>
+<LI>
+<A HREF="javascript:parent.showglos('f2i')"><FONT COLOR="#CC33CC"><code>f2i_CurrentRoundMode()</code></FONT></A> вызывается в теле цикла
+и преобразует число с плавающей точкой в целое без переключения режима
+округления.</LI>
+<LI>
+<A HREF="javascript:parent.showglos('end_chop')"><FONT COLOR="#CC33CC"><code>end_chop()</code></FONT></A> вызывается один раз после выхода
+из цикла и восстанавливает режим округления до ближайшего целого.</LI>
+
+<P align=right><B>продолжение следует...</B>
+
+</BODY>
+</HTML>
+

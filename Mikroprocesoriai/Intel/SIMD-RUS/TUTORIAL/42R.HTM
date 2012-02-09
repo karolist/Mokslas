@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<center>
+
+<a name="mxcsr">&nbsp;</a>
+<IMG width=264 height=90 hspace=0 vspace=0 SRC="images/mxcsr.gif" border=0>
+</center>
+
+<b>Разряды 0<code><big>-</big></code>5</b>  (поле обнаружения исключений) содержат 6 флагов,
+ которые служат признаками детектирования арифметических исключений.
+ Если флаг установлен в 1, то это значит, 
+что в ходе работы обнаружено соответствующее исключение, в противном случае <code><big>-</big></code> нет.<br>
+<b>Разряд 6</b> не используется.<br>
+<b>Разряды 7<code><big>-</big></code>12</b>  (поле маскирования исключений)
+ определяют, как обрабатываются обнаруженные  исключения.
+Если флаг установлен, то соответствующее исключение маскировано и 
+обрабатывается процессором, если флаг сброшен, 
+то вызывается программный обработчик для этого  исключения. <br>
+<b>Разряды 13<code><big>-</big></code>14</b> (RC-поле) устанавливают режим округления данных.<br>
+<b>Разряд 15</b> (FZ-поле) устанавливает режим flush-to-zero.<br>
+<b>Разряды 16<code><big>-</big></code>31</b> не используются.
+
+
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+
+</BODY>
+</HTML>

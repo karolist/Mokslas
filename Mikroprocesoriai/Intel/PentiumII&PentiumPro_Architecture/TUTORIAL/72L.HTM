@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 72</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="0">
+<font size="+1"><b>64</b></font>-разр€дные 
+<A HREF="javascript:parent.showglos('mmxregs')"><FONT COLOR="#CC33CC">регистры MMXЩ</FONT></A> используютс€
+как при работе с типами данных MMX, так и при вычислени€х с плавающей точкой.
+ оманда <A HREF="javascript:parent.showglos('EMMS')"><FONT COLOR="#CC33CC">EMMS</FONT></A> делает эти регистры доступными
+дл€ команд, работающих с плавающей точкой.
+
+<P>„астого использовани€ команды <FONT COLOR="#3333FF">EMMS</FONT> можно
+избежать, снизив частоту переходов между участками кода, работающими с
+типами данных MMX и с плавающей точкой.
+
+<P>ѕри выполнении такого перехода, предотвращайте 
+<A HREF="javascript:parent.showglos('possfpexept')"><FONT COLOR="#CC33CC">возможные исключени€ при работе с плавающей точкой</FONT></A>, использу€ команду
+<FONT COLOR="#3333FF">EMMS</FONT> по следующим правилам:
+<BR>&nbsp;
+<LI>
+¬ставл€йте <FONT COLOR="#3333FF">EMMS</FONT> после каждой команды MMX,
+если неизвестно, кака€ команда следует за ней.</LI>
+<LI>
+<b><I>Ќе</I></b> вставл€йте <FONT COLOR="#3333FF">EMMS</FONT>, если известно,
+что следующа€ команда есть команда MMX (MMX-EMMS-MMX).</LI>
+<LI>
+»спользуйте <FONT COLOR="#3333FF">EMMS</FONT> перед каждым переключением
+между задачами при работе в 
+<A HREF="javascript:parent.showglos('nonpre')"><FONT COLOR="#CC33CC">ќ— без вытесн€ющей
+многозадачности</FONT></A>.</LI>
+<LI>
+—нижайте потери от трехтактной <A HREF="javascript:parent.showglos('latency')">латентности</A> команды <FONT COLOR="#3333FF">EMMS</FONT>,
+помеща€ несколько команд непосредственно после <FONT COLOR="#3333FF">EMMS</FONT>.</LI>
+
+<P><font size="+1"><b>Ќ</b></font>ажмите на кнопку <B>ѕо€снить</B>, чтобы ознакомитьс€ с комментари€ми к примеру.
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<a name="1">
+¬ <B>коде до оптимизации</B> сразу за выполнением команды <FONT COLOR="#3333FF">EMMS</FONT> 
+может последовать возврат в сегмент кода, содержащий команды работы с плавающей точкой. 
+ѕоскольку неизвестно, какие команды будут выполн€тьс€ после приведенных здесь команд MMX,
+ использовать <FONT COLOR="#3333FF">EMMS</FONT> необходимо. <P>¬ <B>оптимизированном
+ коде</B> потери от латентности команды <FONT COLOR="#3333FF">EMMS</FONT> снижены за счет 
+помещени€ нескольких команд непосредственно после <FONT COLOR="#3333FF">EMMS</FONT>.
+<BR><BR><a href="#0">  началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+</BODY>
+</HTML>
+

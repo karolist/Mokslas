@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 16</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>П</b></font>роцессор преобразует обращения к внешним регистрам архитектуры Intel (IA) в обращения к внутренним регистрам.
+<P>Механизм переименования облегчает <A HREF="javascript:parent.showglos('oooexec')">внеочередное выполнение</a> команд, устраняя ложные зависимости, возникающие при использовании одних и тех же регистров разными командами, и позволяет использовать более широкий набор внутренних регистров. Переименование регистров невидимо для программного
+обеспечения, так что в программе невозможно явно переименовывать регистры.
+<P><font size="+1"><b>П</b></font>осле переименования регистров микрооперации распределяются по устройствам
+выполнения. Информация о распределении и об исходной позиции микрооперации
+в коде, а также результаты выполнения микрооперации хранятся в <A HREF="javascript:parent.showglos('ROB')">буфере перестановок</a> до завершения микрооперации.
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку "<B>Показать</B>", чтобы ознакомиться с тем, как процессор преобразует различные обращения к внешнему регистру <code><font color="#0000CC">EAX</font></code> архитектуры Intel (IA).
+</BODY>
+</HTML>
+

@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 64</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="0">
+<font size="+1"><b>ѕ</b></font>рименение раскрутки циклов может повысить эффективность кода по следующим
+причинам:
+<BR>&nbsp;
+<LI>
+„ем больше команд содержитс€ в линейном теле цикла, тем больше возможностей
+дл€ их параллельного выполнени€ есть у процессора.</LI>
+<LI>
+„ем меньше выполн€етс€ итераций, тем меньше затраты на ветвление.</LI>
+<LI>
+Ѕольшое число команд в теле цикла предоставл€ет больше возможностей дл€
+перегруппировки этих команд и устранени€ <A HREF="javascript:parent.showglos('latency')"><FONT COLOR="#CC33CC">задержек</FONT></A>
+путем разделени€ записи и последующего чтени€ данных из одного и того же
+источника.</LI>
+
+<P><B>«амечание:</B>
+<BR>–аскрутка циклов увеличивает размер кода.
+
+<P><font size="+1"><b>Ќ</b></font>ажмите на кнопку <B>ѕо€снить</B>, чтобы ознакомитьс€ с комментари€ми.
+
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<a name="1">
+¬ <b>коде до оптимизации</b> тело цикла выполн€етс€ 100 раз. Ќа каждой четной итерации текущему
+ элементу массива присваиваетс€ значение x, на каждой нечетной - значение y. Ќа каждой итерации 
+выполн€етс€ условный переход, который невозможно предсказать. <P>¬ <b>оптимизированном 
+коде</b> тело раскрученного цикла выполн€етс€ 50 раз. —емантика кода сохранена, но устранен 
+непредсказуемый условный переход и созданы услови€ дл€ параллельного выполнени€.
+<BR><BR><a href="#0">  началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+</BODY>
+</HTML>
+

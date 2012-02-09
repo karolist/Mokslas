@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 57. Message frame, 1.</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+parent.ctrlframe.document.control.but.value ="С начала";
+parent.ctrlframe.current ="xor";
+parent.curchoice='none';
+//-->
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="ffffff" text="000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location){
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");}
+//-->
+</SCRIPT>
+<p>В <B>коде до оптимизации</B> первая команда <FONT COLOR="#0000cc"><code>MOV</code></FONT> очищает регистр  <FONT COLOR="#0000cc"><code>EAX</code></font>.  Третья команда считывает данные из <FONT COLOR="#0000cc"><code>EAX</code></FONT>  после записи в более узкий регистр <FONT COLOR="#0000cc"><code>AX</code></FONT>, что приводит к задержке.
+<BR>В <B>оптимизированном коде</B>  задержки  удается  избежать при помощи обнуления <FONT COLOR="#0000cc"><code>EAX</code></FONT> командой  <FONT COLOR="#0000cc"><code>XOR</code></FONT>.
+
+
+</BODY>
+</HTML>
+

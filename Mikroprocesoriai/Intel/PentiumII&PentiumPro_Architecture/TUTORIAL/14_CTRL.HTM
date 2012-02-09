@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 14. Control frame.</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+rul="<HTML><HEAD><TITLE>Правила игры</TITLE></HEAD><BODY BGCOLOR=\"#FFFFFF\" TEXT=\"#000000\" onBlur=\"self.close()\"><h3><font color=\"#3300ff\">Правила игры</font></h3>Укажите, как алгоритм статического предсказани"+top.ya+" ветвлений предскажет приведенное в примере ветвление. Дл"+top.ya+" этого щелчком мыши выберите один из вариантов ответа (\"Переход выполнен\" или \"Переход не выполнен\").</p><p><b>Хотите сыграть еще раз?</b><br>Нажмите кнопку <b>\"Нова"+top.ya+" игра\"</b> и на экране будет выведен другой фрагмент кода.</p></body></html>";
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<script language="JavaScript">
+<!--
+function newg() {
+if (parent.choiceframe.useransw != "") {
+if (parent.curgame<5) {
+parent.curgame = parent.curgame +1;
+}
+else {
+parent.curgame = 0;
+}
+parent.answerframe.location = "14_answ.htm";
+parent.codeframe.location = "14_code.htm";
+parent.choiceframe.location = "14_ch.htm";
+parent.choiceframe.useransw = "";
+}
+return true;
+}
+//-->
+</script>
+
+<center>
+<form name="control">
+<input name="newgame" type="button" value="Новая игра" onClick="newg()">
+<input name="rules" type="button" value="Правила игры" onClick="top.popup(rul,350,260)">
+</form>
+
+</center>
+</BODY>
+</HTML>
+

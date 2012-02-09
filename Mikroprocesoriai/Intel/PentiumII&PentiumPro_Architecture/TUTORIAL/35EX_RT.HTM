@@ -1,0 +1,226 @@
+<HTML>
+<HEAD>
+<TITLE>Try it (topic 35)</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+var i=0; timer=0;
+var working=true;
+var used = new Array (false, false, false, false);
+
+var _ie = (navigator.userAgent.indexOf("MSIE") > 0 && navigator.userAgent.indexOf("Win") > 0); 
+
+function blink() {
+if (working) {
+  if (document.answer.elements[i].value=="??????") document.answer.elements[i].value=" " 
+  else document.answer.elements[i].value="??????"; 
+  timer=setTimeout ("blink()",500)
+}
+}
+
+function check() {
+ 	if (!(document.answer.elements[0].value == 'double b' && document.answer.elements[1].value == 'int d' && i==3)) {
+//wrong
+parent.ctrlframe.document.control.main.value = "Повторить попытку";
+parent.ctrlframe.oncemore = true;
+   //выдача соответствующего сообщения
+   if (document.answer.elements[1].value == 'double b' && document.answer.elements[3].value == 'int d') {
+if (document.answer.elements[1].value == 'char a') parent.imageframe.location="35ex_r24.htm"
+else parent.imageframe.location="35exr24s.htm";
+top.left.msgframe.location="35ex_lw2.htm";
+   }
+   
+   if (document.answer.elements[0].value == 'int d' && document.answer.elements[2].value == 'double b') {
+if (document.answer.elements[1].value == 'char a') parent.imageframe.location="35ex_r17.htm"
+else parent.imageframe.location="35exr17s.htm";
+top.left.msgframe.location="35ex_lw1.htm";
+   }
+
+if (document.answer.elements[1].value == 'int d' && document.answer.elements[3].value == 'double b') {
+if (document.answer.elements[0].value == 'char a') parent.imageframe.location="35exr24t.htm"
+else parent.imageframe.location="35exr24f.htm";
+top.left.msgframe.location="35ex_lw2.htm";
+   }
+
+  if (document.answer.elements[0].value == 'double b' && document.answer.elements[2].value == 'int d') {
+if (document.answer.elements[1].value == 'char a') parent.imageframe.location="35exr17t.htm"
+else parent.imageframe.location="35exr17f.htm";
+top.left.msgframe.location="35ex_lw1.htm";
+   }
+
+if (document.answer.elements[1].value == 'double b' && document.answer.elements[2].value == 'int d') {
+if (document.answer.elements[0].value == 'char a') parent.imageframe.location="35exr21.htm"
+else parent.imageframe.location="35exr21s.htm";
+top.left.msgframe.location="35ex_lw3.htm";
+   }
+
+if (document.answer.elements[1].value == 'int d' && document.answer.elements[2].value == 'double b') {
+if (document.answer.elements[0].value == 'char a') parent.imageframe.location="35exr17a.htm"
+else parent.imageframe.location="35exr17b.htm";
+top.left.msgframe.location="35ex_lw1.htm";
+   }
+
+if (document.answer.elements[2].value == 'double b' && document.answer.elements[3].value == 'int d') {
+if (document.answer.elements[0].value == 'char a') parent.imageframe.location="35exr20.htm"
+else parent.imageframe.location="35exr20s.htm";
+top.left.msgframe.location="35ex_lw6.htm";
+   }
+
+if (document.answer.elements[0].value == 'int d' && document.answer.elements[3].value == 'double b') {
+if (document.answer.elements[1].value == 'char a') parent.imageframe.location="35exr16t.htm"
+else parent.imageframe.location="35exr16f.htm";
+top.left.msgframe.location="35ex_lw4.htm";
+   }
+
+if (document.answer.elements[0].value == 'double b' && document.answer.elements[3].value == 'int d') {
+if (document.answer.elements[1].value == 'char a') parent.imageframe.location="35exr165.htm"
+else parent.imageframe.location="35exr166.htm";
+top.left.msgframe.location="35ex_lw4.htm";
+   }
+
+if (document.answer.elements[0].value == 'int d' && document.answer.elements[1].value == 'double b') {
+if (document.answer.elements[2].value == 'char a') parent.imageframe.location="35exr18.htm"
+else parent.imageframe.location="35exr18s.htm";
+top.left.msgframe.location="35ex_lw5.htm";
+   }
+
+ alert("HEBEPHO!");
+  
+  }
+if (document.answer.elements[0].value == 'double b' && document.answer.elements[1].value == 'int d' && i==3) {
+if (document.answer.elements[2].value == 'char a') parent.imageframe.location="35exrmc2.htm"
+else parent.imageframe.location="35ex_rmc.htm";
+top.left.msgframe.location="35ex_lc1.htm";
+	alert( "BEPHO!");
+  }
+ }
+
+function selectChanged() {
+if (_ie) {
+//IE
+index = document.choices.userChoice.selectedIndex;
+if ((index != 0) && (!used[index-1]) && (!parent.ctrlframe.oncemore))
+{
+	if (i<3) {
+		i++;
+		document.answer.elements[i-1].value = document.choices.userChoice.options[index].value;
+	    used[index-1] = true;
+	}
+	else {
+		document.answer.elements[i].value = document.choices.userChoice.options[index].value;
+		working=false;
+		clearTimeout (timer);
+		check();
+	}
+}
+else {
+if (used[index-1] && (!parent.ctrlframe.oncemore)) {
+alert ("Этот элемент уже использован! Выберите другой.");
+}
+}
+}
+else {
+index = untaint(document.choices.userChoice.selectedIndex);
+//not IE
+if ((index != 0) && (!used[index-1]) &&(!parent.ctrlframe.oncemore)) {
+	if (i<3) {
+		i++;
+		document.answer.elements[i-1].value = untaint(document.choices.userChoice.options[index].value);
+used[index-1] = true;
+	}
+	else {
+	document.answer.elements[i].value = untaint(document.choices.userChoice.options[index].value);
+	working=false;
+	clearTimeout (timer);
+	check();
+	}
+}
+else {
+if (used[index-1] && (!parent.ctrlframe.oncemore)) {
+alert ("Этот элемент уже использован! Выберите другой.");
+}
+}
+}
+return true;
+}
+
+/*function resetGame() {
+i=0;
+document.answer.elements[0].value = ' ';
+document.answer.elements[1].value = ' ';
+document.answer.elements[2].value = ' ';
+document.answer.elements[3].value = ' ';
+used[0]=false; used[1]=false;used[2]=false;used[3]=false;
+working=true;
+blink();
+}
+*/
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC" onLoad="blink();">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<blockquote><p><small>Выберите нужный элемент для каждой строки слева (выбор производите по порядку, сверху вниз)</small></p></blockquote>
+
+<table width="90%" border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td align="CENTER">
+<center>
+<form name="answer">
+<table border=0 cellspacing=0>
+<tr>
+<td bgcolor="white">
+<code>struct {
+</td>
+</tr>
+<tr>
+<td bgcolor="white"><input type="text" name="line1" value="" width=12>
+</td>
+</tr>
+<tr>
+<td bgcolor="white"><input type="text" name="line2" value="" width=12>
+</td>
+</tr>
+<tr>
+<td bgcolor="white"><input type="text" name="line3" value="" width=12>
+</td>
+</tr>
+<tr>
+<td bgcolor="white"><input type="text" name="line4" value="" width=12>
+</td>
+</tr>
+<tr>
+<td bgcolor="white"><code>&nbsp;&nbsp;}
+</td>
+</tr>
+</table>
+</form>
+</center>
+</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td align=center>
+<form name="choices">
+<SELECT name="userChoice" onChange="selectChanged();">
+   <OPTION value="">Ваш выбор&nbsp;&nbsp;</option>
+   <OPTION value="char a">char a
+   <OPTION value="double b">double b
+   <OPTION value="char c">char c
+<OPTION value="int d">int d 
+</SELECT>
+
+<br clear=all>
+<img src="images/35_ex.gif" width=151 height=91 vspace=10>
+</form>
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>
+

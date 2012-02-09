@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<a name="s"></a>
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>Н</B></big>екэширующие команды предназначены для записи
+<A target="right" HREF="glossary.htm#nontemporal">слабо локализованных</A> 
+данных непосредственно в основную память, минуя кэш-память. Такая технология 
+уменьшает "засорение" кэш-памяти ненужными данными, а также вытеснение из
+нее кэшированных данных с 
+<A target="right" HREF="glossary.htm#temporal">временн&oacute;й</A> или 
+<A target="right" HREF="glossary.htm#spatial">пространственной</A> локализацией.
+
+<p>
+<big><B>К</B></big>оманда
+<A target="right" HREF="glossary.htm#movntps">movntps</A> копирует четыре FP-элемента 
+данных из XMM-регистра в память.
+Команда <A target="right" HREF="glossary.htm#movntq ">movntq </A> копирует 64 разряда 
+данных из MMX-регистра в память.
+
+<p>
+<big><B>Э</B></big>ти команды 
+<A target="right" HREF="glossary.htm#writealloc">не переносят данные в кэш</A> 
+ вышестоящего уровня при записи. Для них 
+характерны особенности, аналогичные работе в режиме 
+<A target="right" HREF="glossary.htm#writecomb">записи с буферизацией</A>, в частности,
+<A target="right" HREF="glossary.htm#weakordered">слабая упорядоченность</A>
+ обращений в память на запись. Для обеспечения 
+строгой упорядоченности обращений в память на запись используйте команду 
+<A target="right" HREF="glossary.htm#sfence">sfence</A> , 
+которая будет рассмотрена далее в этом уроке.
+
+<p>
+<big><B>В</B></big>ыберите
+<a href="#s" onClick="top.state37=1;top.right.location='37r.htm';return false"><code><b>movntq</b></code></a> или 
+<a href="#s" onClick="top.state37=0;top.right.location='37r.htm';return false"><code><b>movntps</b></code></a>
+ для иллюстрации работы команд.
+
+
+
+</BODY>
+</HTML>

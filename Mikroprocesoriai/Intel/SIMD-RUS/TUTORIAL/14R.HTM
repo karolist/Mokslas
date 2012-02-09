@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "rcpps"
+ ,"rsqrtps"
+ ,"rcpss"
+ ,"rsqrtss"
+);
+
+files=new Array(
+  "rcpps"
+ ,"rsqrtps"
+ ,"rcpss"
+ ,"rsqrtss"
+);
+
+titles=new Array(
+  "Параллельное определение<br>обратных значений"
+ ,"Параллельное определение<br> обратных значений корней"
+ ,"Скал\ярное определение<br> обратного значени\я"
+ ,"Скал\ярное определение<br> обратного значени\я корн\я"
+);
+
+comments=new Array(
+ 'Команда <code><font color="#0000cc">rcpps xmm1,xmm2</font></code> '
++'определ\яет приближенное обратное значение дл\я каждого из четырех чисел в '
++'<code><font color="#0000cc">xmm2</font></code> и '
++'записывает результаты в <code><font color="#0000cc">xmm1</font></code>.'
+
+,'Команда <code><font color="#0000cc">rsqrtps xmm1,xmm2</font></code> '
++'вычисл\яет приближенное обратное значение дл\я квадратного корн\я из каждого '
++'из четырех чисел в <code><font color="#0000cc">xmm2</font></code> и  '
++'записывает результаты в <code><font color="#0000cc">xmm1</font></code>. '
+
+,'Команда <code><font color="#0000cc">rcpss xmm1,xmm2</font></code> '
++'определ\яет приближенное обратное значение дл\я числа <code><font color="#0000cc">b0</font></code>, '
++'наход\ящегос\я в младшем элементе регистра <code><font color="#0000cc">xmm2</font></code> и '
++'записывает результат <code><font color="#0000cc">~1/b0 </font></code> '
++'в младший элемент регистра  <code><font color="#0000cc">xmm1</font></code>. '
++'Остальные элементы <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+
+,'Команда <code><font color="#0000cc">rsqrtss xmm1,xmm2</font></code> вычисл\яет приближенное обратное значение дл\я квадратного корн\я '
++'из числа <code><font color="#0000cc">b0</font></code>, наход\ящегос\я в младшем элементе регистра <code><font color="#0000cc">xmm2</font></code> и '
++'записывает результат <code><font color="#0000cc">~1/sqrt(b0)</font></code> в младший элемент регистра  <code><font color="#0000cc">xmm1</font></code>. '
++'Остальные элементы <code><font color="#0000cc">xmm1</font></code> не мен\яютс\я. '
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state14==null) top.state14=0;
+ document.write('<center><form><select onChange="top.state14=this.selectedIndex;self.location=(\'\'+self.location)">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state14)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+ // document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+ document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state14]+'</b></font></tt>');
+ document.write('<IMG width=250 height=150 hspace=6 vspace=10 SRC="images/'+files[top.state14]+'.gif" border=0></center>');
+ document.write(comments[top.state14]);
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

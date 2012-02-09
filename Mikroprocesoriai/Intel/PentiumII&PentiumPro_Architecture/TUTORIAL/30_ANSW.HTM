@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 25. Answer frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+else
+ {
+  if (parent.ctrlframe.index == "9") document.write('<FONT COLOR="#000000">Если условие </FONT>ложно, то переход выполняется и управление передается на редко выполняемый код.');
+  else if (parent.ctrlframe.index == "8") document.write('<FONT COLOR="#000000">Разместите часто выполняемый код </FONT>непосредственно за о<FONT COLOR="#000000">ператором </FONT><FONT COLOR="#0000BF">if</FONT>,<FONT COLOR="#0000BF"> </FONT>чтобы на этот код передавалось управление при последовательном выполнении. Статический алгоритм предскажет, что этот код будет выполняться.');
+       else if (parent.ctrlframe.index == "7") document.write('<FONT COLOR="#000000">Замените условие в операторе </FONT><FONT COLOR="#0000BF">if</FONT><FONT COLOR="#000000"> на противоположное. Оператору </FONT><FONT COLOR="#0000BF">if </FONT>с <FONT COLOR="#000000">условием (</FONT><FONT COLOR="#0000BF">a!=5</FONT><FONT COLOR="#000000">) соответствует условный переход вперед, который будет предсказан статическим алгоритмом как не выполненный.</FONT>');
+            else if (parent.ctrlframe.index == "4") document.write('<FONT COLOR="#000000">Чтобы сохранить семантику кода, поместите команду безусловного перехода на </FONT><FONT COLOR="#0000BF">L2</FONT><FONT COLOR="#000000"> непосредственно за часто выполняемым кодом.</FONT>');      
+                 else if (parent.ctrlframe.index == "3") document.write('<FONT COLOR="#000000">Если условие команды </FONT><FONT COLOR="#0000BF">JNE</FONT> истинно, то переход выполняется и управление передается на редко выполняемый код.');
+                      else if (parent.ctrlframe.index == "2") document.write('<FONT COLOR="#000000">Разместите часто выполняемый код </FONT>непосредственно за условным переходом вперед, чтобы на этот код передавалось управление при последовательном выполнении. Статический алгоритм предскажет, что этот код будет выполняться.');
+                           else if (parent.ctrlframe.index == "1") document.write('<FONT COLOR="#000000">Замените условие на противоположное. Поскольку </FONT><FONT COLOR="#0000BF">JNE</FONT> есть команда условного перехода вперед, статический алгоритм предсказания предскажет, что переход не будет выполнен (произойдет последовательное выполнение).');
+                 else document.write ('');
+
+ }
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

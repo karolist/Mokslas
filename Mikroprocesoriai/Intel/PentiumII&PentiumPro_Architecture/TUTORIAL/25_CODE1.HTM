@@ -1,0 +1,24 @@
+<HEAD>
+<TITLE>Topic 25. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<TABLE WIDTH="100%" ALIGN=center BORDER=0>
+  <TR>
+    <TD ALIGN=center VALIGN=middle><font color="#0000CC"><b>Код до оптимизации</b></font></TD>
+    <TD ALIGN=center VALIGN=middle><font color="#0000CC"><b>Оптимизированный код</b></font></TD>
+  <TR>
+  <TR>
+    <TD BGCOLOR="White" VALIGN=top><pre>switch (i)<BR>{<BR>  case 16:<BR>    <font color="0000FF"><B>Block 16</B></font><BR>    break;<BR>  case 22:<BR>    <font color="0000FF"><B>Block 22</B></font><BR>    break;<BR>  case 33:<BR>    <font color="CC00FF"><B>Block 33</B></font><BR>    break;<BR>  case 47:<BR>    <font color="0000FF"><B>Block 47</B></font><BR>    break;<BR>}<BR></pre></TD>
+    <TD BGCOLOR="White" VALIGN=top><pre><font color="#0000FF"><b>if (i==33){<BR>  <font color="CC00FF"><B>Block 33</B><BR></font>}</b></font></pre></TD>
+  <TR>
+</TABLE>
+</BODY>
+</HTML>

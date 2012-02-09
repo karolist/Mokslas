@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>Optimizing for Pentium(R) II and Pentium Pro Processors. Contents</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+var z="";
+kbound =new Array(0,1);
+lessons=new Array(0,1);
+topics =new Array(0,1);
+
+lsnNum=0; lsnNum=top.lsnNum;
+
+for (k=0;k<top.lessons.length;k++) lessons[k]=top.lessons[k];
+for (k=0;k<top.topics.length;k++)  topics[k] =top.topics[k];
+for (k=0;k<top.kbound.length;k++)  kbound[k] =top.kbound[k];
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#0000CC" VLINK="#0000CC" ALINK="#CC00CC">
+<A NAME="s"></A>
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location) {
+ document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+}
+
+else {
+ for (j=1;j<=lsnNum;j++) {
+  z+="<table width=\"97%\" align=left cellpadding=2 cellspacing=1 border=0>\r\n";
+  z+="<tr><td colspan=2><a name=\""+j+"\"></a><font size=+1><b>"+lessons[j-1]+"</b></font></td></tr>\r\n";
+  z+="<tr><td colspan=2><B>Темы</B></td>\r\n"; 
+//  z+="<td><small>Стр.</small></td>"; 
+  z+="</tr>\r\n"; 
+
+  for (k=kbound[j-1];k<kbound[j];k++) {
+   if (topics[k]!="") {
+    z+="<tr><td valign=top width=33><img src=\"images/vis"+((top.visited[k])?"":"_n");
+    z+=".gif\" width=33 height=20 align=bottom border=0></td>\r\n";
+    z+="<td><A HREF=\"javascript:top.showtopic("+k+")\">"+topics[k]+"</A></td>";
+//    z+="<td align=right valign=top><font color=\"#CC00CC\"><b>"+k+"</b></font></td></tr>\r\n";
+    z+="</tr>\r\n";
+   }
+  }
+  z+="<tr><td>&nbsp;</td><td>&nbsp;</td></tr>";
+  z+="</table><p>\&nbsp;<br clear=all><p>\r\n";
+ }
+ document.write(z); z="";
+}
+//-->
+</script>
+
+
+<p>
+<a name="start">&nbsp;</a>
+<p><font size="+1"><b>В</b></font>ыберите нужный Вам раздел (слева). 
+<p>Если хотите читать все по порядку, нажмите кнопку <img src="button/next1.gif" width=25 height=15 border=0> (справа вверху).
+
+
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+
+<p><img src="images/vis.gif" height=1 width=1>
+
+</BODY>
+</HTML>

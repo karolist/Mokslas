@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 14</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P>При обнаружении команды ветвления, для которой в буфере команд отсутствует история, процессор использует алгоритм <A HREF="javascript:parent.showglos('staticbrpred')">статического предсказания ветвлений</a>.
+<P>Этот алгоритм предсказывает, что:
+<p><LI><A HREF="javascript:parent.showglos('uncondbranch')">Безусловный переход</a> будет выполнен</LI>
+<LI><A HREF="javascript:parent.showglos('backwcondbr')">Условный переход назад</a> будет выполнен</LI>
+<LI><A HREF="javascript:parent.showglos('forwcondbranch')">Условный переход вперед</a> не будет выполнен (происходит последовательное выполнение кода).</LI>
+<P><br><B><I>Проверьте себя!</I></B>
+<BR>Ознакомьтесь с приведенным примером кода, затем выберите <B>Переход выполнен</B> или <B>Переход не выполнен</B> в зависимости от того, как алгоритм статического предсказания ветвлений предскажет результат выполнения команды ветвления.
+
+</BODY>
+</HTML>
+

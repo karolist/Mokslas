@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "movntps"
+ ,"movntq"
+ );
+
+files=new Array(
+   "movntps"
+ ,"movntq"
+ );
+
+sizes=new Array(
+  "width=255 height=301 "
+ ,"width=252 height=303 "
+ );
+
+titles=new Array(
+  ""
+  ,""
+ );
+
+comments=new Array(
+ 'Команда <code><font color="#0000cc">movntps</font></code> записывает 128 бит SPFP-данных непосредственно в пам\ять '
++'и не кэширует данные при кэш-промахе (cache miss). При кэш-попадании (cache hit) данные в кэше обновл\яютс\я, а пр\ямой записи в пам\ять НЕ происходит.'
+
+,'Команда <code><font color="#0000cc">movntq</font></code> записывает 64 бита целочисленных данных непосредственно '
++'в пам\ять и не кэширует данные при кэш-промахе. При кэш-попадании данные в кэше обновл\ютс\я, '
++'а пр\ямой записи в пам\ять НЕ происходит.'
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state37==null) top.state37=0;
+ document.write('<center><form><select onChange="top.state37=this.selectedIndex;self.location=(\'\'+self.location)">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state37)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+// document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+// document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state37]+'</b></font></tt>');
+ document.write('<IMG '+sizes[top.state37]+' hspace=6 vspace=0 SRC="images/'+files[top.state37]+'.gif" border=0></center>');
+ document.write(comments[top.state37]);
+}
+//-->
+</SCRIPT>
+
+</BODY>
+</HTML>

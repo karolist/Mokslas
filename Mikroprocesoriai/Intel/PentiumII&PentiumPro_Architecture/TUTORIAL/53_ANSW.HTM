@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 53. Answer frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+else
+ {
+  if (parent.ctrlframe.choice == "1") 
+  {
+    document.write ('В <B>коде до оптимизации</B> команда <FONT COLOR="#3333FF">MOV</FONT> записывает в память 16-разрядный непосредственный операнд. При компиляции в 32-разрядном режиме будет сгенерирован префикс указания разрядности операнда 66h, на декодирование которого тратятся дополнительные такты.');
+  } 
+  else
+  if (parent.ctrlframe.choice == "2") 
+  {
+    document.write ('В <B>коде до оптимизации</B> в команде <FONT COLOR="#3333FF">MOV</FONT> указан адрес, содержащий смещение. При компиляции будет сгенерирован префикс указания разрядности адреса 67h. <BR>Вынеся сложение базового адреса со смещением в отдельную команду, можно предотвратить генерацию префикса указания разрядности адреса и сэкономить такты на этапе декодирования.');
+  } 
+  else document.write ('');
+
+ }
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

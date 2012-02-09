@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 26</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>Д</b></font>ля устранения ветвлений можно использовать две новых команды условной пересылки целочисленных данных и данных с плавающей точкой, <A HREF="javascript:parent.showglos('CMOVcc')"><code>CMOV<i>cc</i></code></a> и <A HREF="javascript:parent.showglos('FCMOVcc')"><code>FCMOV<i>cc</i></code></a> соответственно.
+
+Данные команды не поддерживаются некоторыми процессорами, так что прежде чем использовать их, проверьте, что Ваша программа выполняется на процессоре Pentium® II или Pentium Pro. Это позволяет сделать команда <A HREF="javascript:parent.showglos('CPUID')">CPUID</a>.
+
+<P><font size="+1"><b>В</b></font>ыберите <code><FONT COLOR="#0000cc">CMOV<i>cc</i></FONT></code> или <FONT COLOR="#0000cc"><code>FCMOV<i>cc</i></code></FONT> и нажмите на кнопку <B>Оптимизировать</B>, чтобы посмотреть, как устраняются ветвления.
+
+
+<P><B>Замечания:</B>
+<ul>
+<LI>Каждая из этих команд преобразуется в две микрооперации, 
+<A HREF="javascript:parent.showglos('contrldep')">зависимые по управлению</a>.</LI>
+<LI>В случае ложного условия и отсутствия в кэш-памяти требуемых данных могут возникнуть 
+значительные задержки.</LI>
+<li>В отличие от <code><A HREF="javascript:parent.showglos('MOV')">MOV</a></code>, 
+<code><FONT COLOR="#0000cc">CMOV<i>cc</i></FONT></code> 
+не изменяет флаги.</BODY>
+</ul>
+
+</body>
+</HTML>
+

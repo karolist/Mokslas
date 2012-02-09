@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 64. Answer frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+else
+ {
+  document.write("<p>");
+  if (parent.ctrlframe.run == "on") 
+  {
+    document.write ("В <b>коде до оптимизации</b> тело цикла выполняется 100 раз. На каждой четной итерации текущему элементу массива присваивается значение x, на каждой нечетной - значение y. На каждой итерации выполняется условный переход, который невозможно предсказать. <P>В <b>оптимизированном коде</b> тело раскрученного цикла выполняется 50 раз. Семантика кода сохранена, но устранен непредсказуемый условный переход и созданы условия для параллельного выполнения.");
+  }
+ }
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

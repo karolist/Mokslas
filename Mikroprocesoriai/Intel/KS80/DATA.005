@@ -1,0 +1,303 @@
+3JMP ....   C3
+3JZ ....    CA
+3JC ....    DA
+3JP ....    F2
+3JM ....    FA
+3JNZ ....   C2
+3JNC ....   D2
+3JPO ....   E2
+3JPE ....   EA
+3CALL ....  C3
+3CZ ....    CA
+3CC ....    DA
+3CP ....    F2
+3CM ....    FA
+3CNZ ....   C2
+3CNC ....   D2
+3CPO ....   E2
+3CPE ....   EA
+3STA (....) 32
+3LDA (....) 3A
+3SHLD (....)22
+3LHLD (....)2A
+3LXI BC,....01
+3LXI DE,....11
+3LXI HL,....21
+3LXI SP,....31
+2MVI A,..   3E
+2MVI B,..   06
+2MVI C,..   0E
+2MVI D,..   16
+2MVI E,..   1E
+2MVI H,..   26
+2MVI L,..   2E
+2MVI (HL),..36
+2ADI ..     C6
+2ACI ..     CE
+2SUI ..     D6
+2SBI ..     DE
+2ANI ..     E6
+2ORI ..     F6
+2XRI ..     EE
+2CPI ..     FE
+9IN [..]    DB
+9OUT [..]   D3
+-------------------
+ MOV A,A    7F  A->A
+ MOV A,B    78  B->A
+ MOV A,C    79  C->A
+ MOV A,D    7A  D->A
+ MOV A,E    7B  E->A
+ MOV A,H    7C  H->A
+ MOV A,L    7D  L->A
+ MOV A,(HL) 7E  (HL)->A
+ MOV B,A    47  A->B
+ MOV B,B    40  B->B
+ MOV B,C    41  C->B
+ MOV B,D    42  D->B
+ MOV B,E    43  E->B
+ MOV B,H    44  H->B
+ MOV B,L    45  L->B
+ MOV B,(HL) 46  (HL)->B
+ MOV C,A    4F  A->C
+ MOV C,B    48  B->C
+ MOV C,C    49  C->C
+ MOV C,D    4A  D->C
+ MOV C,E    4B  E->C
+ MOV C,H    4C  H->C
+ MOV C,L    4D  L->C
+ MOV C,(HL) 4E  (HL)->C
+ MOV D,A    57  A->D
+ MOV D,B    50  B->D
+ MOV D,C    51  C->D
+ MOV D,D    52  D->D
+ MOV D,E    53  E->D
+ MOV D,H    54  H->D
+ MOV D,L    55  L->D
+ MOV D,(HL) 56  (HL)->D
+ MOV E,A    5F  A->E
+ MOV E,B    58  B->E
+ MOV E,C    59  C->E
+ MOV E,D    5A  D->E
+ MOV E,E    5B  E->E
+ MOV E,H    5C  H->E
+ MOV E,L    5D  L->E
+ MOV E,(HL) 5E  (HL)->E
+ MOV H,A    67  A->H
+ MOV H,B    60  B->H
+ MOV H,C    61  C->H
+ MOV H,D    62  D->H
+ MOV H,E    63  E->H
+ MOV H,H    64  H->H
+ MOV H,L    65  L->H
+ MOV H,(HL) 66  (HL)->H
+ MOV L,A    6F  A->L
+ MOV L,B    68  B->L
+ MOV L,C    69  C->L
+ MOV L,D    6A  D->L
+ MOV L,E    6B  E->L
+ MOV L,H    6C  H->L
+ MOV L,L    6D  L->L
+ MOV L,(HL) 6E  (HL)->L
+ MOV (HL),A 77  A->(HL)
+ MOV (HL),B 70  B->(HL)
+ MOV (HL),C 71  C->(HL)
+ MOV (HL),D 72  D->(HL)
+ MOV (HL),E 73  E->(HL)
+ MOV (HL),H 74  H->(HL)
+ MOV (HL),L 75  L->(HL)
+0MVI A,N    3E  N->A
+0MVI B,N    06  N->B
+0MVI C,N    0E  N->C
+0MVI D,N    16  N->D
+0MVI E,N    1E  N->E
+0MVI H,N    26  N->H
+0MVI L,N    2E  N->L
+0MVI (HL),N 36  N->(HL)
+ STAX BC    02  A->(BC)
+ STAX DE    12  A->(DE)
+ LDAX BC    0A  (BC)->A
+ LDAX DE    1A  (DE)->A
+0STA (NN)   32  A->(NN)
+0LDA (NN)   3A  (NN)->A
+0LXI BC,NN  01  NN->BC
+0LXI DE,NN  11  NN->DE
+0LXI HL,NN  21  NN->HL
+0LXI SP,NN  31  NN->SP
+0SHLD (NN)  22  HL->(NN)
+0LHLD (NN)  2A  (NN)->HL
+ PUSH BC    C5  BC->(SP)
+ PUSH DE    D5  DE->(SP)
+ PUSH HL    E5  HL->(SP)
+ PUSH SP    F5  SP->(SP)
+ POP BC     C1  (SP)->BC
+ POP DE     D1  (SP)->DE
+ POP HL     E1  (SP)->HL
+ POP SP     F1  (SP)->SP
+ SPHL       F9  HL->SP
+ XCHG       EB  HL<->DE
+ XTHL       E3  HL<->(SP)
+---------------------------
+0IN [N]     DB  [N]->A
+0OUT [N]    D3  A->[N]
+-----------------------------
+ CMC        3F  C->~C       C
+ STC        37  1->C        C
+ CMA        2F  A->~A       C
+ DAA        27  DecAdjust   S,Z,A,P,C
+ INR A      3C  A+1->A      S,Z,A,P
+ INR B      04  B+1->B      S,Z,A,P
+ INR C      0C  C+1->C      S,Z,A,P
+ INR D      14  D+1->D      S,Z,A,P
+ INR E      1C  E+1->E      S,Z,A,P
+ INR H      24  H+1->H      S,Z,A,P
+ INR L      2C  L+1->L      S,Z,A,P
+ INR (HL)   34  (HL)+1->(HL)S,Z,A,P
+ DCR A      3D  A-1->A      S,Z,A,P
+ DCR B      05  B-1->B      S,Z,A,P
+ DCR C      0D  C-1->C      S,Z,A,P
+ DCR D      15  D-1->D      S,Z,A,P
+ DCR E      1D  E-1->E      S,Z,A,P
+ DCR H      25  H-1->H      S,Z,A,P
+ DCR L      2D  L-1->L      S,Z,A,P
+ DCR (HL)   35  (HL)-1->(HL)S,Z,A,P
+ INX BC     03  BC+1->BC
+ INX DE     13  DE+1->DE
+ INX HL     23  HL+1->HL
+ INX SP     33  SP+1->SP
+ DCX BC     0B  BC-1->BC
+ DCX DE     1B  DE-1->DE
+ DCX HL     2B  HL-1->HL
+ DCX SP     3B  SP-1->SP
+ ADD A      87  A+A->A      S,Z,A,P,C
+ ADD B      80  A+B->A      S,Z,A,P,C
+ ADD C      81  A+C->A      S,Z,A,P,C
+ ADD D      82  A+D->A      S,Z,A,P,C
+ ADD E      83  A+E->A      S,Z,A,P,C
+ ADD H      84  A+H->A      S,Z,A,P,C
+ ADD L      85  A+L->A      S,Z,A,P,C
+ ADD (HL)   86  A+(HL)->A   S,Z,A,P,C
+ ADC A      8F  A+A+C->A    S,Z,A,P,C
+ ADC B      88  A+B+C->A    S,Z,A,P,C
+ ADC C      89  A+C+C->A    S,Z,A,P,C
+ ADC D      8A  A+D+C->A    S,Z,A,P,C
+ ADC E      8B  A+E+C->A    S,Z,A,P,C
+ ADC H      8C  A+H+C->A    S,Z,A,P,C
+ ADC L      8D  A+L+C->A    S,Z,A,P,C
+ ADC (HL)   8E  A+(HL)+C->A S,Z,A,P,C
+ SUB A      97  A-A->A      S,Z,A,P,C
+ SUB B      90  A-B->A      S,Z,A,P,C
+ SUB C      91  A-C->A      S,Z,A,P,C
+ SUB D      92  A-D->A      S,Z,A,P,C
+ SUB E      93  A-E->A      S,Z,A,P,C
+ SUB H      94  A-H->A      S,Z,A,P,C
+ SUB L      95  A-L->A      S,Z,A,P,C
+ SUB (HL)   96  A-(HL)->A   S,Z,A,P,C
+ SBB A      8F  A-A-C->A    S,Z,A,P,C
+ SBB B      88  A-B-C->A    S,Z,A,P,C
+ SBB C      89  A-C-C->A    S,Z,A,P,C
+ SBB D      8A  A-D-C->A    S,Z,A,P,C
+ SBB E      8B  A-E-C->A    S,Z,A,P,C
+ SBB H      8C  A-H-C->A    S,Z,A,P,C
+ SBB L      8D  A-L-C->A    S,Z,A,P,C
+ SBB (HL)   8E  A-(HL)-C->A S,Z,A,P,C
+ ANA A      A7  AandA->A    S,Z,A,P,C
+ ANA B      A0  AandB->A    S,Z,A,P,C
+ ANA C      A1  AandC->A    S,Z,A,P,C
+ ANA D      A2  AandD->A    S,Z,A,P,C
+ ANA E      A3  AandE->A    S,Z,A,P,C
+ ANA H      A4  AandH->A    S,Z,A,P,C
+ ANA L      A5  AandL->A    S,Z,A,P,C
+ ANA (HL)   A6  Aand(HL)->A S,Z,A,P,C
+ XRA A      A7  AxorA->A    S,Z,A,P,C
+ XRA B      A0  AxorB->A    S,Z,A,P,C
+ XRA C      A1  AxorC->A    S,Z,A,P,C
+ XRA D      A2  AxorD->A    S,Z,A,P,C
+ XRA E      A3  AxorE->A    S,Z,A,P,C
+ XRA H      A4  AxorH->A    S,Z,A,P,C
+ XRA L      A5  AxorL->A    S,Z,A,P,C
+ XRA (HL)   A6  Axor(HL)->A S,Z,A,P,C
+ ORA A      B7  AorA->A     S,Z,A,P,C
+ ORA B      B0  AorB->A     S,Z,A,P,C
+ ORA C      B1  AorC->A     S,Z,A,P,C
+ ORA D      B2  AorD->A     S,Z,A,P,C
+ ORA E      B3  AorE->A     S,Z,A,P,C
+ ORA H      B4  AorH->A     S,Z,A,P,C
+ ORA L      B5  AorL->A     S,Z,A,P,C
+ ORA (HL)   B6  Aor(HL)->A  S,Z,A,P,C
+0ADI N      C6  A+N->A      S,Z,A,P,C
+0ACI N      CE  A+N+C->A    S,Z,A,P,C
+0SUI N      D6  A-N->A      S,Z,A,P,C
+0SBI N      DE  A-N-C->A    S,Z,A,P,C
+0ANI N      E6  AandN->A    S,Z,A,P,C
+0ORI N      F6  AxorN->A    S,Z,A,P,C
+0XRI N      EE  AorN->A     S,Z,A,P,C
+0CPI N      FE  A-N->F      S,Z,A,P,C
+ CMP A      BF  A-A->F      S,Z,A,P,C
+ CMP B      B8  A-B->F      S,Z,A,P,C
+ CMP C      B9  A-C->F      S,Z,A,P,C
+ CMP D      BA  A-D->F      S,Z,A,P,C
+ CMP E      BB  A-E->F      S,Z,A,P,C
+ CMP H      BC  A-H->F      S,Z,A,P,C
+ CMP L      BD  A-L->F      S,Z,A,P,C
+ CMP (HL)   BE  A-(HL)->F   S,Z,A,P,C
+ DAD BC     03  HL+BC->HL   C
+ DAD DE     13  HL+DE->HL   C
+ DAD HL     23  HL+HL->HL   C
+ DAD SP     33  HL+SP->HL   C
+-------------------------
+ RLC        07  RotLeftCarry  C
+ RAL        17  RotLeft       C
+ RRC        0F  RotRightCarry C
+ RAR        1F  RotRight      C
+----------------------------
+ PCHL       E9  HL->PC
+0JMP NN     C3  NN->PC
+0JZ NN      CA  NN->PC      kai Z=1
+0JC NN      DA  NN->PC      kai C=1
+0JP NN      F2  NN->PC      kai S=0
+0JM NN      FA  NN->PC      kai S=1
+0JNZ NN     C2  NN->PC      kai Z=0
+0JNC NN     D2  NN->PC      kai C=0
+0JPO NN     E2  NN->PC      kai A=0
+0JPE NN     EA  NN->PC      kai A=1
+0CALL NN    CD  PC->(SP)
+                NN->PC
+0CZ NN      CC  PC->(SP)    kai Z=1
+                NN->PC
+0CC NN      DC  PC->(SP)    kai C=1
+                NN->PC
+0CP NN      F4  PC->(SP)    kai S=0
+                NN->PC
+0CM NN      FC  PC->(SP)    kai S=1
+                NN->PC
+0CNZ NN     C4  PC->(SP)    kai Z=0
+                NN->PC
+0CNC NN     D4  PC->(SP)    kai C=0
+                NN->PC
+0CPO NN     E4  PC->(SP)    kai A=0
+                NN->PC
+0CPE NN     EC  PC->(SP)    kai A=1
+                NN->PC
+ RST 1      CF  PC->(SP)
+                08->PC
+ RST 3      DF  PC->(SP)
+                18->PC
+ RST 5      EF  PC->(SP)
+                28->PC
+ RST 7      FF  PC->(SP)
+                38->PC
+ RET        C9  (SP)->PC
+ RNZ        C0  (SP)->PC    kai Z=0
+ RZ         C8  (SP)->PC    kai Z=1
+ RNC        D0  (SP)->PC    kai C=0
+ RC         D8  (SP)->PC    kai C=1
+ RPO        E0  (SP)->PC    kai A=0
+ RPE        E8  (SP)->PC    kai A=1
+ RP         F0  (SP)->PC    kai S=0
+ RM         F8  (SP)->PC    kai S=1
+-----------------------
+ EI         FB  EnableInterrupt
+ DI         F3  DisableInterrupt
+ HLT        76  Halt
+ NOP        00  NoOperation

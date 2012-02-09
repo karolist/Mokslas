@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 71. Answer frame.</TITLE>
+</HEAD>
+<BODY>
+<PRE>
+Floating-point to Integer Conversion Algorithm
+
+This algorithm converts a floating-point number to a 32-bit integer and 
+returns the result in the EAX register. 
+To use this function, modify your compiler to call it.
+
+_ftol32proc
+	lea	edc,[esp-8]
+	sub	esp,16		; allocate frame
+	and	ecx,-8		; align pointer on boundary of 8
+	fld	st(0)			; duplicate FPU stack top
+	fistp	qword ptr[ecx]
+	fild	qwork ptr[ecx]
+	mov	edx,[ecx+4]		; high dword of integer
+	mov	eax,[ecx]		; low dword of integer
+	test	eax,eax
+	je	integer_QNaN_or_zero
+
+arg_is_not_integer_QNaN:
+	fsubp	st(1),st		; TOS=d-round(d),
+				{ st(1)=st(1)-st & pop ST }
+	test	edx,edx		; check the sign of the integer
+	jnz	positive		
+; number is negative
+					; dead cycle
+					; dead cycle
+	fstp	dword ptr[ecx]	; result of subtraction
+	mov	ecx,[ecx]		; dword of difference (single precision)
+	add	esp,16
+	xor	ecx,80000000h
+	add	ecx,7fffffffh	; if difference > 0, then increment integer
+	
+	adc	eax,0			; inc eax (add CARRY flag)
+	ret
+
+positive:
+	fstp	dword ptr[ecx]	; result of subtraction
+	mov	ecx,[ecx]		; dword of difference (single precision)
+
+	add	esp,16
+	add	ecx,7fffffffh	; if difference < 0, then decrement integer
+	sbb	eax,0			; dec eax (subtract CARRY flag)
+	ret
+
+integer_QNaN_or_zero:
+	test	edx,7fffffffh
+	jnz	arg_is_not_integer_QNaN
+	add	esp,16
+	ret
+</PRE>
+</BODY>
+</HTML>

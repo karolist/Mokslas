@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>¬</B></big> задачах, св€занных с преобразовани€ми в трехмерном пространстве, 
+осуществл€етс€ пересчет координат вершин объектов из одного положени€ в другое.
+<p>
+<big><B>¬</B></big> приводимом примере кода показываетс€, как следует перегруппировать данные 
+дл€ четырех вершин из модели AOS в модель SOA. 
+<p>
+<big><B>¬</B></big> модели AOS данные дл€ каждой вершины изначально представлены в виде структуры, 
+состо€щей из ее координат 
+<code><font color="#0000cc">x,y,z</font></code> и компоненты
+<code><font color="#0000cc">w</font></code> (
+<code><font color="#0000cc">w</font></code> часто нормируетс€ на 
+<code><font color="#0000cc">1</font></code>).
+<p>
+„тобы преобразовать данные к модели SOA, нужно выделить в отдельные группы 
+сначала <code><font color="#0000cc">x</font></code>-координаты всех вершин, затем
+<code><font color="#0000cc">y,z</font></code>  и
+ <code><font color="#0000cc">w</font></code>Цкоординаты,  и занести их в 
+разные XMM-регистры (по 4 координаты за один цикл обработки).
+<p>
+<big><B>Ќ</B></big>ажмите кнопку <b>‘рагмент кода</b>  и пройдите код в пошаговом режиме, 
+чтобы увидеть, как происходит перегруппировка данных из одной модели в другую.
+
+
+</BODY>
+</HTML>

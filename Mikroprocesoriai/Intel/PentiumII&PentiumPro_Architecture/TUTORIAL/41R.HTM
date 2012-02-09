@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 41</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<TABLE BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Отдельные массивы</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>struct {
+   int a[500];
+   int b[500];
+      }s;
+ ...
+ for (i=0;i&lt;500;i++)
+    s.a[i]=2*s.a[i];  
+ ...
+ for (i=0;i&lt;500;i++)
+    s.b[i]=2*s.b[i]; </PRE>
+    </TD>
+  </TR>
+</TABLE>
+
+<TABLE  BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Составной массив</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>struct {
+   int a;
+   int b;
+      }s[500];
+ ...
+ for (i=0;i&lt;500;i++)
+ {
+   s[i].a+=5;
+   s[i].b-=3;
+ }    </PRE>
+    </TD>
+  </TR>
+</TABLE>
+</center>
+</BODY>
+</HTML>
+

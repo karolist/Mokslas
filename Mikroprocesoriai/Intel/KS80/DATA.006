@@ -1,0 +1,126 @@
+    Radijo Aparatûros Katedra
+
+     Mikroprocesoriaus i8080
+        komandù sistema
+  Sudaró: RP-3 gr.st.A.U÷inskas
+  Tikrino: doc. A.Graýulevißius
+        Vilnius, 1996
+
+        Trumpas apra÷ymas
+       -------------------
+  Asemblerio  tekstas  renkamas
+darbiniame lange, esanßiame kai-
+róje pusóje.  Kita  ekrano dalis
+yra skirta õvairiems paketo pra-
+ne÷imams,  kuriuos  galima i÷si-
+kviesti pele.
+  Jeigu pelós nóra,  tai paketas
+suteiks Jums tik tris galimybes:
+grõýti õ DOS (Ctrl+Q),  sukompi-
+liuoti programÝ (Ctrl+R)  ir su-
+rasti norimÝ komandÝ (Ctrl+F).
+                              2.
+  Paketo  paslaugos i÷kvießiamos
+paspaudus  kairõ pelós mygtukÝ
+ant geltono teksto. Gauti langai
+uýdaromi de÷iniu pelós mygtuku.
+  Vienoje eilutóje gali bûti tik
+ýymó  ir viena asemblerio koman-
+da.  üymó yra  tariamas adresas,
+kuriuo  gali  pasinaudoti  kitos
+komandos.  Sutransliavus progra-
+mÝ,  kiekviena ýymó tampa realiu
+adresu.  Visos ýymós  programoje
+turi  prasidóti nuo  1 stulpelio
+ir turi bûti 2-8 simboliù ilgio.
+  Jeigu ýymós  nevartojamos,
+tai  komanda  ra÷oma tik  nuo  2
+stulpelio.  Kitaip,transliuojant
+paketas supras komandÝ  kaip ýy-
+mñ.
+ Kitame puslapyje  pateiktas pa-
+vyzdys.
+                              3.
+     pradzia MVI A,FF
+             OUT [A0]
+             CALL 0005
+             IN [31]
+             JNZ pradzia
+
+  Atkreipkite dómesõ, kad naudo-
+jami skaißiai yra 16 sistemos ir
+jù ilgis lygus 1 ar 2 baitams.
+  Visos komandos ra÷omos tik di-
+ dýiosiomis raidómis.
+
+      MENIU DarbinisLangas
+     ----------------------
+  SurinktÝ  programÝ  galite i÷-
+saugoti  diske,  jÝ  pakrauti  õ
+darbinõ langÝ ar viskÝ i÷valyti.
+Kreipiantis õ diskÝ, nepamir÷ki-
+te failo vardo.
+
+                              4.
+       MENIU Transliatorius
+      ----------------------
+  Savo  programÝ  galite  trans-
+liuoti  õ  failÝ  arba  õ langÝ.
+Transliuojant õ langÝ,rezultatas
+bus matomas i÷ karto. Taßiau jei
+programa yra 20 ir daugiau eilu-
+ßiu ilgio,  tai patartina trans-
+liuoti  õ failÝ.  Vóliau jõ  bus
+lengva pakrauti õ darbinõ langÝ.
+Sukurtam    failui   priskiriama
+priesaga "*.pro".
+  Taip  pat  programuotojas gali
+nurodyti  savo  pradinõ  adresÝ,
+nuo  kurio  prasidós  ma÷ininiai
+kodai.
+  Reikia  pridurti,  kad  tu÷ßiù
+eilußiu transliatorius nesupran-
+ta. Taigi jis prane÷, kad yra
+neýinoma komanda.
+
+                              5.
+   MENIU Skaißiavimo sistemos
+  ---------------------------
+  Ra÷ant asembleriu, daýnai pri-
+reikia  vienos sistemos  skaißiù
+paversti kitos sistemos skaißiu.
+Naudodamiesi ÷iuo meniu galósite
+laisvai "nardyti" po skaißiavimo
+sistemas.
+
+         MENIU Komandos
+        ----------------
+  Paketas supranta  tik 1/3 visù
+i8080 komandù(i÷ viso vir÷ 700).
+Nesudetingoms  programoms jù yra
+pakankamai."Komandù" meniu galite
+jas rasti  pagal paskirtõ,  arba
+pagal kokõ  nors poýymõ.  Pavyz-
+dziui, jeigu uýmir÷ote kokia ko-
+manda patalpina skaißiù õ  A re-
+                              6.
+gistrÝ, tai õvedñ "N->A", gausi-
+te norimÝ atsakymÝ.
+Meniu naudojami sutrumpinimai:
+(HL) - atm. last.adresas,nuro-
+       dytas reg. poroje HL;
+[N] - porto adresas;
+N - vienas baitas;
+NN - du baitai (vienas ýodis);
+S - ýenklo (Sign) poýymis (p)
+Z - nulio (Zero) p;
+A - papildomas (Auxiliary) p;
+P - lygiaverti÷kumo (Parity) p;
+C - perna÷os (Carry) p. 
+
+          MENIU Pagalba
+         ---------------
+  Þia  trumpai apra÷ytos  paketo
+galimybós,   kurios  padós  Jums
+tapti  tikru   mikroprocesoriaus
+i8080 programuotoju.

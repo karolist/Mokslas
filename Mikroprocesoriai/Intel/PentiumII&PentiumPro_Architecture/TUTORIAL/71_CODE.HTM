@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 62. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<TABLE WIDTH="100%" ALIGN=center BORDER=0>
+  <TR>
+    <TD ALIGN=center><P><P><font color="#0000CC"><b>Неявный вызов _ftol в тексте на C</b></TD>
+  </TR>
+
+<TR>
+<TD>
+<TABLE ALIGN=center BORDER=2>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE> double d1=1.3;
+ double d2=2.3;
+ int i;
+ ...
+ i=d1+d2;
+ ...</PRE>
+    </TD>
+  </TR>
+</TABLE>
+</TD>
+</TR>
+  <TR>
+    <TD ALIGN=center><font color="#0000CC"><b>Вызов _ftol в ассемблерном тексте</b></TD>
+  </TR>
+<TR>
+<TD>
+<TABLE ALIGN=center BORDER=2>
+    <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE> fld d1
+ fadd d2 
+ call _ftol 
+ mov i, eax    
+ ret </PRE>
+    </TD>
+  </TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

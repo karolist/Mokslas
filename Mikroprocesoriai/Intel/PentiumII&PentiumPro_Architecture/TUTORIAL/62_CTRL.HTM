@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 62. Control frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+if (top.run62==null) top.run62="0";
+
+function showanswer() {
+ top.run62="1";
+ parent.answerframe.location = "62_answ.htm";
+}
+//-->
+</SCRIPT>
+
+<FORM>
+<P ALIGN=center><INPUT NAME="run" TYPE=button VALUE="Пояснить" onClick="showanswer()">
+</FORM>
+
+</BODY>
+</HTML>

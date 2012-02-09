@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<STYLE TYPE="text/css">
+<!--
+tt { font-size: 9pt; }
+-->
+</STYLE>
+<title></title>
+</HEAD>
+<body background=backgr.gif bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#660099">
+<a name="top"></a>
+
+<script language="JavaScript">
+<!--
+if (''+location != ''+top.location) {
+ lineW=top.lineW;
+ codeH=top.codeH;
+ codeW=top.codeW;
+ backgr=top.backgr;
+ foregr=top.foregr;
+
+ mnames=top.mnames;
+ mesgW=top.mesgW;
+ mesgH=top.mesgH;
+
+ document.writeln('<center><table border=0 cellpadding=0 cellspacing=0>');
+ document.writeln('<tr><td>');
+
+ // Buttons
+ document.writeln('<form><input type="button" value="Шаг" onClick="top.userClicked=1;top.nextStep()">');
+ document.writeln('<input type="button" value="C начала" onClick="top.init()">');
+ document.writeln('<input type="button" value="Выход" onClick="top.close()"></form>');
+
+
+ document.writeln('<table border=0 cellpadding=0 cellspacing=0 width='+(lineW+codeW+lineW)+'>');
+ for (n=0;n<top.codeLines.length;n++) {
+  document.writeln('<tr bgcolor=white>');
+  document.writeln('<td colspan=2 width='+(lineW+codeW)+'><img name=HL'+n+' width='+(lineW+codeW)+' height='+lineW+' src="'+backgr+'"></td>');
+  document.writeln('<td width='+lineW+'><img name=HR'+n+' width='+lineW+' height='+lineW+' src="'+backgr+'"></td>');
+  document.writeln('</tr>');
+
+  document.writeln('<tr bgcolor=white>');
+  document.writeln('<td width='+lineW+'><img name=L'+n+' width='+lineW+' height='+codeH+' src="'+backgr+'"></td>');
+  document.writeln('<td width='+codeW+'><tt>'+top.codeLines[n]+'</tt></td>');
+  document.writeln('<td width='+lineW+'><img name=R'+n+' width='+lineW+' height='+codeH+' src="'+backgr+'"></td>');
+  document.writeln('</tr>');
+ }
+
+ document.writeln('<tr bgcolor=white>');
+ document.writeln('<td colspan=2 width='+(lineW+codeW)+'><img name=HL'+top.codeLines.length+' width='+(lineW+codeW)+' height='+lineW+' src="'+backgr+'"></td>');
+ document.writeln('<td width='+lineW+'><img name=HR'+top.codeLines.length+' width='+lineW+' height='+lineW+' src="'+backgr+'"></td>');
+ document.writeln('</tr></table>');
+
+ // Top right 
+ document.writeln('</td><td align=center>');
+ 
+ // Bottom left 
+ document.writeln('</td></tr><tr><td>');
+ document.writeln('<img name=MESG width='+mesgW+' height='+mesgH+' src="'+mnames+top.initMesg+'.gif">');
+
+
+ // Bottom right 
+ document.writeln('</td><td>');
+
+ document.writeln('</td></tr></table></center>');
+}
+//-->
+</script>
+
+</BODY>
+</HTML>

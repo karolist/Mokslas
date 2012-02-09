@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 10</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<P><font size="+1"><b>К</b></font>онвейер процессоров Pentium®&nbsp;II и Pentium&nbsp;Pro 
+обрабатывает команды в 12 стадий; их можно условно сгруппировать так:
+
+<ul>
+<LI>Начальный этап, работающий c <A HREF="javascript:parent.showglos('inordfrend')">сохранением порядка команд</a> исходной программы:</LI>
+<small>
+<BR> - Предсказание следующего значения счетчика команд (IP).
+<BR> - Выборка потока команд архитектуры Intel (IA).
+<BR> - Декодирование команд и генерация <A HREF="javascript:parent.showglos('microops')">микроопераций</a>.
+<BR> - Отображение регистров архитектуры Intel (IA) во внутренние регистры процессора для устранения ложных зависимостей.
+<BR> - Распределение микроопераций по устройствам выполнения и сохранение результатов выполнения в <A HREF="javascript:parent.showglos('ROB')">буфере перестановок</a> в порядке 
+исходной программы.
+</small>
+
+<LI><A HREF="javascript:parent.showglos('oooexec')">Внеочередное выполнение микроопераций</a></LI>
+<small>
+<BR> - Распределение и выполнение микроопераций.
+<BR> - Сохранение результатов выполнения в буфере перестановок.
+</small>
+
+<li><A HREF="javascript:parent.showglos('inordretir')">Завершение по порядку</a></LI>
+<small>
+<BR> - При необходимости, запись результатов в память или во внешние регистры архитектуры Intel (IA).
+<BR> - Удаление микрооперций из буфера перестановок.
+</small>
+
+</ul>
+
+</BODY>
+</HTML>
+

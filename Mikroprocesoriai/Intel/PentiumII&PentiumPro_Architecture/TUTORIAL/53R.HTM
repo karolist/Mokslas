@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 53. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+var choice="";
+var internal="1";
+function showanswer(param) 
+{
+  if (param == "3") 
+  { 
+    choice=internal;
+//  parent.answerframe.location = "53_answ.htm";
+    top.window.left.location.hash=internal;
+  }
+  else
+  {
+    internal=param;
+    choice="";
+  }
+}
+//-->
+</SCRIPT>
+
+<TABLE ALIGN=center BORDER=0 WIDTH=100%>
+  <TR>
+    <TD COLSPAN=2><font size="+1"><BR>Префикс указания разрядности операнда<BR></b></font></TD>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Код до оптимизации</b></font></TD>
+    <TD BGCOLOR="White"><code>mov word ptr mem, 0x77</code></TD>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Оптимизированный код</b></font>
+    <TD BGCOLOR="White"><code><font color="#0000FF"><b>mov eax, 0x77</b></font><br>mov word ptr mem, ax</code></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN=2><font size="+1"><BR>Префикс указания разрядности адреса<BR></b></font>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Код до оптимизации</b></font></TD>
+    <TD BGCOLOR="White"><code>mov dword ptr mem[ax], edx</code></TD>
+  </TR>
+  <TR>
+    <TD><font color="#0000CC">Оптимизированный код</b></font></TD>
+    <TD BGCOLOR="White"><code><font color="#0000FF"><b>add ax, offset mem</b></font><br>mov dword ptr [ax], edx</code></TD>
+  </TR>
+</TABLE>
+<BR><BR>
+<FORM>
+<TABLE WIDTH="100%" ALIGN=center BORDER=0>
+<TR>
+ <TD>  <INPUT NAME="ch" TYPE=radio VALUE="1" checked onClick='showanswer("1")'><FONT SIZE="-1"><b>Префикс разрядности операнда</b></FONT><BR>
+       <INPUT NAME="ch" TYPE=radio VALUE="2" onClick='showanswer("2")'><FONT SIZE="-1"><b>Префикс разрядности адреса</b></FONT>
+ </TD>
+ <TD VALIGN="middle">  <INPUT NAME="run" TYPE=button VALUE="Пояснить" onClick='showanswer("3")'>
+ </TD>
+</TR>
+</TABLE>
+</FORM>
+
+</BODY>
+</HTML>

@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 14. Code frame.</TITLE>
+<script language="JavaScript">
+<!--
+codes = new Array ("Begin:<br>&nbsp;mov eax, mem32<br>&nbsp;and eax, ebx<br>&nbsp;imul eax, edx<br>&nbsp;shl eax, 7<br>&nbsp;<b>jc Begin</b>",
+"&nbsp;mov eax, mem32<br>&nbsp;and eax, ebx<br>&nbsp;imul eax, edx<br>&nbsp;shl eax, 7<br>&nbsp;<b>jc Begin</b><br>&nbsp;xor eax, eax<br>Begin:<br>&nbsp;add eax, 4",
+"&nbsp;mov eax, 10<br>loop:<br>&nbsp;add list[4*eax], 5<br>&nbsp;dec eax<br>&nbsp;<b>jnz loop</b>",
+"&nbsp;mov ecx, 12<br>&nbsp;cmp eax, 7<br>&nbsp;<b>jne EAX_7</b><br>&nbsp;mov ecx, 17<br>EAX_7: . . .",
+"&nbsp;add eax, 7<br>&nbsp;sub edx, ecx<br>&nbsp;mov ecx, 17<br>&nbsp;<b>jmp ecx_17</b><br>ecx_12: . . .<br>&nbsp;mov ecx, 12<br>ecx_17: . . .",
+"&nbsp;mov eax, mem32<br>&nbsp;and eax, ebx<br>&nbsp;imul eax, edx<br>&nbsp;shl eax, 7<br>&nbsp;add eax, ecx<br>&nbsp;<b>Call Convert</b>");
+
+colors = new Array ("#66FF99","#99FFFF","#FFFF66","#CCFFCC","#FFFFCC","#FFCCFF");
+
+function bg() {
+document.bgColor=colors[parent.curgame];
+return true;
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onLoad="bg()">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<code>
+<script language="JavaScript">
+<!--
+document.write (codes[parent.curgame]);
+//-->
+</SCRIPT>
+</code>
+</BODY>
+</HTML>
+

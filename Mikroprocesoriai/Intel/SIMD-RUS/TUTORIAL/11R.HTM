@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFEE" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+names=new Array(
+  "ѕараллельные "
+ ,"—кал\€рные "
+ );
+
+files=new Array(
+  "parallel"
+ ,"scalar"
+ );
+
+sizes=new Array(
+  "width=250 height=172 "
+ ,"width=250 height=172 "
+ );
+
+titles=new Array(
+  "ѕараллельные команды"
+ ,"—кал\€рные команды"
+ );
+
+comments=new Array(
+ 'ѕараллельна\€ команда действует одновременно на все 4 пары соответствующих элементов в '
++'<code><font color="#0000cc">xmm1</font></code> и <code><font color="#0000cc">xmm2</font></code>.'
++'„етыре полученных результата записываютс\€ в первый операнд <code><font color="#0000cc">xmm1</font></code> (выходной операнд).'
+
+
+,'—кал\€рна\€ команда действует только на младшие элементы <code><font color="#0000cc">a0, b0</font></code> '
++'в регистрах <code><font color="#0000cc">xmm1</font></code> и <code><font color="#0000cc">xmm2</font></code>. '
++'–езультат записываетс\€ в <code><font color="#0000cc">xmm1</font></code> (выходной операнд). '
++'—одержимое трех старших элементов в <code><font color="#0000cc">xmm1</font></code> не измен\€етс\€.'
+);
+
+if (document.location==parent.document.location)
+ document.write('<CENTER><H3><a href="index.htm">Start here!</a></H3></CENTER>')
+else {
+ if (top.state11==null) top.state11=0;
+ document.write('<center><form><select onChange="top.state11=this.selectedIndex;self.location=(\'\'+self.location)">');
+ for (k=0;k<names.length;k++) {
+  document.write('<option value='+k+((k==top.state11)?' selected>':'>')+names[k]);
+ }
+ document.write('</select></form>');
+
+ document.write('<IMG width=170 height=65 align=right SRC="images/legend.gif" border=0><br clear=all>');
+// document.write('<tt><font color="#0000cc" face="sans-serif"><b>'+titles[top.state11]+'</b></font></tt>');
+ document.write('<IMG '+sizes[top.state11]+' hspace=6 vspace=0 SRC="images/'+files[top.state11]+'.gif" border=0></center>');
+ document.write(comments[top.state11]);
+}
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

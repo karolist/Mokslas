@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 58</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>К</b></font>оманду <A HREF="javascript:parent.showglos('MOV')"><code>MOV</code></a>,  работающую с 8- или 16-разрядным регистром, иногда можно заменить другими командами. Такая замена позволит избежать <A HREF="javascript:parent.showglos('partregstall')">задержки при обращении к 8- или 16-разрядным регистрам</a>, не нарушая семантики кода.
+<p>Как правило, выигрыш от предотвращения задержки покрывает расходы на выполнение нескольких дополнительных команд.<P><B>Примеры:</B><BR>В приведенном здесь примере <B>оптимизированного кода</B> вместо команды <FONT COLOR="#0000cc"><code>MOV</code></FONT> используются  <A HREF="javascript:parent.showglos('SHL')"><code>SHL</code></a>, <FONT COLOR="#0000cc"><code>AND</code></FONT> и <FONT COLOR="#0000cc"><code>OR</code></FONT>, что позволяет произвести те же вычисления, не вызывая при этом задержки. Возможна дальнейшая оптимизация кода путем группировки команд.<P><font size="+1"><b>В</b></font>ыберите пример кода и нажмите на кнопку <B>"По шагам"</B>,чтобы ознакомиться  с комментариями к пошаговому выполнению кода.<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать"</B>, чтобы попробовать на практике предотвратить  задержку при  обращении к 8- или 16-разрядным регистрам.
+
+</BODY>
+</HTML>
+

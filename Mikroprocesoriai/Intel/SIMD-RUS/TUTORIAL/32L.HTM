@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<a name="s"></a>
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>К</B></big>оманды этой группы попарно сравнивают упакованные целочисленные элементы 
+данных входного и выходного операндов, и возвращают наибольшие или наименьшие 
+значения для каждой пары. Команды применимы только для сравнения байтов
+<A target="right" HREF="glossary.htm#unsigned">без знака</A>  или слов 
+<A target="right" HREF="glossary.htm#signed">со знаком</A>. 
+
+<p>
+<big><B>В</B></big>ходной операнд для этих команд может располагаться либо в MMX-регистре, либо
+ в  памяти. Выходной операнд должен обязательно находиться в MMX-регистре.
+
+<p>
+<big><B>К</B></big>оманды 
+<a href="#s" onClick="top.state32=1;top.right.location='32r.htm';return false"><b>pmaxsw</b></a> и 
+<a href="#s" onClick="top.state32=0;top.right.location='32r.htm';return false"><b>pminsw</b></a>
+ сравнивают четыре слова со знаком;
+
+команды <a href="#s" onClick="top.state32=3;top.right.location='32r.htm';return false"><b>pmaxub</b></a>
+ и <a href="#s" onClick="top.state32=2;top.right.location='32r.htm';return false"><b>pminub</b></a>
+ сравнивают восемь байтов без знака.
+
+
+</BODY>
+</HTML>

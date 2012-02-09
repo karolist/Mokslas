@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 37</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="0">
+<P><font size="+1"><b>Е</b></font>сли Ваш компилятор не выравнивает <A HREF="javascript:parent.showglos('statvars')"><FONT COLOR="#CC33CC">статические
+переменные</FONT></A>, используйте ассемблерный код для их явного выравнивания.
+<P><B>Пример:</B>
+<BR>Приведенный здесь ассемблерный код получается в результате оптимизации
+<B>исходного текста на C</B>.
+<P><B>Оптимизирванный ассемблерный код</B> изменяет значение указателя
+стека так, чтобы при помещении восьмибайтной переменной <B><FONT COLOR="#3333FF">a</FONT></B>
+в стек она была размещена по адресу, кратному восьми байтам.
+<P><font size="+1"><b>Н</b></font>ажатием на стрелку <img src="images/bluarrow.gif"> Вы
+можете вызвать комментарии для соответствующей строки кода.
+<P ALIGN=right><B>Продолжение следует...</B>
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<p>
+<a name="1">
+Сохранить содержимое регистра <FONT COLOR="#0000BF">EBP </FONT>в стеке.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="2">
+<FONT COLOR="#000000">Восстановить прежнее значение указателя стека. Теперь </FONT>
+<FONT COLOR="#0000BF">EBP</FONT><FONT COLOR="#000000"> и </FONT><FONT COLOR="#0000BF">ESP</FONT>
+<FONT COLOR="#000000"> указывают на один и тот же адрес.</FONT> 
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="3">
+<FONT COLOR="#000000">Выполнить операцию </FONT><FONT COLOR="#0000BF">AND</FONT> над регистром 
+<FONT COLOR="#0000BF">EBP </FONT>и константой -8. <P>
+<pre><FONT COLOR="#0000BF">  001000010010</FONT><FONT COLOR="#000000"> (содержимое </FONT><FONT COLOR="#0000BF">EBP</FONT><FONT COLOR="#000000">)</FONT> <BR><FONT COLOR="#0000BF">&amp;</FONT><FONT COLOR="#000000"> </FONT><U><FONT COLOR="#0000BF">111111111000</FONT></U><FONT COLOR="#000000"> ( -8)</FONT> <BR><FONT COLOR="#0000BF">&nbsp;&nbsp;&nbsp; 001000010000</FONT></pre>
+<P>Теперь <FONT COLOR="#0000BF">EBP</FONT> содержит адрес, кратный восьми, и переменная 
+<FONT COLOR="#0000BF">a </FONT>будет размещена по этому адресу и, следовательно, выровнена.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="4">
+<FONT COLOR="#000000">Добавить дополнительные четыре байта для выравнивания и установить
+ указатель стека на адрес, кратный восьми байтам.</FONT>
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="5">
+<FONT COLOR="#000000">Многоточием обозначены команды, заносящие значение переменной </FONT>
+<FONT COLOR="#0000BF">a</FONT><FONT COLOR="#000000"> в регистры </FONT>
+<FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000"> и </FONT><FONT COLOR="#0000BF">EDX</FONT>
+<FONT COLOR="#000000"> для дальнейшего использования.</FONT>
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="6">
+<FONT COLOR="#000000">Поместить </FONT><FONT COLOR="#0000BF">a</FONT> в стек.
+<FONT COLOR="#000000"><CODE>-8 + </CODE></FONT><FONT COLOR="#0000BF"><CODE>EBP</CODE></FONT><FONT COLOR="#000000"> кратно 
+восьми. Поскольку </FONT><FONT COLOR="#0000BF"><CODE>EBP</CODE> </FONT>содержит выровненный адрес, переменная
+<FONT COLOR="#0000BF">a </FONT>также выровнена.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="7">
+<FONT COLOR="#000000">Поместить </FONT><FONT COLOR="#0000BF"><CODE>a</CODE></FONT> в стек данных с 
+плавающей точкой.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="8">
+<FONT COLOR="#000000">Вычислить </FONT><FONT COLOR="#0000BF"><CODE>a*a</CODE></FONT><FONT COLOR="#000000">.</FONT>
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="9">
+Восстановить начальное выравнивание.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="10">
+Восстановить начальное содержимое <FONT COLOR="#3333FF">EBP</FONT><FONT COLOR="#000000">.</FONT>
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 26. Message frame, 1.</TITLE>
+</HEAD>
+<BODY bgcolor="ffffff" text="000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location){
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");}
+//-->
+</SCRIPT>
+<B>”словие истинно (A >= B)</B>
+<BR>
+
+<B><FONT COLOR="#0000cc"> од до оптимизации</FONT></B>
+<BR>
+1. <FONT COLOR="#0000cc"><code>CMP</code></FONT> сравнивает <FONT COLOR="#0000cc"><code>A</code></FONT> и <FONT COLOR="#0000cc"><code>B</code></FONT>.
+
+<BR>2. <FONT COLOR="#0000cc"><code>A</code></FONT> >= <FONT COLOR="#0000cc"><code>B</code></FONT>, поэтому выполн€етс€ переход на <FONT COLOR="#0000cc"><code>L30</code></FONT>.
+
+<BR>3. <FONT COLOR="#0000cc"><code>MOV</code></FONT> пересылает <FONT COLOR="#0000cc"><code>C2</code></FONT> в <FONT COLOR="#0000cc"><code>EBX</code></FONT>.
+
+<p><B><FONT COLOR="#0000cc">ќптимизированный код</FONT></B>
+
+<BR>1. <FONT COLOR="#0000cc"><code>XOR</code></FONT> устанавливает <FONT COLOR="#0000cc"><code>EBX</code></FONT> в 0, предотвраща€ задержку в св€зи с использованием 16-разр€дного регистра.
+
+<BR>2. <FONT COLOR="#0000cc"><code>CMP</code></FONT> сравнивает <FONT COLOR="#0000cc"><code>A</code></FONT> и <FONT COLOR="#0000cc"><code>B</code></FONT>.
+
+<BR>3. <FONT COLOR="#0000cc"><code>A</code></FONT> >= <FONT COLOR="#0000cc"><code>B</code></FONT>, поэтому <FONT COLOR="#0000cc"><code>SETGE</code></FONT> устанавливает <FONT COLOR="#0000cc"><code>BL</code></FONT> в 1.
+
+<BR>4. <FONT COLOR="#0000cc"><code>DEC</code></FONT> уменьшает <FONT COLOR="#0000cc"><code>EBX</code></FONT> на 1, теперь  <FONT COLOR="#0000сс"><code>EBX</code></FONT> = 0.
+
+<BR>5. ѕосле выполнени€ <FONT COLOR="#0000cc"><code>AND</code></FONT> с параметрами <FONT COLOR="#0000cc"><code>EBX</code></FONT> и <FONT COLOR="#0000cc"><code>(C1-C2)</code></font> <FONT COLOR="#0000cc"><code>EBX</code></FONT> содержит 0.
+
+
+<BR>6. <FONT COLOR="#0000cc"><code>ADD</code></FONT> прибавл€ет <FONT COLOR="#0000cc"><code>C2</code></FONT> к <FONT COLOR="#0000cc"><code>EBX</code></FONT>, теперь <FONT COLOR="#0000cc"><code>EBX</code></FONT> = <FONT COLOR="#0000cc"><code>C2</code></FONT>.
+</BODY>
+</HTML>
+

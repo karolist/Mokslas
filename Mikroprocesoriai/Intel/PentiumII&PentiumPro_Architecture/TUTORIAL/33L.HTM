@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 33</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>П</b></font>роцессор может обращаться к данным, находящимся в кэш-линии, без каких-либо
+задержек. Если данные выходят за границу 32-байтной кэш-линии, то задержка
+возникает.
+<P>Для предотвращения таких задержек выравнивайте данные в соответствии
+с их размером, как показано в таблице.
+<P>Вот некоторые способы выравнивания данных:
+<LI> Изменение порядка задания структур данных.</LI>
+<LI> Использование <A HREF="javascript:parent.showglos('statvars')"><FONT COLOR="#CC33CC">статических переменных</FONT></A>
+     вместо <A HREF="javascript:parent.showglos('dynvars')"><FONT COLOR="#CC33CC">динамических</FONT></A>.</LI>
+<LI> Использование ассемблерного кода для выравнивания статических переменных.</LI>
+<LI> Использование функции <code><A HREF="javascript:parent.showglos('MALLOC')"><FONT COLOR="#CC33CC">MALLOC</FONT></A></code> для выравнивания
+     структур и массивов.</LI>
+<P><B>Замечание:</B>
+<BR>При выравнивании данных по границе могут возникнуть неиспользованные
+области в кэше и в основной памяти.
+
+</BODY>
+</HTML>
+

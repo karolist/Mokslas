@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 60. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<TABLE WIDTH="100%" ALIGN=center BORDER=0>
+  <TR>
+    <TD ALIGN=center VALIGN=middle><font color="#0000CC"><b>Код до оптимизации</b></font></TD>
+  <TR>
+  <TR>
+    <TD BGCOLOR="White" VALIGN=middle><pre>float dot_product(float *a, float *b)<BR>{<BR>  int i;<BR>  float tmp=0.0;<BR>  for(i=0;i&lt;ARR; <font color="#CC00FF"><b>i+=4){</b></font><BR>      <font color="#0000FF"><b>tmp0</b></font> += a[i]*b[i];<BR>      <font color="#CC00FF"><b><font color="#0000FF"><b>tmp1</b></font> += a[i+1]*b[i+1];</b></font><BR>      <font color="#CC00FF"><b><font color="#0000FF"><b>tmp2</b></font> += a[i+2]*b[i+2];</b></font><BR>      <font color="#CC00FF"><b><font color="#0000FF"><b>tmp3</b></font> += a[i+3]*b[i+3];</b></font><BR>  }<BR>  <font color="#0000FF"><b>ret tmp0+tmp1+tmp2+tmp3;</b></font><BR>}</pre></TD>
+  <TR>
+</TABLE>
+<P>
+Затем устраним зависимости, введя четыре отдельных переменных для накопления
+суммы: <FONT COLOR="#3333FF"><CODE>tmp0-tmp3</CODE></FONT>. Значение каждого из накопителей не 
+зависит от содержимого остальных. Таким образом, стало возможно параллельное выполнение
+четырех строк текста.
+</BODY>
+</HTML>

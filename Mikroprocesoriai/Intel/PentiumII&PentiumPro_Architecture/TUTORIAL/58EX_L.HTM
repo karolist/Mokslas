@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 58 Ex.</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="0">
+<P>Поставьте подходящую команду на свободное место.
+<BR>&nbsp;
+<BR>Команда <FONT COLOR="#3333FF">ADD</FONT> в <B>коде до оптимизации</B>
+производит чтение из 32-рарядного регистра <FONT COLOR="#3333FF">EAX</FONT>
+после того, как <FONT COLOR="#3333FF">MOV</FONT> записала данные в узкий
+регистр <FONT COLOR="#3333FF">AL</FONT>. В связи с этим возникает задержка.
+<P><BR>Укажите номер команды, которую нужно поставить на свободное место в <B>оптимизированном коде</B>
+чтобы предотвратить задержку.
+<BR>Нажмите на кнопку <B>С начала</B>, чтобы попробовать другие варианты.
+Кнопка <B>Решение</B> позволит посмотреть правильный ответ, а кнопка Возврат
+вернет Вас в основное окно Курса.
+
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<a name="1">
+<BR><B><I><FONT COLOR="#000000">Неверно!</FONT></I></B> Выполнение <FONT COLOR="#0000BF">OR</FONT><FONT COLOR="#000000">
+с операндами </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">
+и </FONT><FONT COLOR="#0000BF">FFFFFF00h</FONT><FONT COLOR="#000000"> затирает
+содержимое </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">.&nbsp;</FONT>
+<BR><FONT COLOR="#000000">Совет: Используйте команду, обнуляющую младшие
+восемь разрядов </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">,
+не изменяя старшие 24 разряда.</FONT>
+
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="2">
+<BR><FONT COLOR="#000000"><B><I>Верно!</I></B> </FONT>Выполнение <FONT COLOR="#0000BF">AND</FONT><FONT COLOR="#000000">
+с операндами </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">
+и </FONT><FONT COLOR="#0000BF">FFFFFF00h</FONT><FONT COLOR="#000000"> обнуляет
+младшие восемь разрядов </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">,
+не изменяя старшие 24 разряда.</FONT>
+<BR>При выполнении поразрядного <FONT COLOR="#0000BF">OR</FONT> нулей с
+<FONT COLOR="#0000BF">imm8 </FONT>значение <FONT COLOR="#0000BF">imm8</FONT>
+заносится в <FONT COLOR="#0000BF">AL</FONT><FONT COLOR="#000000">. Старшие</FONT>
+<FONT COLOR="#000000">24 разряда сохраняют свои значения.</FONT>
+<BR><BR><a href="#0">К началу страницы</a>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="3">
+<BR><FONT COLOR="#000000"><B><I>Неверно!</I></B> </FONT>Выполнение <FONT COLOR="#0000BF">OR</FONT><FONT COLOR="#000000">
+с операндами </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">
+и </FONT><FONT COLOR="#0000BF">FFFFFF00h</FONT><FONT COLOR="#000000"> изменяет
+все содержимое </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">.</FONT>
+<BR><FONT COLOR="#000000">Совет: Используйте команду, обнуляющую младшие
+восемь разрядов </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">,
+не изменяя старшие 24 разряда.</FONT>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="4">
+<BR><FONT COLOR="#000000"><B><I>Неверно!</I></B> При выполнении кода возникнет
+задержка, так как выбранная команда производит запись в узкий регистр </FONT><FONT COLOR="#0000BF">AL</FONT><FONT COLOR="#000000">.
+Следующие команды считывают содержимое всего регистра </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">.&nbsp;</FONT>
+
+<P><FONT COLOR="#000000">Совет: Используйте команду, обнуляющую младшие
+восемь разрядов </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">,
+не изменяя старшие 24 разряда.</FONT>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="5">
+<P>Выполнение <FONT COLOR="#0000BF">AND</FONT><FONT COLOR="#000000"> с
+операндами </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">
+и </FONT><FONT COLOR="#0000BF">FFFFFF00h</FONT><FONT COLOR="#000000"> обнуляет
+младшие восемь разрядов </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000">,
+не изменяя старшие 24 разряда.</FONT>
+<BR>При выполнении поразрядного <FONT COLOR="#0000BF">OR</FONT> нулей с
+<FONT COLOR="#0000BF">imm8 </FONT>значение <FONT COLOR="#0000BF">imm8</FONT>
+заносится в <FONT COLOR="#0000BF">AL</FONT><FONT COLOR="#000000">. Старшие</FONT>
+<FONT COLOR="#000000">24 разряда сохраняют свои значения.</FONT>
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BODY>
+</HTML>

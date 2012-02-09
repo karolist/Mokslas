@@ -1,0 +1,330 @@
+<HTML>
+<HEAD>
+<TITLE>Новые SIMD-команды</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+var arrivedfrom=0;
+var lasttopic=0;
+var rootURL, trueRootURL, tmOut, c;
+var hindex = 0;
+
+notMSIE3=(navigator.appName=="Netscape"||parseInt(navigator.appVersion)>3)?true:false;
+
+userhistory = new Array();
+visited = new Array();
+kbound  = new Array();
+lessons = new Array();
+topics  = new Array();
+tfiles  = new Array();
+
+visited[0] = true;
+for (j=0;j<lasttopic;j++) {
+ visited[j] = false;
+}
+
+function curriculum () {
+ Lsn("Введение");
+  Tpc("О новых SIMD-командах",1);
+  Tpc("Цели обучени\я",2);
+  Tpc("Как работать с учебным курсом",3);
+  Tpc("",4);
+  Tpc("Обзор содержани\я курса",5);
+  Tpc("Это следует знать",6);
+ Lsn("Команды SIMD c плавающей зап\ятой");
+  Tpc("Краткий обзор",7);
+  Tpc("",8);
+  Tpc("Регистры и типы данных",9);
+  Tpc("",10);
+  Tpc("Параллельные и скал\ярные операции",11);
+  Tpc("Арифметические команды",12);
+  Tpc("Команды вычислени\я квадратных корней",13);
+  Tpc("Быстрые приближенные вычислени\я",14);
+  Tpc("Нахождение максимума и минимума",15);
+  Tpc("Перестановка элементов",16);
+  Tpc("",17);
+  Tpc("",18);
+  Tpc("Распаковка элементов",19);
+  Tpc("Копирование данных",20);
+  Tpc("",21);
+  Tpc("Создание знаковой маски",22);
+  Tpc("Арифметическое сравнение и создание маски",23);
+  Tpc("Логические команды",24);
+  Tpc("Скал\ярное сравнение с установкой флагов EFLAGS",25);
+  Tpc("Преобразование типов данных",26);
+  Tpc("",27);
+ Lsn("Целочисленные команды SIMD");
+  Tpc("Краткий обзор",28);
+  Tpc("Обща\я характеристика целочисленных SIMD-команд",29);
+  Tpc("Извлечение слова",30);
+  Tpc("Вставка слова",31);
+  Tpc("Нахождение максимума и минимума",32);
+  Tpc("Создание знаковой маски байтов",33);
+  Tpc("Умножение слов без знака",34);
+  Tpc("Перестановка целочисленных элементов",35);
+ Lsn("Команды управлени\я кэшированием");
+  Tpc("Краткий обзор",36);
+  Tpc("Некэширующие команды записи в пам\ять",37);
+  Tpc("Запись маскированных байтов в пам\ять",38);
+  Tpc("Упреждающее кэширование",39);
+  Tpc("Принудительна\я запись",40);
+ Lsn("Сохранение и восстановление состо\яни\я");
+  Tpc("Краткий обзор",41);
+  Tpc("Регистр состо\яни\я и управлени\я",42);
+  Tpc("Сохранение и загрузка регистра MXCSR",43);
+  Tpc("Команды сохранени\я и восстановлени\я состо\яни\я",44);
+ Lsn("Примеры использовани\я новых команд");
+  Tpc("Краткий обзор",45);
+  Tpc("Проверка наличи\я процессорной поддержки",46);
+  Tpc("Организаци\я данных дл\я технологии SIMD",47);
+  Tpc("",48);
+  Tpc("",49);
+  Tpc("Условна\я выборка",50);
+  Tpc("Скал\ярное произведение векторов",51);
+  Tpc("Умножение матрицы на вектор",52);
+  Tpc("Приближенное нахождение обратных значений",53);
+  Tpc("Устранение ветвлений",54);
+  Tpc("Ослабление освещенности",55);
+  Tpc("Преобразование из FP в целое",56);
+  Tpc("Альфа-порог",57);
+  Tpc("Умножение данных без знака",58);
+  Tpc("Упреждающее кэширование",59);
+}
+
+lsnName="";
+lsnNum=0;
+function Lsn(parName) {
+ lessons[lsnNum]=parName;
+ lsnName=parName;
+ lsnNum++;
+}
+
+tpcName="";
+lasttopic=0;
+kbound[0]=1;
+tfiles[0]=0;
+
+function Tpc(parName,parFile) {
+ lasttopic++;
+ topics[lasttopic]=parName;
+ tfiles[lasttopic]=parFile;
+ kbound[lsnNum]=lasttopic+1;
+}
+
+function writeMap(parLes) {
+ top.right.location="0r.htm#"+parLes;
+}
+
+function isFirstOrLast () {
+ ind =(""+top.topic.location).lastIndexOf("/"); 
+ ind2=(""+top.topic.location).lastIndexOf("\\");
+ if (ind<ind2) ind=ind2;
+ if ((""+top.topic.location).toLowerCase().indexOf(tfiles[0]+"t.htm")==ind+1) 
+  return 1;
+ if ((""+top.topic.location).toLowerCase().indexOf(tfiles[lasttopic]+"t.htm")==ind+1) 
+  return 2;
+ return 0;
+}
+
+function curtopic () {
+ if (top.topic) {
+  if (top.topic.location) {
+   ind =(""+top.topic.location).lastIndexOf("/");
+   ind2=(""+top.topic.location).lastIndexOf("\\");
+   if (ind<ind2) ind=ind2;
+   for (m=0;m<=lasttopic;m++) {
+    if ((""+top.topic.location).toLowerCase().indexOf(tfiles[m]+"t.htm")==ind+1) return m;
+   }
+  }
+ }
+ return -1;
+}
+
+function next() {
+ thistopic=curtopic();
+ if (thistopic!=lasttopic) showtopic(thistopic+1);
+}
+
+function prev() {
+ thistopic=curtopic();
+ if (thistopic>1) showtopic(thistopic-1);
+ if (thistopic==1) showmap();
+}
+
+function help() {
+ if (curtopic()!=3) showtopic(3);
+ else if ((""+top.right.location).indexOf("3r.htm")==-1) top.right.location="3r.htm";
+}
+
+function showtopic(k) {
+ arrivedfrom=curtopic();
+ visited[k]=true;
+ if (hindex<lasttopic) {
+  userhistory[hindex] = arrivedfrom;
+  hindex++;
+ }
+ else {
+  for (j=1;j<lasttopic-1;j++) {
+   userhistory[j]=userhistory[j+1];
+  }
+  userhistory[lasttopic-1]=arrivedfrom;
+ }
+
+ if (0<=k && k<=lasttopic){
+  window.topic.location=tfiles[k]+"t.htm";
+  window.left.location =tfiles[k]+"l.htm";
+  window.right.location=tfiles[k]+"r.htm";
+  if (k<lasttopic && notMSIE3){
+   window.nxtopic.location=tfiles[k+1]+"t.htm";
+   window.nxleft.location =tfiles[k+1]+"l.htm";
+   window.nxright.location=tfiles[k+1]+"r.htm";
+  }
+ }
+}
+
+function showmap() {
+ arrivedfrom=curtopic();
+ if (arrivedfrom==0) return;
+ if (hindex<lasttopic) {
+  userhistory[hindex] = arrivedfrom;
+  hindex++;
+ }
+ else {
+  for (j=1;j<lasttopic-1;j++) userhistory[j]=userhistory[j+1];
+  userhistory[lasttopic-1]=arrivedfrom;
+ }
+
+ window.topic.location="0t.htm";
+ window.left.location ="0l.htm";
+ for (j=1;j<kbound.length;j++) {
+  if (kbound[j-1]<=arrivedfrom && arrivedfrom<kbound[j]) writeMap(j);
+ }
+}
+
+function showlr() {
+ arrivedfrom=curtopic();  if (arrivedfrom==-1) return;
+
+ leftNotThere= (top.left.location) && (""+top.left.location).toLowerCase().indexOf(tfiles[arrivedfrom]+"l.htm")==-1;
+ rightNotThere=(top.right.location)&& (""+top.right.location).toLowerCase().indexOf(tfiles[arrivedfrom]+"r.htm")==-1;
+
+ if (leftNotThere||rightNotThere) {
+  if (leftNotThere)  window.left.location =tfiles[arrivedfrom]+"l.htm";
+  if (rightNotThere) window.right.location=tfiles[arrivedfrom]+"r.htm";
+  return;
+ }
+
+ if (userhistory.length<2) {
+  if (arrivedfrom==0) return;
+  else showmap();
+  return;
+ }
+
+ if (hindex==0) {showtopic(userhistory[1]); return;}
+
+ if (userhistory[hindex-1]>0){
+  window.left.location =tfiles[userhistory[hindex-1]] + "l.htm";
+  window.topic.location=tfiles[userhistory[hindex-1]] + "t.htm";
+  window.right.location=tfiles[userhistory[hindex-1]] + "r.htm";
+ }
+ else {
+  window.topic.location="0t.htm";
+  window.left.location ="0l.htm";
+  for (j=1;j<kbound.length;j++) {
+   if (kbound[j-1]<=arrivedfrom && arrivedfrom<kbound[j]) writeMap(j);
+  }
+ }
+ hindex--;
+}
+
+function gloss() {
+ top.right.location="glossary.htm";
+}
+
+function exit() {
+ if (confirm("Закончить работу?")) self.close();
+}
+
+function cutAnchor(inStr) {
+ outStr=""+inStr;
+ ind=outStr.indexOf("#",0);
+ if (ind>-1) outStr=outStr.substring(0,ind);
+ return outStr;
+}
+
+function regularize(theURL) {
+ n=theURL.length;
+ for (j=0;j<n;j++) {
+  if (theURL.charAt(j)=="\\") theURL=theURL.substring(0,j)+"/"+theURL.substring(j+1,n);
+ }
+ return theURL;
+}
+
+function findRootURL() {
+ trueRootURL=regularize(""+top.document.location);
+ trueRootURL=trueRootURL.substring(0,trueRootURL.lastIndexOf("/")+1);
+ rootURL=trueRootURL.toLowerCase();
+}
+
+findRootURL();
+curriculum();
+
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript1.2">
+<!--
+onresize=function(){
+ if(navigator.appName=="Netscape" && parseInt(navigator.appVersion)==4) {
+  thistopic=curtopic();
+  if(thistopic<1) {
+   setTimeout("writeMap(1)",100);
+  }
+  else {top.topic.location=thistopic+"t.htm"} 
+ }
+}
+
+//if (navigator.appVersion.indexOf("Win")!=-1) chset="<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=Windows-1251\">"; 
+
+
+onload=function(){self.focus()}
+//-->
+</SCRIPT>
+
+</HEAD>
+
+
+<FRAMESET cols="*,53" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0> 
+ <FRAMESET rows="66,*" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0>
+  <FRAME SRC="0t.htm" NAME="topic" marginwidth=10 marginheight=2 scrolling="no">
+  <FRAMESET cols="50%,50%" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0>
+   <FRAME SRC="0l.htm" NAME="left"  marginwidth=5 marginheight=3>
+   <FRAME SRC="0r.htm#start" NAME="right" marginwidth=5 marginheight=3>
+  </FRAMESET>
+ </FRAMESET>
+ <FRAMESET rows="100%,*" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0>
+  <FRAME SRC="buttons.htm" NAME="buttons" marginwidth=2 marginheight=2 scrolling="no">
+  <FRAMESET cols="8,8,8,8,8,*" FRAMEBORDER=NO FRAMESPACING=0 BORDER=0> 
+   <FRAME SRC="1t.htm" NAME="nxtopic">
+   <FRAME SRC="1l.htm" NAME="nxleft">
+   <FRAME SRC="1r.htm" NAME="nxright">
+   <FRAME SRC="version.htm" NAME="vrsn">
+   <FRAME SRC="disclaim.htm" NAME="dscl">
+   <FRAME SRC="glossary.htm" NAME="gloss">
+  </FRAMESET>
+ </FRAMESET>
+</FRAMESET>
+
+<NOFRAMES>
+<HTML>
+<HEAD>
+<TITLE>Pentium(R) III Processor Streaming SIMD Extensions Tutorial</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+Welcome to Pentium(R) III Processor Streaming SIMD Extensions Tutorial!
+To start learning, please use a frame-enabled browser.
+</BODY>
+</HTML>
+</NOFRAMES>
+
+
+
+

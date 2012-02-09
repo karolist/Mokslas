@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>Control Frame (topic 47)</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+function changeloc() {
+if (top.left.checked_radio=="optimized"){
+if (parent.curstep<3) {
+parent.imageframe.location="47_exo" + (parent.curstep+1) + ".htm"; 
+parent.topframe.location="47ex_mo"+(parent.curstep+1) + ".htm";
+}
+else {
+top.right.topframe.location="47ex_rm.htm"; 
+top.right.imageframe.location="47ex_rim.htm";
+document.control.main.value="Запустить";
+}
+}
+else {
+//original
+if (parent.curstep<3) {
+parent.imageframe.location="47_exno" + (parent.curstep+1) + ".htm"; 
+parent.topframe.location="47exmno"+(parent.curstep+1) + ".htm";
+}
+else {
+top.right.topframe.location="47ex_rm.htm"; 
+top.right.imageframe.location="47ex_rim.htm";
+document.control.main.value="Запустить";
+}
+}
+return true;
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="control">
+<input type="button" name="main" value="     Запустить     " onClick="changeloc()">
+<input type="button" name="return" value="Вернуться" onClick="top.return_from_exercise();">
+</form>
+</center>
+</BODY>
+</HTML>

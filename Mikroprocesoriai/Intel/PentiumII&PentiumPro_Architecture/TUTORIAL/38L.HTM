@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 38</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="msg0"></a>
+<P><font size="+1"><b>Е</b></font>сли в Вашем коде используется массив или структура из элементов одинакового размера, память под которые выделена динамически, и компилятор не выравнивает эти структуры данных, выравнивайте их в C-тексте следующим образом:
+
+<ol><li>Используйте <A HREF="javascript:parent.showglos('MALLOC')"><code>MALLOC</code></a>, чтобы выделить область памяти следующего объема:<br> V = размер всей структуры (массива) + размер одного элемента -1.</li>
+
+<li>Используйте поразрядную операцию <FONT COLOR="#0000cc"><code>AND</code></FONT> для выравнивания начала структуры   (массива).</li></ol><P><B>Пример:</B><BR>Приведенный здесь текст на C выравнивает структуру по границе, определяемой значением <FONT COLOR="#0000cc"><code>BOUND</code></FONT>.<P>При <FONT COLOR="#0000cc"><code>BOUND</code></FONT> = 8 и размере каждого элементав восемь байтов все элементы будут выровнены по границе, кратной восьми байтам.<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать"</B>, чтобы посмотреть, как средствами языка C выравнивать восьмибайтовые элементы по границе, кратной восьми байтам.
+<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+
+<a name="msg1"></a>
+<br>
+<P>Данная команда выделяет область памяти для всей структуры с запасом в <FONT COLOR="#0000cc"><code>BOUND-1</code></FONT> байтов для выравнивания.<BR>В данном примере элементы имеют размер 8 байтов  (<FONT COLOR="#0000cc"><code>BOUND</code></FONT> = 8), поэтому выделяются 7 дополнительных байтов.
+<p>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="msg2"></a>
+<br>
+<P>Данная команда выравнивает структуру по границе, кратной 8 байтам, путем сдвига этой структуры:
+<center>
+<table cellspacing=0 cellpadding=0>
+<tr>
+<td align=center>
+<FONT COLOR="#0000cc"><code>p
+</td>
+<td align=center>
+<FONT COLOR="#0000cc"><code>00801054
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td align=center>
+<FONT COLOR="#0000cc"><code>+ BOUND-1
+</td>
+<td  align=center>
+<FONT COLOR="#0000cc"><code><U>00000007</U>
+</td>
+<td>
+<FONT COLOR="#0000cc"><code>(7)
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td  align=center>
+<FONT COLOR="#0000cc"><code>0080105B
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td  align=center>
+<FONT COLOR="#0000cc"><code>&amp;
+</td>
+<td>
+<FONT COLOR="#0000cc"><code><U>FFFFFFF8</u>
+</td>
+<td>
+<FONT COLOR="#0000cc"><code><u>(~7)</U>
+</td>
+</tr>
+<tr>
+<td align=center>
+<FONT COLOR="#0000cc"><code>new_p
+</td>
+<td align=center>
+<FONT COLOR="#0000cc"><code>00801058
+</td>
+<td>
+<FONT COLOR="#0000cc"><code>((p+7)&amp;~7)
+</td>
+</tr>
+</table>
+</center>
+
+<P>Указатель <FONT COLOR="#0000cc"><code>new_p</code></FONT> содержит адрес, кратный 8 байтам, по которому теперь располагается структура.</FONT><P>Следует отметить, что дополнительные байты не используются.
+<p>
+<a href="#msg0" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</BODY>
+</HTML>
+

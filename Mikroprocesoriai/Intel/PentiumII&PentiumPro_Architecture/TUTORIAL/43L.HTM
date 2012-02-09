@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 43</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>В</b></font> данном примере размер каждой структуры увеличивается до 32 байтов  при помощи добавления поля типа int.<P>Как показано на рисунке, после такого заполнения     каждая из структур      отображается в две кэш-линии.<P><font size="+1"><b>Н</b></font>а рисунке представлено, как структуры      располагаются в кэш-памяти после заполнения, но до  выравнивания.<P><font size="+1"><b>С</b></font>ледующий шаг состоит в выравнивании структур по границе кэш-линии,   то есть по границе, кратной 32 байтам.<P><B>Замечание:</B>
+
+<BR>Заполнение приводит к увеличению размера структур. В результате остается   меньше свободной памяти       для данных и может возрасти число <A HREF="javascript:parent.showglos('cachemiss')">промахов   в кэш</a>.
+
+<p align=right><B>продолжение следует...</B>
+
+
+</BODY>
+</HTML>
+

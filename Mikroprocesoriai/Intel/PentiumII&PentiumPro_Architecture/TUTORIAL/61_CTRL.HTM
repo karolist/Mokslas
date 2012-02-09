@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 61. Control frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+var choice="1";
+function showanswer(p) {
+  if (p=="0")
+  {
+    top.window.left.location.hash = choice;
+  }
+  else choice=p;
+}
+//-->
+</SCRIPT>
+<FORM NAME="myForm">
+<TABLE WIDTH="100%" ALIGN=center BORDER=0>
+<TR>
+  <TD><INPUT NAME="ch" TYPE=radio VALUE="1" checked onClick='choice="1";showanswer("1")'>IMUL</TD>
+  <TD><INPUT NAME="ch" TYPE=radio VALUE="2" onClick='choice="2";showanswer("2")'>CDQ</TD>
+  <TD><INPUT NAME="ch" TYPE=radio VALUE="3" onClick='choice="3";showanswer("3")'>MOVcc</TD>
+  <TD><INPUT NAME="run" TYPE=button VALUE="Пояснить" onClick='showanswer("0")'></TD>
+</TR>
+</TABLE>
+</FORM>
+
+</BODY>
+</HTML>

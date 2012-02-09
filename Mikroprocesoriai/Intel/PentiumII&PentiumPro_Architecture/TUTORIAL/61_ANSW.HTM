@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 62. Answer frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+else
+ {
+  document.write("<p>");
+  if (parent.ctrlframe.run == "on") 
+  {
+    if( parent.ctrlframe.choice=="1" )  document.write (' оманда <FONT COLOR="#3333FF">IMUL</FONT> выполн€етс€ за один такт. <P>Ќа более старых процессорах с архитектурой Intel эффективнее было замен€ть команду <FONT COLOR="#3333FF">IMUL</FONT> на последовательность команд, показанную в <B>коде до оптимизации</B>. “еперь в цел€х уменьшени€ размера кода следует использовать <FONT COLOR="#3333FF">IMUL.</FONT> ');
+    if( parent.ctrlframe.choice=="2" )  document.write (' оманда <FONT COLOR="#3333FF">CDQ </FONT>преобразуетс€ в одну микрооперацию. «амен€€ комбинацию <FONT COLOR="#0000BF">MOV</FONT><FONT COLOR="#000000"> и </FONT><FONT COLOR="#0000BF">SAR</FONT><FONT COLOR="#000000"> на </FONT><FONT COLOR="#0000BF">CDQ</FONT><FONT COLOR="#000000">, можно уменьшить размер кода и повысить его быстродействие.</FONT> ');
+    if( parent.ctrlframe.choice=="3" )  document.write (' оманды <FONT COLOR="#0000BF">MOVSX</FONT><FONT COLOR="#000000"> и </FONT><FONT COLOR="#0000BF">MOVSX</FONT><FONT COLOR="#000000"> теперь выполн€ютс€ быстрее, чем н</FONT>а более старых процессорах с архитектурой Intel. <BR>использование <FONT COLOR="#0000BF">MOVSX</FONT><FONT COLOR="#000000"> предотвращает</FONT> задержку при использовании 8- и 16-разр€дных регистров, котора€ возникает при выполнении <B>кода до оптимизации</B>. ');
+  }
+ }
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

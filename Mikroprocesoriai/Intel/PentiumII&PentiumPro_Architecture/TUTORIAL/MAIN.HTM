@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+<TITLE>Optimizing for Pentium(R) II and Pentium Pro Processors</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+curtopic=0;
+var arrivedfrom=0;
+var lasttopic=72;
+var rootURL, trueRootURL, tmOut, c;
+var winref1=null;
+var goodref1=null;
+var winref=null;
+var goodref=null;
+var _info = navigator.userAgent; 
+
+var _ie = (_info.indexOf("MSIE") > 0 && _info.indexOf("Win") > 0); 
+bVer = parseInt(navigator.appVersion);
+if (bVer>3) _ie=false;
+
+var ya = "\я";
+
+userhistory = new Array(72);
+visited = new Array (72);
+for (j=0;j<72;j++) {
+ visited[j] = false;
+}
+
+var hindex = 0;
+
+function next() {
+ showtopic(curtopic+1)
+}
+
+function prev() {
+ showtopic(curtopic-1)
+}
+
+function help() {
+ showtopic(4);
+}
+
+function showtopic(k) {
+ exitAllowed=false;
+ arrivedfrom=curtopic;
+
+ visited[k-1]=true;
+
+ if (hindex<lasttopic) {
+  userhistory[hindex] = arrivedfrom;
+  hindex = hindex + 1;
+ }
+ else {
+  for (j=0;j<lasttopic-1;j++) {
+   userhistory[j]=userhistory[j+1];
+  }
+  userhistory[lasttopic-1]=arrivedfrom;
+ }
+
+ if (0<=k && k<=lasttopic){
+  curtopic=k;
+  window.topic.location=k + "t.htm";
+  window.left.location =k + "l.htm";
+  window.right.location=k + "r.htm";
+
+  if (k==0) window.buttons.location="buttons2.htm";
+  if (k>0 && k<lasttopic) window.buttons.location="buttons.htm";
+  if (k==lasttopic) window.buttons.location="buttons1.htm";
+ }
+}
+
+function showmap() {
+ exitAllowed=false;
+ arrivedfrom=curtopic;
+ if (hindex<lasttopic) {
+  userhistory[hindex] = arrivedfrom;
+  hindex = hindex + 1;
+ }
+ else {
+  for (j=0;j<lasttopic-1;j++) {
+   userhistory[j]=userhistory[j+1];
+  }
+  userhistory[lasttopic-1]=arrivedfrom;
+ }
+
+ window.buttons.location="buttons2.htm";
+ curtopic=0;
+ window.topic.location="0t.htm";
+ window.left.location ="0l.htm";
+
+ if (arrivedfrom<=5) {window.right.location="0r.htm#1"}
+ else if (arrivedfrom<=23) {window.right.location="0r.htm#2";}
+ else if (arrivedfrom<=31) {window.right.location="0r.htm#3";}
+ else if (arrivedfrom<=49) {window.right.location="0r.htm#4";}
+ else if (arrivedfrom<=54) {window.right.location="0r.htm#5";}
+ else if (arrivedfrom<=64) {window.right.location="0r.htm#6";}
+ else {window.right.location="0r.htm#7";}
+}
+
+function showlr() {
+ if (hindex!=0) {
+  if (userhistory[hindex-1]>0 && (hindex!=0)){
+   window.left.location=userhistory[hindex-1] + "l.htm";
+   window.topic.location=userhistory[hindex-1] + "t.htm";
+   window.right.location=userhistory[hindex-1] + "r.htm";
+   window.buttons.location="buttons.htm";
+  }
+  else showmap();
+ }
+ else showmap();
+ if (hindex>0) hindex--;
+}
+
+function exit() {
+ if (confirm("Закончить работу?")) self.close();
+}
+
+function cutAnchor(inStr) {
+ inStr=""+inStr;
+ outStr=""+inStr;
+ ind=inStr.indexOf("#",0);
+ if (ind>-1) outStr=inStr.substring(0,ind);
+ return outStr;
+}
+
+function regularize(theURL) {
+ theURL=cutAnchor(theURL);
+ n=theURL.length;
+ for (j=0;j<n;j++) {
+  if (theURL.charAt(j)=="\\") theURL=theURL.substring(0,j)+"/"+theURL.substring(j+1,n);
+ }
+ return theURL;
+}
+
+function findRootURL() {
+ trueRootURL=regularize(""+top.document.location);
+ trueRootURL=trueRootURL.substring(0,trueRootURL.lastIndexOf("/")+1);
+ rootURL=trueRootURL.toLowerCase();
+}
+
+
+function showglos(term) {
+ glURL = "glossary.htm#" + term;
+
+ if (!_ie) {
+  winref=open('','glossary','width=310,height=390,resizable=no,menubar=no,toolbar=no,scrollbars=yes');
+  winref.location=glURL;
+  winref.focus();
+ }
+ else {
+  window.glossary.location.hash=term;
+ }
+}
+
+function popup(htmltext,w,h) {
+ htmltext1=htmltext;
+
+ params='width=' + w + ',height=' + h + ',resizable=no,menubar=no,toolbar=no,scrollbars=no';
+
+ goodref1=winref1;
+ winref1=open('','popup',params);
+ winref1.document.write(htmltext);
+ winref1.document.close();
+
+ if (winref1==goodref1) {
+  winref1.self.close();    
+  setTimeout("winref1=open('','popup',params);winref1.document.write(htmltext1);winref1.document.close();",100);
+ }
+}
+
+function exercise(num) {
+ window.left.location =num + "ex_l.htm";
+ window.right.location=num + "ex_r.htm";
+}
+
+function return_from_exercise() {
+ window.left.location =curtopic + "l.htm";
+ window.right.location=curtopic + "r.htm";
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+
+
+<script language="JavaScript">
+<!--
+if (!_ie) {
+document.write ("<FRAMESET cols=\"*,53\" FRAMEBORDER=NO BORDER=0>");
+document.write ("<FRAMESET rows=\"66,*\" FRAMEBORDER=NO BORDER=0>");
+document.write ("<FRAME SRC=\"0t.htm\" NAME=\"topic\" marginwidth=2 marginheight=2 scrolling=\"no\">");
+document.write ("<FRAMESET cols=\"50%,50%\" FRAMEBORDER=NO BORDER=0>");
+document.write ("<FRAME SRC=\"0l.htm\" NAME=\"left\"  marginwidth=5 marginheight=3>");
+document.write ("<FRAME SRC=\"0r.htm\" NAME=\"right\" marginwidth=5 marginheight=3>");
+document.write ("</FRAMESET>");
+document.write ("</FRAMESET>");
+document.write ("<FRAME SRC=\"buttons2.htm\" NAME=\"buttons\" marginwidth=2 marginheight=2 scrolling=\"no\">");
+document.write ("</FRAMESET>");
+}
+else {
+//MSIE
+document.write ("<FRAMESET cols=\"*,53\" BORDER=3 noresize>");
+document.write ("<FRAMESET rows=\"*,110\" BORDER=3>");
+document.write ("<FRAMESET rows=\"66,*\" FRAMEBORDER=NO BORDER=0 noresize>");
+document.write ("<FRAME SRC=\"0t.htm\" NAME=\"topic\" marginwidth=2 marginheight=2 scrolling=\"no\">");
+document.write ("<FRAMESET cols=\"50%,50%\" FRAMEBORDER=NO BORDER=0 framespacing=0>");
+document.write ("<FRAME SRC=\"0l.htm\" NAME=\"left\"  marginwidth=5 marginheight=3>");
+document.write ("<FRAME SRC=\"0r.htm\" NAME=\"right\" marginwidth=5 marginheight=3>");
+document.write ("</FRAMESET>");
+document.write ("</FRAMESET>");
+document.write ("<FRAME SRC=\"glossary.htm#IA\" NAME=\"glossary\"  marginwidth=20 marginheight=2>");
+document.write ("</FRAMESET>");
+document.write ("<FRAME SRC=\"buttons2.htm\" NAME=\"buttons\" marginwidth=2 marginheight=2 scrolling=\"no\">");
+document.write ("</FRAMESET>");
+}
+//-->
+</SCRIPT>
+
+<NOFRAMES>
+<HTML>
+<HEAD>
+<TITLE>Optimizing for Pentium(R) II and Pentium Pro Processors</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+Welcome to Optimizing for Pentium(R) II and Pentium Pro Processors tutorial!
+To start learning, please use a frame-enabled browser.
+</BODY>
+</HTML>
+</NOFRAMES>
+
+
+
+

@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 37. Control frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+var choice="";
+function showanswer(param) {
+choice=param;
+parent.answerframe.location = "37_answ.htm";
+}
+//-->
+</SCRIPT>
+<CENTER>
+<font color="#OOOOCC"><b>Исходный текст на C</b></font>
+<TABLE ALIGN=center BORDER=2>
+  <TR><TD><pre> double main(){ <BR>    double a; <BR>    ... <BR>    return a*a; <BR> } </pre></TD></TR>
+</TABLE>
+<font color="#OOOOCC"><b>Оптимизированный ассемблерный код</b></font>
+<TABLE  ALIGN=center BORDER=2>
+<TR>
+<TABLE  ALIGN=center BORDER=0>
+<pre>
+  <TR><TD></TD><TD BGCOLOR="White">main:</TD></TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("1")'></TD>
+    <TD BGCOLOR="White">  push ebp</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("2")'></TD>
+    <TD BGCOLOR="White">  mov esp, ebp</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("3")'></TD>
+    <TD BGCOLOR="White">  and ebp, -8</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("4")'></TD>
+    <TD BGCOLOR="White">  sub esp, 12</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("5")'></TD>
+    <TD BGCOLOR="White">  ...</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("6")'></TD>
+    <TD BGCOLOR="White">  mov DWORD PTR[-4+ebp], eax<BR>&nbsp;mov DWORD PTR[-8+ebp], edx</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("7")'></TD>
+    <TD BGCOLOR="White">  fld QWORD PTR[-8+ebp]</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("8")'></TD>
+    <TD BGCOLOR="White">  fmul st(0), st</TD>
+  </TR>
+  <TR>
+    <TD><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("9")'></TD>
+    <TD BGCOLOR="White">  add esp, 12</TD>
+  </TR>
+  <TR>
+    <TD VALIGN="top" ><INPUT NAME="ch" TYPE=radio VALUE="1" onClick='showanswer("10")'></TD>
+    <TD BGCOLOR="White">  pop ebp<BR>  ret</TD>
+  </TR>
+
+</pre>
+</TABLE>
+</TR>
+</TABLE>
+
+<FORM>
+  
+</FORM>
+</CENTER>
+</BODY>
+</HTML>

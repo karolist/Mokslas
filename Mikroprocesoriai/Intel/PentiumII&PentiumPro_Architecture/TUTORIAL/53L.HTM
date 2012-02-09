@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 53</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="0">
+<P><font size="+1"><b>С</b></font>ледующие 
+<A HREF="javascript:parent.showglos('prefixes')"><FONT COLOR="#CC33CC">префиксы</FONT></A> используются
+в сегменте кода для переключения между 16- и 32-разрядным режимом работы
+процессора:
+<BR>&nbsp;
+<LI>
+<A HREF="javascript:parent.showglos('opsizeovpr')"><FONT COLOR="#CC33CC">Префикс указания разрядности операнда</FONT></A>
+(66h)</LI><LI>
+<A HREF="javascript:parent.showglos('addrsizeov')"><FONT COLOR="#CC33CC">Префикс указания разрядности адреса</FONT></A>(67h)</LI>
+<P><font size="+1"><b>И</b></font>спользование префиксов приводит к задержкам при декодировании в следующих
+случаях:
+<BR>&nbsp;
+<LI>Префикс указания разрядности операнда используется с непосредственным операндом.</LI>
+<LI>Префикс указания разрядности адреса используется с адресом, содержащимсмещение.</LI>
+
+<P>Следует по возможности избегать использования кода, содержащего префиксы.
+<P><B>Примеры:</B>
+<BR>В приведенных здесь фрагментах <B>оптимизированного кода </B>минимизировано
+число дополнительных тактов декодирования для команд, содержащих префиксы
+указания разрядности операнда и адреса.
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>Пояснить</B>, чтобы ознакомиться с комментариями.
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<A NAME="1">
+В <B>коде до оптимизации</B> команда <FONT COLOR="#3333FF">MOV</FONT> записывает в память 
+16-разрядный непосредственный операнд. При компиляции в 32-разрядном режиме будет сгенерирован 
+префикс указания разрядности операнда 66h, на декодирование которого тратятся дополнительные такты.
+<BR><BR><A HREF="#0">К началу страницы</A>
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<A NAME="2">
+В <B>коде до оптимизации</B> в команде <FONT COLOR="#3333FF">MOV</FONT> указан адрес, содержащий 
+смещение. При компиляции будет сгенерирован префикс указания разрядности адреса 67h. <BR>
+Вынеся сложение базового адреса со смещением в отдельную команду, можно предотвратить генерацию 
+префикса указания разрядности адреса и сэкономить такты на этапе декодирования.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+</BODY>
+</HTML>
+

@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 45</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<p><font size="+1"><b>Ч</b></font>исло <A HREF="javascript:parent.showglos('cachemiss')">промахов в кэш</A>&nbsp; можно
+уменьшить за счет организации кода внутри циклов таким образом, чтобы над
+данными выполнялось как можно больше операций, пока эти данные находятся
+в кэш-памяти. Оптимальный способ организации зависит от того, как используются
+данные.
+<P>Вот некоторые варианты:
+<p>
+<LI>
+<A HREF="javascript:parent.showglos('loopfus')"><FONT COLOR="#CC33CC">объединение циклов</FONT></A> - объединяйте циклы,
+работающие с элементами одного массива.</LI>
+<LI>
+<A HREF="javascript:parent.showglos('loopfis')"><FONT COLOR="#CC33CC">расщепление циклов</FONT></A> - обрабатывайте
+большие блоки данных по частям, в нескольких циклах.</LI>
+<LI>
+<A HREF="javascript:parent.showglos('loopinterch')"><FONT COLOR="#CC33CC">перестановка в цикле</FONT></A> - обращайтесь
+к данным в цикле с учетом того, как компилятор размещает их в памяти</LI>
+<LI>
+<A HREF="javascript:parent.showglos('loopblock')"><FONT COLOR="#CC33CC">блочная организация циклов</FONT></A> - организуйте
+циклы таким образом, чтобы большие массивы данных обрабатывались малыми
+порциями.</LI>
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать"</B>, чтобы на примере модельной кэш-памяти
+посмотреть, как работает объединение циклов.
+<P><font size="+1"><b>Б</b></font>лочная организация и перестановка в цикле рассматриваются в следующих
+темах.
+
+</BODY>
+</HTML>
+

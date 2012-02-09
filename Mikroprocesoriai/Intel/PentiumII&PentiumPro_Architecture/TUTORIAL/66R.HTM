@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 66</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<TABLE  BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Код до оптимизации</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>
+ double src[100];
+ double dst[100];
+ ArDiv()
+ {
+   int i;
+   for (i=0;i&lt;100;i++)
+        dst[i]/=src[i];
+ }</PRE>
+    </TD>
+  </TR>
+</TABLE>
+<P><P>
+<TABLE  BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Оптимизированный код</b></CAPTION>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White" ALIGN=left VALIGN=middle>
+    <PRE>
+ <font color="#0000FF"><b>float</b></font> src[100];
+ <font color="#0000FF"><b>float</b></font> dst[100];
+ ArDiv()
+ {
+   int i;
+   for (i=0;i&lt;100;i++)
+        dst[i]/=src[i];
+ }</PRE>
+    </TD>
+  </TR>
+</TABLE>
+</center>
+
+</BODY>
+</HTML>
+

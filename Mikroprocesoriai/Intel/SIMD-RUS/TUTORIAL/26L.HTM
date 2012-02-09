@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>К</B></big>оманды этой группы выполняют преобразования данных из 32-разрядного целочисленного 
+<A target="right" HREF="glossary.htm#signed">представления со знаком</A>
+ в FP-представление  и обратно. 
+Операции производятся как над упакованными, так и над скалярными данными. 
+В приведенной ниже таблице команды систематизированы по виду преобразования и типу данных.
+<p>
+
+
+
+
+<TABLE border=1 cellspacing=0 cellpadding=2> 
+<TR bgcolor="#FFCCCC">
+<TH>Тип преобра-<br>зования</TH>
+<TH>Упако-<br>ванные</TH>
+<TH>Скалярные</TH>
+</TR>
+
+<TR>
+<TD>FP в целое с <A target="right" HREF="glossary.htm#rounding">округлением</A></TD>
+<TD align="center"><A target="right" HREF="glossary.htm#cvtps2pi">cvtps2pi</A></TD>
+<TD align="center"><A target="right" HREF="glossary.htm#cvtss2si">cvtss2si</A></TD>
+</TR>
+
+
+<TR>
+<TD>FP в целое с отбрасыванием дробной части</TD>
+<TD align="center"><A target="right" HREF="glossary.htm#cvttps2pi">cvttps2pi</A></TD>
+<TD align="center"><A target="right" HREF="glossary.htm#cvttss2si">cvttss2si</A></TD>
+</TR>
+
+
+<TR>
+<TD>Целое в FP с округлением</TD>
+<TD align="center"><A target="right" HREF="glossary.htm#cvtpi2ps">cvtpi2ps</A></TD>
+<TD align="center"><A target="right" HREF="glossary.htm#cvtsi2ss">cvtsi2ss</A></TD>
+</TR>
+
+
+
+</TABLE>
+
+
+
+
+<p>
+<big><B>К</B></big>оманды преобразования типов, использующие
+<A target="right" HREF="glossary.htm#truncate">отбрасывание дробной части</A>, 
+не нуждаются в доступе к 
+<A target="right" HREF="glossary.htm#mxcsr">регистру MXCSR</A> 
+для установки режима округления. 
+Более подробно с режимами округления можно познакомиться в уроке 
+<a href="javascript:top.showtopic(41)">"Сохранение и восстановление состояния"</a>.
+
+
+
+
+</BODY>
+</HTML>

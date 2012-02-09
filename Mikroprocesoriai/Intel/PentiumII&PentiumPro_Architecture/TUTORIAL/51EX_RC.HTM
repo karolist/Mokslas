@@ -1,0 +1,239 @@
+<HTML>
+<HEAD>
+<TITLE>See it work, Control Frame (topic 51)</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+var timer1 =0;
+var timer2 =0;
+var timer3=0;
+var timer4=0;
+var working1=false;
+var working2=false;
+
+function stop() {
+if (timer1) clearTimeout(timer1);
+timer1=0;
+//alert("passed");
+
+if (timer2) clearTimeout(timer2);
+timer2=0;
+if (timer3) clearTimeout(timer3);
+timer3=0;
+if (timer4) clearTimeout(timer4);
+timer4=0;
+working1=false;
+working2=false;
+}
+
+function o_2() {
+if (working1) {
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.document.main.d1.value;
+parent.topframe.i=10;
+parent.topframe.document.main.d2.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d2_1.value="uop";
+setTimeout("document.control.main.value=\"Продолжить\";",1000);
+}
+}
+
+function o_1() {
+if (working1) {
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.document.main.d0.value;
+parent.topframe.i=9;
+parent.topframe.document.main.d1.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d1_1.value="uop";
+timer2=setTimeout("o_2()",2000);
+}
+}
+
+function o_4() {
+if (working2) {
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.document.main.d1.value;
+parent.topframe.i=13;
+parent.topframe.document.main.d2.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d2_1.value="uop";
+setTimeout("document.control.main.value=\"С начала\";",1000);
+}
+}
+
+function o_3() {
+if (working2) {
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.document.main.d0.value;
+parent.topframe.i=12;
+parent.topframe.document.main.d1.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d1_1.value="uop";
+timer4=setTimeout("o_4()",2000);
+}
+}
+
+function no_1() {
+if (working1) {
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.document.main.d0.value;
+parent.topframe.i=2;
+parent.topframe.document.main.d1.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d1_1.value="uop";
+setTimeout("document.control.main.value=\"Продолжить\";",1000);
+}
+}
+
+function no_2() {
+if (working2) {
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.document.main.d0.value;
+parent.topframe.i=4;
+parent.topframe.document.main.d1.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d1_1.value="uop";
+timer3=setTimeout("no_3()",2000);
+}
+}
+
+function no_3() {
+if (working2) {
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.document.main.d1.value;
+parent.topframe.i=5;
+parent.topframe.document.main.d2.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d2_1.value="uop";
+setTimeout("document.control.main.value=\"Продолжить\";",1000);
+}
+}
+
+function changeloc() {
+if (parent.topframe.checked_radio=="reordered"){
+//reordered
+if (parent.curstep<3) parent.curstep++
+else parent.curstep=0;
+
+if (parent.curstep==1) {
+parent.topframe.i=8;
+parent.topframe.document.main.d0.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d0_1.value="uop";
+parent.topframe.document.main.cycle.value=parent.curstep;
+parent.topframe.working=true;
+parent.topframe.blink();
+working1=true;
+top.left.msgframe.location="51exlo1.htm";
+timer1=setTimeout("o_1()",2000);
+}
+else {
+if (parent.curstep==2) {
+
+temp=parent.topframe.i;
+parent.topframe.document.main.elements[temp].value = parent.topframe.curval;
+//alert("passed");
+stop();
+parent.topframe.working=false;
+//parent.topframe.stop();
+
+parent.topframe.document.main.d0.value="";
+parent.topframe.document.main.d1.value="";
+parent.topframe.document.main.d2.value="";
+parent.topframe.document.main.d0_1.value="";
+parent.topframe.document.main.d1_1.value="";
+parent.topframe.document.main.d2_1.value="";
+
+parent.topframe.i=11;
+temp=parent.topframe.i;
+parent.topframe.document.main.d0.value = parent.topframe.document.main.elements[temp].value;
+parent.topframe.working=true;
+parent.topframe.document.main.d0_1.value="uop";
+parent.topframe.document.main.cycle.value=parent.curstep;
+
+working2=true;
+top.left.msgframe.location="51exlo2.htm";
+timer3=setTimeout("o_3()",3000);
+}
+else {
+//сначала
+stop();
+parent.topframe.change_checked(parent.topframe.checked_radio);
+}
+}
+}
+else {
+//original
+if (parent.curstep<4) parent.curstep++
+else parent.curstep=0;
+
+if (parent.curstep==1) {
+parent.topframe.i=1;
+parent.topframe.document.main.d0.value=parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.document.main.d0_1.value="uop";
+parent.topframe.document.main.cycle.value=parent.curstep;
+parent.topframe.working=true;
+parent.topframe.blink();
+working1=true;
+top.left.msgframe.location="51exlno1.htm";
+timer1=setTimeout("no_1()",2000);
+}
+else {
+if (parent.curstep==2) {
+
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.curval;
+stop();
+parent.topframe.working=false;
+
+parent.topframe.document.main.d0.value="";
+parent.topframe.document.main.d1.value="";
+parent.topframe.document.main.d2.value="";
+//parent.topframe.document.main.d0_1.value="";
+parent.topframe.document.main.d1_1.value="";
+parent.topframe.document.main.d2_1.value="";
+
+parent.topframe.i=3;
+parent.topframe.document.main.d0.value = parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.working=true;
+parent.topframe.document.main.d0_2.value="uop";
+parent.topframe.document.main.cycle.value=parent.curstep;
+
+working2=true;
+top.left.msgframe.location="51exlno2.htm";
+timer2=setTimeout("no_2()",3000);
+}
+else {
+if (parent.curstep==3) {
+
+parent.topframe.document.main.elements[parent.topframe.i].value = parent.topframe.curval;
+stop();
+parent.topframe.working=false;
+
+parent.topframe.document.main.d0.value="";
+parent.topframe.document.main.d1.value="";
+parent.topframe.document.main.d2.value="";
+parent.topframe.document.main.d1_1.value="";
+parent.topframe.document.main.d2_1.value="";
+
+parent.topframe.i=6;
+parent.topframe.document.main.d0.value = parent.topframe.document.main.elements[parent.topframe.i].value;
+parent.topframe.working=true;
+parent.topframe.document.main.cycle.value=parent.curstep;
+
+top.left.msgframe.location="51exlno3.htm";
+setTimeout("document.control.main.value=\"С начала\";",1000);
+}
+else {
+//сначала
+stop();
+parent.topframe.change_checked(parent.topframe.checked_radio);
+}
+}
+}
+}
+return true;
+}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="control">
+<input type="button" name="main" value="     По шагам     " onClick="changeloc()">
+<input type="button" name="return" value="Вернуться" onClick="top.return_from_exercise();">
+</form>
+</center>
+</BODY>
+</HTML>

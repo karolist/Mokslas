@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 20</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="top">
+
+<P><font size="+1"><b>В</b></font> процессе <A HREF="javascript:parent.showglos('inordretir')">завершения по порядку</a> предварительные результаты внеочередного выполнения команд становятся окончательными.
+
+<P><font size="+1"><b>К</b></font>огда очередная микрооперация (в порядке исходной последовательной программы) готова к завершению, выполняются следующие действия:
+<LI>Результаты сохраняются в регистры архитектуры Intel (IA), указанные в командах машинного кода.</LI>
+<LI>Если нужно, данные записываются в кэш или в память. Так они становятся доступными для операций чтения.</LI>
+<LI>Команда удаляется из <A HREF="javascript:parent.showglos('ROB')">буфера перестановок</a>.</LI>
+<br>
+<font size="+1"><b>Т</b></font>акой порядок завершения позволяет сохранить семантику кода.
+
+<p><B>Замечания.</B>
+За один такт могут завершаться до четырех <A HREF="javascript:parent.showglos('microops')">микроопераций</a>.
+Все команды, вошедшие в конвейер в результате <A HREF="javascript:parent.showglos('branchmispred')">неверного предсказания ветвления</a>, отбрасываются и не проходят через этап завершения.
+
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать"</B>, чтобы посмотреть, как происходит процесс завершения.
+<br>&nbsp;
+
+<br>
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a name="msg1">
+<br>
+Микрооперации 9, 10 и 11 готовы к завершению. Результаты их выполнения будут записаны в регистры архитектуры Intel и удалены из буфера
+перестановок. 
+<br>За один такт могут завершаться до четырех микроопераций. Микрооперация 12 завершится на следующем такте.
+<br>
+<a href="#top" target="_self">К началу страницы</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="msg2">
+<br>
+Микрооперация 12 готова к завершению, а микрооперация 13 - нет. На данном такте завершается только микрооперация 12.<br> 
+Результаты ее выполнения будут записаны во внешние регистры архитектуры Intel и удалены из буфера перестановок.
+<br>
+<a href="#top" target="_self">К началу страницы</a>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="msg3">
+<br>
+Микрооперации 13 и 14 готовы к завершению, а микрооперация 15 - нет. На данном такте завершаются микрооперации 13 и 14.
+<br>
+<a href="#top" target="_self">К началу страницы</a>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</BODY>
+</HTML>
+

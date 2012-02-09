@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B> </B></big>оманда <code><font  color="#0000cc">sfence</font></code> 
+примен€етс€ дл€ строгого упор€дочени€ последовательности 
+обращений в пам€ть и синхронизации ее с содержимым кэш-пам€ти, если такие 
+обращени€ €вл€ютс€ <A target="right" HREF="glossary.htm#weakordered">слабо упор€доченными</A>.
+<p>
+<big><B>ѕ</B></big>ри использовании <code><font  color="#0000cc">sfence</font></code>
+ в основную пам€ть копируютс€ все данные предшествующих команд 
+записи, хран€щиес€ в буфере записи и кэше. “олько после этого будут выполн€тьс€ 
+следующие команды записи.
+<p>
+<big><B> </B></big>оманда <code><font  color="#0000cc">sfence</font></code>
+ временно блокирует выполнение лишь последующих команд сохранени€ данных, 
+не вли€€ при этом на работу других команд.
+
+
+
+
+
+
+</BODY>
+</HTML>

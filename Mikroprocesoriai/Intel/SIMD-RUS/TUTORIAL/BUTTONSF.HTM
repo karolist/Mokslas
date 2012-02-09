@@ -1,0 +1,34 @@
+<html>
+<body bgcolor="white">
+<script language="JavaScript">
+document.write('<base href="'+top.location+'">')
+</script>
+
+<center>
+<form><input type="button" value="Шаг" onClick="setTimeout('top.nextStep()',100)">
+<input type="button" value="Назад" onClick="setTimeout('top.backStep()',100)">
+<input type="button" value="Выход" onClick="setTimeout('top.close()',100)">
+</form>
+</center>
+
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<p>&nbsp;<br>
+<img width=1 height=1 src="../white.gif"><img width=1 height=1 src="../magenta.gif">
+
+<script language="JavaScript">
+<!--
+
+N=(top.instructions)?top.instructions.length:0;
+for (k=0;k<N;k++) {
+ document.writeln('<img width=1 height=1 src="mesg'+k+'.gif"><img width=1 height=1 src="regs'+k+'.gif">');
+}
+//-->
+</script>
+
+</body>
+</html>

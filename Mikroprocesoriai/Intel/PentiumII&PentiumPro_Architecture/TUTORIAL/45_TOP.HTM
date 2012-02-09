@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 45. Top frame</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><P>
+<TABLE WIDTH=100% ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Объединение циклов</b></font></CAPTION>
+  <Tr>
+    <Th><font color="#0000CC">Код до оптимизации</font></TD>
+    <Th><font color="#0000CC">Оптимизированный код</font></TD>
+  </Tr>
+  <TR VALIGN=middle>
+    <TD BGCOLOR="White" VALIGN=top>
+<PRE> for (i=1;i&lt;n){
+  ...A[i] ...
+ }
+ for (i=1; i&lt;n){
+  ...A[i] ...
+ }</PRE></TD>
+    <TD BGCOLOR="White" VALIGN=top>
+<PRE> for (i=1;i&lt;n){
+  ...A[i] ...
+  ...A[i] ...
+ }</PRE>
+
+    </TD>
+  </TR>
+</TABLE> 
+<P>
+<TABLE WIDTH=100% ALIGN=center BORDER=2>
+  <CAPTION ALIGN=top><font color="#0000CC"><b>Расщепление циклов</b></font></CAPTION>
+  <Tr>
+    <Th><font color="#0000CC">Код до оптимизации</font></TD>
+    <Th><font color="#0000CC">Оптимизированный код</font></TD>
+  </Tr>
+  <TR VALIGN=top>
+    <TD BGCOLOR="White" VALIGN=top>
+<PRE> for (i=1;i&lt;n){
+  ...A[i] ...
+  ...B[i] ...
+ }</PRE>
+    </TD>
+    <TD BGCOLOR="White" VALIGN=top>
+<PRE> for (i=1;i&lt;n){
+  ...A[i] ...
+ }
+ for (i=1; i&lt;n){
+  ...B[i] ...
+ }</PRE>
+    </TD>
+  </TR>
+</TABLE> 
+
+</BODY>
+</HTML>
+

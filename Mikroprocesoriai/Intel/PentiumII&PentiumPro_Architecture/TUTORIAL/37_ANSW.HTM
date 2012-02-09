@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 37. Answer frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+else
+ {
+     if (parent.ctrlframe.choice=="1") document.write('—охранить содержимое регистра <FONT COLOR="#0000BF">EBP </FONT>в стеке.');
+      else 
+     if (parent.ctrlframe.choice=="2") document.write('<FONT COLOR="#000000">¬осстановить прежнее значение указател€ стека. “еперь </FONT><FONT COLOR="#0000BF">EBP</FONT><FONT COLOR="#000000"> и </FONT><FONT COLOR="#0000BF">ESP</FONT><FONT COLOR="#000000"> указывают на один и тот же адрес.</FONT> ');
+      else 
+     if (parent.ctrlframe.choice=="3") document.write('<FONT COLOR="#000000">¬ыполнить операцию </FONT><FONT COLOR="#0000BF">AND</FONT> над регистром <FONT COLOR="#0000BF">EBP </FONT>и константой -8. <P><pre><FONT COLOR="#0000BF">  001000010010</FONT><FONT COLOR="#000000"> (содержимое </FONT><FONT COLOR="#0000BF">EBP</FONT><FONT COLOR="#000000">)</FONT> <BR><FONT COLOR="#0000BF">&amp;</FONT><FONT COLOR="#000000"> </FONT><U><FONT COLOR="#0000BF">111111111000</FONT></U><FONT COLOR="#000000"> ( -8)</FONT> <BR><FONT COLOR="#0000BF">&nbsp;&nbsp;&nbsp; 001000010000</FONT></pre><P>“еперь <FONT COLOR="#0000BF">EBP</FONT> содержит адрес, кратный восьми, и переменна€ <FONT COLOR="#0000BF">a </FONT>будет размещена по этому адресу и, следовательно, выровнена.');
+      else 
+     if (parent.ctrlframe.choice=="4") document.write('<FONT COLOR="#000000">ƒобавить дополнительные четыре байта дл€ выравнивани€ и установить указатель стека на адрес, кратный восьми байтам.</FONT>');
+      else 
+     if (parent.ctrlframe.choice=="5") document.write('<FONT COLOR="#000000">ћноготочием обозначены команды, занос€щие значение переменной </FONT><FONT COLOR="#0000BF">a</FONT><FONT COLOR="#000000"> в регистры </FONT><FONT COLOR="#0000BF">EAX</FONT><FONT COLOR="#000000"> и </FONT><FONT COLOR="#0000BF">EDX</FONT><FONT COLOR="#000000"> дл€ дальнейшего использовани€.</FONT>');
+      else 
+     if (parent.ctrlframe.choice=="6") document.write('<FONT COLOR="#000000">ѕоместить </FONT><FONT COLOR="#0000BF">a</FONT> в стек.<FONT COLOR="#000000">-8 + </FONT><FONT COLOR="#0000BF">EBP</FONT><FONT COLOR="#000000"> кратно восьми. ѕоскольку </FONT><FONT COLOR="#0000BF">EBP </FONT>содержит выровненный адрес, переменна€ <FONT COLOR="#0000BF">a </FONT>также выровнена.');
+      else 
+     if (parent.ctrlframe.choice=="7") document.write('<FONT COLOR="#000000">ѕоместить </FONT><FONT COLOR="#0000BF">a</FONT> в стек данных с плавающей точкой.');
+      else 
+     if (parent.ctrlframe.choice=="8") document.write('<FONT COLOR="#000000">¬ычислить </FONT><FONT COLOR="#0000BF">a*a</FONT><FONT COLOR="#000000">.</FONT>');
+      else 
+     if (parent.ctrlframe.choice=="9") document.write('¬осстановить начальное выравнивание.');
+      else 
+     if (parent.ctrlframe.choice=="10") document.write('¬осстановить начальное содержимое <FONT COLOR="#3333FF">EBP</FONT><FONT COLOR="#000000">.</FONT>');
+      else  document.write('');
+
+ }
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

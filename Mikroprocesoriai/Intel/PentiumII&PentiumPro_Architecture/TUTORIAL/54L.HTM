@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 54</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<font size="+1"><b>К</b></font>огда процессор встречает данные в сегменте кода, он пытается выполнить
+их, что приводит к пустой трате времени.
+<BR><font size="+1"><b>Ч</b></font>тобы предотвратить попытки выполнения данных, следует:
+<BR>&nbsp;
+<LI>
+Размещать данные, которые предполагается изменять, в сегменте данных.</LI>
+<LI>
+Выравнивать данные по адресу, кратному 32 байтам, с тем чтобы они отображались
+в отдельную кэш-линию и не выбирались вместе с кодом.</LI>
+<P><B>Пример:</B>
+<BR>Приведенный здесь <B>код до оптимизации</B> содержит таблицу переходов,
+предназначенную только для чтения и начинающуюся с адреса <FONT COLOR="#3333FF">L46</FONT>.
+Поскольку таблица располагается в сегменте кода, процессор тратит время
+впустую на предварительную обработку ее как последовательости команд.
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>Оптимизировать</B>, чтобы посмотреть, как следует
+организовать код для предотвращения задержки.
+</BODY>
+</HTML>
+

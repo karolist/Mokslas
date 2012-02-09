@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>See it work (topic 45)</TITLE>
+<script language="JavaScript">
+<!--
+checked_radio="o";
+
+function change_checked(value) {
+
+checked_radio=value;
+parent.curstep=0;
+parent.cachemiss.document.cachemiss.cm.value="";
+document.main.no_iter.value="";
+document.main.o_iter.value="";
+top.left.msgframe.location="35ex_lb.htm";
+parent.imageframe.location="45ex_i0.htm";
+parent.ctrlframe.document.control.step.value="По шагам";
+
+}
+
+//-->
+</script>
+</HEAD>
+<BODY BGCOLOR="#cccccc" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<center>
+<form name="main">
+<table cellspacing="0" cellpadding="1" border="0">
+<tr>
+<td valign=top nowrap width="50%">
+<input type="radio" name="choice" value="original" onCLick="change_checked('no')">&nbsp;<b><font color="#0000cc">Код до оптимизации</font></b>
+<table cellpadding="1" border="1" width="100%">
+<tr>
+<td bgcolor="white" width="100%">
+<pre><code>for(i=1,Min=a[0];
+    i&lt;14;i++)
+ Min=min(Min,a[i]);
+  
+for(i=1,Max=a[0];
+    i&lt;14;i++) {
+ Max=max(Max,a[i]);</code></pre></td></tr></table></td>
+<td valign=top nowrap width="50%">
+<input type="Radio" name="choice" value="reordered" checked onclick="change_checked('o')">&nbsp;<b><font color="#0000cc">Оптимизирован. код</font></b><br>
+<table cellpadding="1" border="1" width="100%">
+<tr>
+<td bgcolor="white" width="100%">
+<pre><code>for(i=1,Min=a[0],
+  Max=a[0];i&lt;14;i++)
+
+ Min=min(Min,a[i]);
+ Max=max(Max,a[i]);</code></pre></td></tr></table></td></tr><tr>
+  <td><font size="-1" color="#0000CC">Итерация:<br></font><input type="Text" name="no_iter" size="20"></td><td><font size="-1" color="#0000CC">Итерация:<br></font><input type="Text" name="o_iter" size="20">
+</td>
+</tr>
+</table>
+</form>
+</BODY>
+</HTML>
+

@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 59</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>З</b></font>адержка при доступе к флагам возникает в следующих случаях:<P>
+<li><B>Случай 1</B> - Вначале производится запись в некоторые (не во все) <A HREF="javascript:parent.showglos('statusflags')">флаги состояния</a>, входящие в состав регистра <FONT COLOR="#0000cc"><code>EFLAGS</code></FONT>, а затем чтение как измененных, так и не измененных флагов. Если считываются <I>только</I> измененные или <I>только</I> не измененные флаги, задержка не возникает.</li>
+<p><li><B>Случай 2</B> - Вслед за <A HREF="javascript:parent.showglos('shiftcommands')">командой сдвига</a> или <A HREF="javascript:parent.showglos('rotinstrs')">циклического сдвига</a>, читающими  из регистра <FONT COLOR="#0000cc"><code>CL</code></FONT>, выполняется команда, считывающая  любой из флагов.<P><font size="+1"><b>Ч</b></font>тобы избежать задержки в <b>первом случае</b>, следует вставлять в код команды,  не читающие флаги, или использовать команды, пишущие во все флаги сразу.<P>Чтобы избежать задержки во <b>втором случае</b>, следует вставлять команды,  пишущие во все флаги, сразу вслед за командами сдвига и циклического сдвига,  читающими из регистра <FONT COLOR="#0000cc"><code>CL</code></FONT>.<P><font size="+1"><b>В</b></font>ыберите один из случаев и нажмите на кнопку <B>"Показать"</B>, чтобы  ознакомиться с комментариями.
+
+</BODY>
+</HTML>
+

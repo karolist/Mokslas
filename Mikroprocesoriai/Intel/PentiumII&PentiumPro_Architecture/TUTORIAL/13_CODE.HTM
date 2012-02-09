@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 13. Code frame.</TITLE>
+<script language="JavaScript">
+<!--
+codes = new Array ("if \(a == 5\)<br>a = 7\;<br>else<br>a = 5\;",
+"L1: lpcnt++\;<br>if \(\(lpcnt%4\)==0\)<br>printf\(&quot;Loop Count divides by 4\n&quot;\)\;",
+"L1: locnt++\;<br>if \(\(lpcnt%5\)==0\)<br>printf\(&quot;Loop Count divides by 5\n&quot;\)\;");
+
+colors = new Array ("#66FF99","#99FFFF","#FFFF66");
+
+function bg() {
+document.bgColor=colors[parent.curgame];
+return true;
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY onLoad="bg()">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<code>
+<script language="JavaScript">
+<!--
+document.write (codes[parent.curgame]);
+//-->
+</SCRIPT>
+</code>
+</BODY>
+</HTML>
+

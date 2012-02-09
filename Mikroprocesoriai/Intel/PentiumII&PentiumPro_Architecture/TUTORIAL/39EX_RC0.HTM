@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 39 Ex.</TITLE>
+</HEAD>
+<BODY TEXT="#0000CC" LINK="#0000CC" VLINK="#0000CC" ALINK="#0000CC" BACKGROUND="images/backgr3.gif">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+var choice=0;
+function erun()
+{ 
+  choice=0;
+  choice=document.codeForm.r1.value;
+  choice=document.codeForm.r2.value+choice;
+  choice=document.codeForm.r3.value+choice;
+  choice=document.codeForm.r4.value+choice;
+  choice=document.codeForm.r5.value+choice;
+//  alert("Choice="+choice);
+  if (choice=="53142")
+  {
+    // Right answer
+    top.window.left.location.hash="2";
+  }
+  else
+  { 
+    // Wrong answer
+    top.window.left.location.hash="1";
+  }
+  return(true);
+}
+//-->
+</SCRIPT>
+
+<FORM NAME=codeForm>
+<TABLE ALIGN=center BORDER=2>
+  <TR ALIGN=center VALIGN=middle>
+    <TD BGCOLOR="White">
+      <TABLE ALIGN=center BORDER=0>
+        <TR><TD><pre>struct person_in_list</pre></TD><TD></TD></TR>
+        <TR><TD><PRE>{</PRE></TD><TD></TD></TR>
+        <TR><TD><PRE>  struct person_in_list *next;</PRE></TD><TD></TD></TR>
+        <TR><TD><font color="#0000FF"><b><PRE>  int place_in_list;</PRE></b></font></TD><TD><INPUT SIZE=1 NAME="r1" TYPE="int" VALUE="1"></TD></TR>
+        <TR><TD><font color="#0000FF"><b><PRE>  int id;</PRE></b></font></TD><TD><INPUT SIZE=1 NAME="r2" TYPE="int" VALUE="2"></TD></TR>
+        <TR><TD><font color="#0000FF"><b><PRE>  int priority;</PRE></b></font></TD><TD><INPUT SIZE=1 NAME="r3" TYPE="int" VALUE="3"></TD></TR>
+        <TR><TD><font color="#0000FF"><b><PRE>  char name[32];</PRE></b></font></TD><TD><INPUT SIZE=1 NAME="r4" TYPE="int" VALUE="4"></TD></TR>
+        <TR><TD><font color="#0000FF"><b><PRE>  char salary_level;</PRE></b></font></TD><TD><INPUT SIZE=1 NAME="r5" TYPE="int" VALUE="5"></TD></TR>
+        <TR><TD><PRE>}</PRE></TD><TD></TD></TR>
+      </TABLE>
+    </TD>
+  </TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>
+

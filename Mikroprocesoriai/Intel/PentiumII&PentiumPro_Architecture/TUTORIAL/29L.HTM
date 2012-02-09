@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 29</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>В</b></font> случае правильного предсказания ветвления <A HREF="javascript:parent.showglos('BTB')">буфером адресов ветвления</a> команда ветвления задерживается на один такт, необходимый для предварительной выборки.
+
+<P>Если выполнение команд, находящихся между ветвлениями, может быть завершено за меньшее число тактов, чем необходимо для предварительной выборки следующей команды ветвления, избежать задержки можно одним из следующих способов:
+
+<p>
+<LI>Вставка дополнительных команд между командами ветвления, условные переходыпо которым будут выполнены с высокой вероятностью.</LI>
+
+<LI>Раскрутка цикла в случае, когда ветвление обеспечивает повторение итераций.</LI>
+
+<P><B>Пример:</B><BR>Цикл, приведенный под заголовком <B>Код до оптимизации</B>, содержит <A HREF="javascript:parent.showglos('backwcondbr')">условный переход назад</a>.
+
+<P>В <B>Оптимизированном коде</B> цикл раскручен три раза, что снижает число ветвлений и связанных с ними задержек при выполнении.
+</BODY>
+</HTML>
+

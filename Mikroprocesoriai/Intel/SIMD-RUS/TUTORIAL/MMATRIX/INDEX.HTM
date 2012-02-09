@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<STYLE TYPE="text/css">
+<!--
+tt { font-size: 9pt; }
+-->
+</STYLE>
+
+<title>Умножение матрицы на вектор</title>
+<script language="JavaScript">
+<!--
+
+codeLines=new Array(
+  " 1 movaps xmm0, [list+X+ecx]"
+ ," 2 movaps xmm2, [list+Y+ecx]"
+ ," 3 movaps xmm3, [list+Z+ecx]"
+ ," 4 movaps xmm1, [esi+m00]"
+ ," 5 movaps xmm4, [esi+m01]"
+ ," 6 mulps  xmm1, xmm0"
+ ," 7 mulps  xmm4, xmm2"
+ ," 8 addps  xmm4, xmm1"
+ ," 9 movaps xmm1, [esi+m02]"
+ ,"10 mulps  xmm1, xmm3"
+ ,"11 addps  xmm4, xmm1"
+ ,"12 addps  xmm4, [esi+m03]"
+ );
+
+isComment=new Array(0,0,0,0,0,0,0,0,0,0,0,0,0);
+
+lineW=2;
+codeH=16;
+codeW=220;
+backgr="../white.gif";
+foregr="../magenta.gif";
+
+rnames="regs";
+regsW=520;
+regsH=145;
+
+mnames="mesg";
+mesgW=320;
+mesgH=200;
+
+
+// Loading Images
+
+regImg=new Array();
+msgImg=new Array();
+if (document.images) {
+ blurImg=new Image(1,1); 
+ foc_Img=new Image(1,1); 
+ blurImg.src=backgr;
+ foc_Img.src=foregr;
+ for (n=0;n<=codeLines.length;n++) {
+  if (n>0 && isComment[n-1]) continue;
+  regImg[n]=new Image(regsW,regsH);
+  regImg[n].src=rnames+n+".gif";
+  msgImg[n]=new Image(mesgW,mesgH);
+  msgImg[n].src=mnames+n+".gif";
+ }
+}
+
+function focusLine(par) {
+ if (document.images && 0<=par && par<codeLines.length) {
+  eval("document.L"+par+".src=foc_Img.src"); 
+  eval("document.R"+par+".src=foc_Img.src"); 
+  eval("document.HL"+par+".src=foc_Img.src"); 
+  eval("document.HR"+par+".src=foc_Img.src"); 
+  eval("document.HL"+(par+1)+".src=foc_Img.src"); 
+  eval("document.HR"+(par+1)+".src=foc_Img.src"); 
+ }
+}
+
+function blurLine(par) {
+ if (document.images && 0<=par && par<codeLines.length) {
+  eval("document.L"+par+".src=blurImg.src"); 
+  eval("document.R"+par+".src=blurImg.src"); 
+  eval("document.HL"+par+".src=blurImg.src"); 
+  eval("document.HR"+par+".src=blurImg.src"); 
+  eval("document.HL"+(par+1)+".src=blurImg.src"); 
+  eval("document.HR"+(par+1)+".src=blurImg.src"); 
+ }
+}
+
+curLine=-1;
+finished=false;
+
+function nextStep() {
+ blurLine(curLine);
+ curLine++;
+ while (curLine<codeLines.length && isComment[curLine]) curLine++;
+ if (curLine<codeLines.length) {
+  focusLine(curLine);
+  if (document.images) document.REGS.src=regImg[curLine+1].src; 
+  if (document.images) document.MESG.src=msgImg[curLine+1].src; 
+ }
+ else {
+  finished=true;
+  curLine=-1;
+  if (document.images) document.REGS.src=regImg[0].src; 
+  if (document.images) document.MESG.src=msgImg[0].src; 
+ }
+}
+
+function backStep() {
+ if (curLine==-1) {
+  if (!finished) return;
+  else curLine=codeLines.length;
+ }
+ blurLine(curLine);
+ curLine--;
+ while (curLine>=0 && isComment[curLine]) curLine--;
+ if (0<=curLine) {
+  focusLine(curLine);
+  if (document.images) document.REGS.src=regImg[curLine+1].src; 
+  if (document.images) document.MESG.src=msgImg[curLine+1].src; 
+ }
+ else {
+  curLine=-1;
+  if (document.images) document.REGS.src=regImg[0].src; 
+  if (document.images) document.MESG.src=msgImg[0].src; 
+ }
+}
+
+function putNBSP(par) {
+ var s=par; m=s.indexOf(" ");
+ while (m!=-1) { s=s.substring(0,m)+"\&nbsp;"+s.substring(m+1,s.length); m=s.indexOf(" "); }
+ return s;
+}
+
+for (n=0;n<codeLines.length;n++) {
+ codeLines[n]=putNBSP(codeLines[n]);
+}
+
+//-->
+</script>
+
+
+<SCRIPT language="JavaScript1.2">
+<!--
+onload=function(){self.focus()}
+//-->
+</SCRIPT>
+
+</HEAD>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#660099">
+
+<a name="top"></a>
+
+<script language="JavaScript">
+<!--
+ document.writeln('<center><table border=0 cellpadding=0 cellspacing=0>');
+ document.writeln('<tr><td>');
+
+ document.writeln('<table border=0 cellpadding=0 cellspacing=0 width='+(lineW+codeW+lineW)+'>');
+ for (n=0;n<codeLines.length;n++) {
+  document.writeln('<tr bgcolor=white>');
+  document.writeln('<td colspan=2 width='+(lineW+codeW)+'><img name=HL'+n+' width='+(lineW+codeW)+' height='+lineW+' src="'+backgr+'"></td>');
+  document.writeln('<td width='+lineW+'><img name=HR'+n+' width='+lineW+' height='+lineW+' src="'+backgr+'"></td>');
+  document.writeln('</tr>');
+
+  document.writeln('<tr bgcolor=white>');
+  document.writeln('<td width='+lineW+'><img name=L'+n+' width='+lineW+' height='+codeH+' src="'+backgr+'"></td>');
+  document.writeln('<td width='+codeW+'><tt><!font face="Courier New,Courier" size=2>'+codeLines[n]+'<!/font></tt></td>');
+  document.writeln('<td width='+lineW+'><img name=R'+n+' width='+lineW+' height='+codeH+' src="'+backgr+'"></td>');
+  document.writeln('</tr>');
+ }
+
+ document.writeln('<tr bgcolor=white>');
+ document.writeln('<td colspan=2 width='+(lineW+codeW)+'><img name=HL'+codeLines.length+' width='+(lineW+codeW)+' height='+lineW+' src="'+backgr+'"></td>');
+ document.writeln('<td width='+lineW+'><img name=HR'+codeLines.length+' width='+lineW+' height='+lineW+' src="'+backgr+'"></td>');
+ document.writeln('</tr></table>');
+
+ // Top right 
+ document.writeln('</td><td align=center>');
+//\\
+
+document.writeln('<form><input type="button" value="Шаг" onClick="setTimeout(\'top.nextStep()\',100)">');
+ document.writeln('<input type="button" value="Назад" onClick="setTimeout(\'top.backStep()\',100)">');
+ document.writeln('<input type="button" value="Выход" onClick="setTimeout(\'top.close()\',100)"></form>');
+
+
+ document.writeln('<img name=MESG width='+mesgW+' height='+mesgH+' src="'+mnames+'0.gif"></td>');
+
+
+ // Wide Registers 
+ document.writeln('</td></tr><tr><td colspan=2>&nbsp;</td></tr>');
+document.writeln('<tr><td colspan=2>'); 
+document.writeln('<img name=REGS width='+regsW+' height='+regsH+' src="'+rnames+'0.gif"></td>');
+
+
+ // Bottom left 
+ document.writeln('</td></tr><tr><td>');
+
+
+ // Bottom right 
+ document.writeln('</td><td>');
+
+ document.writeln('</td></tr></table></center>');
+//-->
+</script>
+
+</BODY>
+</HTML>

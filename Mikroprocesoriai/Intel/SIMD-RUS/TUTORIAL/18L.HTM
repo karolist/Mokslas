@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<STYLE TYPE="text/css">
+<!--
+small { font-size: 10pt; font-family="sans-serif"}
+-->
+</STYLE>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<a name="top"></a>
+
+<SCRIPT language="JavaScript">
+<!--
+pairs = new Array (
+ "<small>\&nbsp;(младша\€\&nbsp;пара)</small>"
+,"<small>\&nbsp;(втора\€\&nbsp;пара)</small>"
+,"<small>\&nbsp;(треть\€\&nbsp;пара)</small>"
+,"<small>\&nbsp;(старша\€\&nbsp;пара)</small>"
+);
+
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+
+else {
+ if (top.state18==null) {
+  document.writeln('<p><big><B>T</B></big>еперь сами попробуйте применить команду <code><font color="#0000cc">shufps</font></code>.');
+  document.writeln('<p><big><B>«</B></big>аполните все позиции выходного операнда <code><font color="#0000cc">xmm1</font></code> (под чертой) в соответствии с 8-разр\€дным значением третьего (непосредственного) операнда.');
+  document.writeln('¬ыбирайте нужные элементы операндов-регистров щелчком мыши.');
+  document.writeln('<p><big><B>„</B></big>тобы увидеть правильный ответ, нажмите кнопку <b>OTBET</b>.');
+  document.writeln('<p><big><B>—</B></big>права внизу ¬ы можете выбрать тип перестановки: циклическую, зеркальную, "размножение" или перестановку общего вида.');
+  document.bgColor="white";
+ }
+ else {
+  hexN=top.state18.substring(0,2);
+  binN=top.state18.substring(2,10);
+  len=top.state18.length;
+
+  document.writeln('<p><center><table border=1 bgcolor=white cellspacing=0 cellpadding=4><tr><td>');
+  if (len>10) 
+   document.writeln('<font color=red><b><i>'+top.state18.substring(10,len)+'</i></b></font><br>');
+  document.writeln('<small>B операнде</small> <code><font color="#0000cc">'+hexN+'h='+binN+"</font></code> <small>пары разр\€дов соответствуют следующим элементам операндов-регистров:</small>");
+
+  document.writeln('<table border=0 cellspacing=5 cellpadding=0><tr><td>');
+  for (n=0;n<4;n++) {
+   document.writeln('<tr><td valign=top><code><font color="#0000cc">' + binN.substring(6-2*n,8-2*n) + '</font></code>' + pairs[n] +" </td>");
+   document.writeln('<td><small>элемент </small><code>'+parseInt(binN.substring(6-2*n,8-2*n),2)+"</code> <small>"+((n<2)?"из первого операнда":" из второго операнда")+"</small></td></tr>");
+  }
+  document.writeln('</td></tr></table>');
+  document.writeln('</td></tr></table></center>');
+  document.bgColor="#FFFFEE";
+ }
+}
+
+//-->
+</SCRIPT>
+
+
+</BODY>
+</HTML>

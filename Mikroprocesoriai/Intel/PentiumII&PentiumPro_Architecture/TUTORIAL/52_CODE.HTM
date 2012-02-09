@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 52. Code frame.</TITLE>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif">
+
+<SCRIPT language="JavaScript">
+<!--
+if (!top.state52) top.state52=0;
+
+
+microops = new Array(12);
+microops[0] = 1;
+microops[1] = 1;
+microops[2] = 1;
+microops[3] = 1;
+microops[4] = 4;
+microops[5] = 2;
+microops[6] = 1;
+microops[7] = 1;
+microops[8] = 1;
+microops[9] = 2;
+microops[10] = 1;
+microops[11] = 2;
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+ {
+  document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");
+ }
+//-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!--
+function check()
+{
+  if ( document.codeForm.r2.value != "" 
+    && document.codeForm.r1.value != "" 
+    && document.codeForm.r0.value != "" 
+    && document.codeForm.r2.value >=1 && document.codeForm.r2.value <= 12
+    && document.codeForm.r1.value >=1 && document.codeForm.r1.value <= 12
+    && document.codeForm.r0.value >=1 && document.codeForm.r0.value <= 12
+    && document.codeForm.r1.value != document.codeForm.r2.value
+    && document.codeForm.r2.value != document.codeForm.r0.value
+    && document.codeForm.r1.value != document.codeForm.r0.value )
+  {
+     if ( microops[document.codeForm.r2.value-1]==1 && microops[document.codeForm.r1.value-1]==1 )
+     { // Correct
+       if ( microops[document.codeForm.r0.value-1]==1 ) top.state52=3; // Not optimal
+       else top.state52=2; // Optimal
+     }
+     else top.state52=1; // Incorrect
+  }
+  else top.state52=1; // Incorrect
+
+  parent.answerframe.location="52_answ.htm";
+  
+}
+//-->
+</SCRIPT>
+
+</BODY>
+<FORM NAME="codeForm">
+<TABLE WIDTH="100%" BORDER=0>
+  <TR>
+    <TD BGCOLOR="White"><PRE><B><OL><LI>sub ebx, 9<BR><LI>mov esi, 4</LI><BR><LI>or ecx, 8</LI><BR><LI>jne L3</LI><BR><LI>inc c</LI><BR><LI>add eax, mem</LI><BR><LI>mov edi</LI><BR><LI>cdq</LI><BR><LI>add edx, 3</LI><BR><LI>pop eax</LI><BR><LI>jnz L2</LI><BR><LI>sbb eax, eax</LI><BR></OL></B></PRE>
+    </TD>
+    <TD ALIGN=right><B>D0&nbsp;&nbsp;</B><INPUT NAME="r0" TYPE="int" SIZE=2 VALUE=""><P><B>D1&nbsp;&nbsp;</B><INPUT NAME="r1" TYPE="int" SIZE=2 VALUE=""><P><B>D2&nbsp;&nbsp;</B><INPUT NAME="r2" TYPE="int" SIZE=2 VALUE=""></TD>
+  </TR>
+  <TR><TD VALIGN=middle><INPUT NAME="run" TYPE="button" VALUE="Проверить" onClick="check()"></TD>
+      <TD VALIGN=middle><A TARGET="left" HREF="52l.htm#rules">Правила игры </A></TD>
+  </TR>
+</TABLE>
+</FORM>
+</HTML>

@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<a name="s"></a>
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<big><B>А</B></big>рифметические команды SIMD выполняют сложение, вычитание, умножение
+и деление данных одинарной точности с плавающей запятой.
+
+<p>
+<big><B>В</B></big>ходной (второй) операнд этих команд может располагаться
+либо в XMM-регистре, либо в памяти. Выходной (первый) операнд должен 
+находиться в XMM-регистре.
+Арифметические команды поддерживают как 
+параллельные, так и скалярные операции.
+
+<TABLE border=0 cellpadding=0 cellspacing=15>
+<TR>
+<TD>
+Параллельные:
+<code>
+<LI><TT><a onClick="top.state12=0;top.right.location='12r.htm';return false" href="#s"><b>addps</b></a></TT>
+<LI><TT><a onClick="top.state12=1;top.right.location='12r.htm';return false" href="#s"><b>subps</b></a></TT>
+<LI><TT><a onClick="top.state12=2;top.right.location='12r.htm';return false" href="#s"><b>mulps</b></a></TT>
+<LI><TT><a onClick="top.state12=3;top.right.location='12r.htm';return false" href="#s"><b>divps</b></a></TT></code>
+</TD>
+
+<TD>
+Скалярные:
+<code>
+<LI><TT><a onClick="top.state12=4;top.right.location='12r.htm';return false" href="#s"><b>addss</b></a></TT>
+<LI><TT><a onClick="top.state12=5;top.right.location='12r.htm';return false" href="#s"><b>subss</b></a></TT>
+<LI><TT><a onClick="top.state12=6;top.right.location='12r.htm';return false" href="#s"><b>mulss</b></a></TT>
+<LI><TT><a onClick="top.state12=7;top.right.location='12r.htm';return false" href="#s"><b>divss</b></a></TT></code>
+</TD>
+</TR>
+</TABLE>
+
+
+</BODY>
+</HTML>

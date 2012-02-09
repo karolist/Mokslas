@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 30</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<A NAME="0">
+<P><font size="+1"><b>В</b></font>етвление, история&nbsp; которого отсутствует в 
+<A HREF="javascript:parent.showglos('BTB')"><FONT COLOR="#CC33CC">буфере адресов
+ветвления</FONT></A>, предсказывается при помощи 
+<A HREF="javascript:parent.showglos('staticbrpred')"><FONT COLOR="#CC33CC">статического
+алгоритма предсказания</FONT></A>. Этот алгоритм предсказывает, что 
+<A HREF="javascript:parent.showglos('forwcondbranch')"><FONT COLOR="#CC33CC">условные
+переходы вперед</FONT></A> не будут выполнены.
+
+<P><font size="+1"><b>Р</b></font>азмещайте наиболее часто выполняемый код непосредственно за условным
+переходом вперед, чтобы на этот код передавалось управление при 
+<A HREF="javascript:parent.showglos('fallthcode')"><FONT COLOR="#CC33CC">последовательном
+выполнении</FONT></A>. Такое размещение снижает вероятность ошибки при
+статическом предсказании и позволяет осуществлять предварительную выборку
+часто выполняемых команд.
+<P><font size="+1"><b>Е</b></font>сли Ваш компилятор не поддерживает настраиваемое профилирование, произведите
+перестановку в исходном тексте.
+<BR>&nbsp;
+<BR><font size="+1"><b>В</b></font>ыберите язык программирования и нажмите на кнопку <B>Оптимизировать</B>,
+чтобы ознакомиться с примером.
+<BR>&nbsp;
+
+<BR><BR><BR><BR><BR><BR><A NAME="9">
+<FONT COLOR="#000000">Если условие </FONT>ложно, то переход выполняется и управление передается на редко выполняемый код.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<A NAME="8">
+<FONT COLOR="#000000">Разместите часто выполняемый код </FONT>непосредственно за о<FONT COLOR="#000000">ператором </FONT>
+<FONT COLOR="#0000BF">if</FONT>,<FONT COLOR="#0000BF"> </FONT>чтобы на этот код передавалось управление при последовательном выполнении. 
+Статический алгоритм предскажет, что этот код будет выполняться.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<A NAME="7">
+<FONT COLOR="#000000">Замените условие в операторе </FONT><FONT COLOR="#0000BF"><CODE>if</CODE></FONT>
+<FONT COLOR="#000000"> на противоположное. Оператору </FONT><FONT COLOR="#0000BF"><CODE>if</CODE> </FONT>с <FONT COLOR="#000000">условием (</FONT><FONT COLOR="#0000BF"><CODE>a!=5</CODE></FONT><FONT COLOR="#000000">) соответствует условный 
+переход вперед, который будет предсказан статическим алгоритмом как не выполненный.</FONT>
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<A NAME="4">
+<FONT COLOR="#000000">Чтобы сохранить семантику кода, поместите команду безусловного перехода на
+ </FONT><FONT COLOR="#0000BF">L2</FONT><FONT COLOR="#000000"> непосредственно за часто 
+выполняемым кодом.</FONT>
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<A NAME="3">
+<FONT COLOR="#000000">Если условие команды </FONT><FONT COLOR="#0000BF"><CODE>JNE</CODE></FONT> истинно, то 
+переход выполняется и управление передается на редко выполняемый код.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<A NAME="2">
+<FONT COLOR="#000000">Разместите часто выполняемый код </FONT>непосредственно за условным 
+переходом вперед, чтобы на этот код передавалось управление при последовательном выполнении. Статический алгоритм предскажет, что этот код будет выполняться.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<A NAME="1">
+<FONT COLOR="#000000">Замените условие на противоположное. Поскольку </FONT>
+<FONT COLOR="#0000BF">JNE</FONT> есть команда условного перехода вперед, статический алгоритм
+ предсказания предскажет, что переход не будет выполнен (произойдет последовательное выполнение).
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+</BODY>
+</HTML>
+

@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 47</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<p><font size="+1"><b>П</b></font>рименение <A HREF="javascript:parent.showglos('loopblock')"><FONT COLOR="#CC33CC">блочной организации циклов</FONT></A>
+эффективно при выполнении операций над большими матрицами, которые не умещаются
+в кэш-памяти целиком.
+<P><font size="+1"><b>В</b></font> <B>коде до оптимизации</B> значения M, N и L достаточно велики, чтобы:
+<ul>
+<LI>
+В конце каждой итерации по <code><font color="#0000CC">j</font></code> требуемые элементы матрицы <code><font color="#0000CC">C</font></code> скорее всего
+вытеснены из кэш-памяти.</LI>
+<LI>
+Только один элемент строки матрицы <code><font color="#0000CC">A</font></code> может быть использован до помещения
+в кэш следующей строки этой матрицы.</LI></ul>
+
+<p><font size="+1"><b>В</b></font> <B>оптимизированном коде</B> число итераций для матрицы <code><font color="#0000CC">C</font></code> уменьшено
+в четыре раза, и для каждой строки матрицы <code><font color="#0000CC">A</font></code> последовательно используются
+четыре ее элемента.
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать"</B>, чтобы посмотреть, как работает кэш-память
+при выполнении каждого из вариантов кода.
+</BODY>
+</HTML>
+

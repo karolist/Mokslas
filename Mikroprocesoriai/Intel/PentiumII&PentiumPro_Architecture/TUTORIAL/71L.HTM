@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 71</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<font size="+1"><b>П</b></font>усть для вычислений которые производит Ваша программа на C, важно
+соблюдение режима округления, а текст программы изменить сложно. В таком
+случае можно заменить алгоритм преобразования чисел с плавающей точкой
+в целые, используемый компилятором, на приведенный здесь.
+
+<P><font size="+1"><b>Н</b></font>еявное преобразование, содержащееся в приведенном здесь <B>тексте на C</B>, 
+при компиляции переводится в <B>ассемблерный код</B>, вызывающий
+функцию <FONT COLOR="#3333FF">_ftol</FONT>.
+
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>Показать</B> <FONT COLOR="#3333FF">_ftol</FONT>,
+чтобы открыть файл <FONT COLOR="#3333FF">ftol.wri</FONT>, содержащий текст
+этой функции. Алгоритм, который реализует данная функция, преобразует число
+с плавающей точкой в целое путем отбрасывания дробной части без переключения
+режима округления, без 
+<A HREF="javascript:parent.showglos('synchexec')"><FONT COLOR="#CC33CC">синхронизации выполнения</FONT></A>
+и использования команды <FONT COLOR="#3333FF">FLDCW</FONT>.
+
+<P><B>Замечание:</B>
+<BR>Функция компилятора C фирмы Microsoft, которую необходимо заменить,
+также называется <FONT COLOR="#3333FF">_ftol</FONT>.
+
+</BODY>
+</HTML>
+

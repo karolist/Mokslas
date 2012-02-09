@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>П</B></big>рием "<A target="right" HREF="glossary.htm#alphasat">альфа-порог</A>" 
+применяется в 2D- и 3D-графике для создания эффектов
+ тумана,
+ постепенного увеличения (уменьшения) цветовой насыщенности изображения,
+ плавного перехода от одного изображения к другому.
+
+<p>
+<big><B>О</B></big>бычно цвет точек изображения 
+кодируется с помощью трехкомпонентной модели <A target="right" HREF="glossary.htm#rgb">RGB</A>.
+Для моделирования степени прозрачности изображения часто вводят  
+четвертую компоненту 
+А&nbsp;(<A target="right" HREF="glossary.htm#alpha">Альфа</A>).
+
+<p>
+<big><B>В</B></big> этом примере для понижения 
+интенсивности RGB-цветов A-компонента применена в качестве 
+порогового значения. Чтобы все RGB-компоненты оказались не выше A, используется
+команда <A target="right" HREF="glossary.htm#pminmaxub">pminub</A>.
+(Аналогично, чтобы повысить RGB-компоненты до уровня не ниже A,
+можно было бы использовать команду 
+<A target="right" HREF="glossary.htm#pminmaxub">pmaxub</A>.)
+
+</BODY>
+</HTML>

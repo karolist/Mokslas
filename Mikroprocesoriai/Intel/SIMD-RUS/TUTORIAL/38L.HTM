@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>К</B></big>оманда <code><font  color="#0000cc">maskmovq</font></code>
+выборочно записывает байты из MMX-регистра 
+непосредственно в память. Байты выбираются в соответствии
+с 8-разрядной маской, состоящей из старших битов 
+в байтах второго операнда <code><big>-</big></code> MMX-регистра.
+Единица в некотором разряде маски означает запись соответствующего байта в память,
+нуль <code><big>-</big></code> отсутствие записи. Адрес памяти, по которому производится запись, 
+указывается в регистре <code><font  color="#0000cc">edi</font></code>. 
+<p>
+<big><B>К</B></big>оманда <code><font  color="#0000cc">maskmovq</font></code> 
+<A target="right" HREF="glossary.htm#writealloc">не переносит данные в кэш</A>
+ вышестоящего уровня. 
+Для нее характерны особенности, аналогичные работе в режиме <A
+ target="right" HREF="glossary.htm#writecomb">записи с буферизацией</A>, в частности,
+<A target="right" HREF="glossary.htm#weakordered">слабая упорядоченность</A>
+  обращений в память. 
+Для строгого упорядочения обращений в память 
+используйте команду <A target="right" HREF="glossary.htm#sfence">sfence</A>, 
+рассматриваемую далее.
+
+
+
+</BODY>
+</HTML>

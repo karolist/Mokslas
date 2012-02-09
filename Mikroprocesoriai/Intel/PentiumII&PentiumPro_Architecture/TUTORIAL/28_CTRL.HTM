@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 28. Control frame.</TITLE>
+
+<SCRIPT language="JavaScript">
+<!--
+var choice="1";
+
+function showanswer(param) {
+ choice=""+param;
+ top.window.left.location.hash=choice;
+ setTimeout('rewriteCode()',10);
+ return true;
+}
+
+function rewriteCode() {
+ if (document.location!=parent.document.location)
+ {
+  buf="";
+  buf+='<HTML><HEAD></HEAD><BODY BGCOLOR=\"#FFFFFF\" BACKGROUND=\"images/backgr3.gif\"><CENTER>';
+  if (choice=="1") buf+='<font color="#0000CC"><b>Код до оптимизации</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR> setge bl <BR> dec ebx <BR> and ebx, (C1-C2) <BR> add ebx, C2</code></TD></TR></TABLE>';
+  if (choice=="2") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR><font color="#0000FF"><b> sbb ebx, ebx </b></font></code></TD></TR></TABLE>';
+  if (choice=="3") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR> setge bl </code></TD></TR></TABLE>';
+  if (choice=="4") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR> setge bl <BR> dec ebx <BR> and ebx, (C1-C2) </code></TD></TR></TABLE>';
+  if (choice=="5") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR> setge bl <font color="#0000FF"><b> lea ebx, ebx*(C1-C2)+C1 </b></font></code></TD></TR></TABLE>';
+  if (choice=="6") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR> setge bl <font color="#0000FF"><b> mov ebx, TABLE [ebx*4] </b></font></code></TD></TR></TABLE>';
+  if (choice=="7") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR><font color="#0000FF"><b> setl bl </b></font></code></TD></TR></TABLE>';
+  if (choice=="8") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR><font color="#0000FF"><b> setl bl </b></font><BR> dec ebx <BR><font color="#0000FF"><b> and ebx, C2 </b></font></code></TD></TR></TABLE>';
+  if (choice=="9") buf+='<font color="#0000CC"><b>Оптимизированный код</b><TABLE ALIGN=center BORDER=2><TR ALIGN=center VALIGN=middle><TD BGCOLOR="White" ALIGN=left VALIGN=middle><code> xor ebx, ebx <BR> cmp A, B <BR><font color="#0000FF"><b> setl bl <BR> lea ebx,ebx*(C1-C2)+C2</b></font></code></TD></TR></TABLE>';
+  buf+='</CENTER></BODY></HTML>';
+
+  top.right.codeframe.document.write(buf);
+  top.right.codeframe.document.close();
+ }
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif"  bgcolor="White">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+
+<TABLE WIDTH="100%" ALIGN=center BORDER=2>
+  <TR>
+    <TD ALIGN=center COLSPAN=2><font color="#0000CC"><b>Условия<b/></font></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=center COLSPAN=2><A onClick="showanswer(1)" target="left" HREF="28l.htm#1"><IMG border=0 SRC="images/bluarrow.gif"></A> Код до оптимизации</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(2)" target="left" HREF="28l.htm#2"><IMG border=0 SRC="images/bluarrow.gif"></A> C1=-1,<font color="#CC0000">C2</font>=0</TD>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(6)" target="left" HREF="28l.htm#6"><IMG border=0 SRC="images/bluarrow.gif"></A> Внутри тела цикла</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(3)" target="left" HREF="28l.htm#3"><IMG border=0 SRC="images/bluarrow.gif"></A> C1=0,<font color="#CC0000">C2</font>=1</TD>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(7)" target="left" HREF="28l.htm#7"><IMG border=0 SRC="images/bluarrow.gif"></A> C1=1,<font color="#CC0000">C2</font>=0</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(4)" target="left" HREF="28l.htm#4"><IMG border=0 SRC="images/bluarrow.gif"></A> <font color="#CC0000">C2</font>=0</TD>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(8)" target="left" HREF="28l.htm#8"><IMG border=0 SRC="images/bluarrow.gif"></A> C1=0</TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(5)" target="left" HREF="28l.htm#5"><IMG border=0 SRC="images/bluarrow.gif"></A> <font color="#CC0000">C2</font>-С1=1,2,4 или 8</TD>
+    <TD BGCOLOR="White" ALIGN=left><A onClick="showanswer(9)" target="left" HREF="28l.htm#9"><IMG border=0 SRC="images/bluarrow.gif"></A> <font color="#CC0000">C2</font>-С1=-1,-2,-4 или -8</TD>
+  </TR>
+</TABLE>
+
+</BODY>
+</HTML>
+

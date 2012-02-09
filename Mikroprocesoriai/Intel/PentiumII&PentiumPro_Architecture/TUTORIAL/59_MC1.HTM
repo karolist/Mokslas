@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 59. Message frame, 1.</TITLE>
+<SCRIPT language="JavaScript">
+<!--
+parent.ctrlframe.document.control.but.value ="С начала";
+parent.ctrlframe.current ="c1";
+parent.curchoice='none';
+//-->
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="ffffff" text="000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location){
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>");}
+//-->
+</SCRIPT>
+<p><FONT COLOR="#0000cc"><code>SAHF</code></FONT> (запись содержимого  регистра <FONT COLOR="#0000cc"><code>AH</code></FONT> в  флаги) пишет во все флаги, кроме  <FONT COLOR="#0000cc"><code>OF</code></FONT>.  В <B>коде до оптимизации</B> команда  <FONT COLOR="#0000cc"><code>JG</code></FONT>  считывает флаги  <FONT COLOR="#0000cc"><code>OF</code></FONT>, <FONT COLOR="#0000cc"><code>SF</code></FONT> и  <FONT COLOR="#0000cc"><code>ZF</code></FONT>, что приводит  к задержке.<P>В <B>оптимизированном коде</B> задержки удается  избежать путем вставки дополнительных команд, не читающих флаги. Команда <FONT COLOR="#0000cc"><code>JG</code></FONT>  начинает выполняться  после завершения <FONT COLOR="#0000cc"><code>SAHF</code></FONT>,  так что при выборке <FONT COLOR="#0000cc"><code>JG</code></FONT> нет необходимости ждать.
+
+</BODY>
+</HTML>
+

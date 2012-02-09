@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 22</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>Е</b></font>сли произошел <A HREF="javascript:parent.showglos('cachemiss')">промах в кэш</a> первого уровня, процессор считывает из кэша второго уровня (или, если нужно, из основной памяти) целую группу из 32 байтов. При необходимости происходит <A HREF="javascript:parent.showglos('LRU')">замещение кэш-линии</a>, не использовавшейся дольше других.
+
+<P><font size="+1"><b>К</b></font>ак при чтении, так и при записи процессор заполняет данными целые кэш-линии.
+
+<P>Вероятность попадания в кэш возрастает в следующих случаях:
+
+<p>
+<LI>Требуемые данные или команды недавно уже использовались (имеет место <A HREF="javascript:parent.showglos('templocality')">локальность во времени</a>).</LI>
+<LI>Требуемые данные или команды располагаются в памяти близко к данным и командам, используемым в данный момент (<A HREF="javascript:parent.showglos('spaclocal')">близкое расположение</a>).</LI>
+
+<P><font size="+1"><b>Н</b></font>ажмите на кнопку <B>"Показать"</B>, чтобы посмотреть, как возникают попадания и промахи в кэш при выполнении кода (влияние кэш-памяти второго уровня в данном примере не учитывается).
+</BODY>
+</HTML>
+

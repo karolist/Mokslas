@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 41</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>С</b></font>пособ задания массивов в Вашем коде должен соответствовать порядку,
+в котором происходит обращение к элементам этих массивов.
+
+<P><font size="+1"><b>Е</b></font>сли вначале происходит обработка всех элементов одного массива, и лишь
+затем начинается работа с другим, задавайте эти массивы отдельно. При работе
+с массивом, заданным таким образом, обращение к его элементу вызовет заполнение
+кэш-линии элементами этого же массива.
+
+<P><font size="+1"><b>Е</b></font>сли происходит попеременное обращение к элементам различных массивов,
+объединяйте их в составной массив. В таком случае каждая кэш-линия будет
+содержать элементы различных массивов с близкими значениями индексов.
+
+<P><B>Примеры:</B>
+<BR>В случае <B>отдельных массивов</B> кэширование <FONT COLOR="#0000cc"><code>a[i]</code></font> приводит к кэшированию
+<FONT COLOR="#0000cc"><code>a[i+1,i+2,...]</code></font>
+<P>В случае <b>составного массива</b> кэширование <FONT COLOR="#0000cc"><code>a[i]</code></font> приводит к кэшированию <FONT COLOR="#0000cc"><code>b[i]</code></font>.
+
+</BODY>
+</HTML>
+

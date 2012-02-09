@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 52</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<a name="0">
+<P><font size="+1"><b>П</b></font>роцессор рассылает простые команды в один из трех декодеров в зависимости
+от типа команды.
+<P>
+<TABLE ALIGN=center BORDER=1>
+  <TR ALIGN=left VALIGN=middle>
+    <TD ALIGN=left VALIGN=middle><b><font size="-1">Тип команды</font></b></TD>
+    <TD ALIGN=left VALIGN=middle><b><font size="-1">Декодер</font></b></TD>
+    <TD ALIGN=left VALIGN=middle><b><font size="-1">На выходе</font></b></TD>
+  </TR>
+  <TR ALIGN=left VALIGN=middle>
+    <TD ALIGN=left VALIGN=middle><font size="-1">Регистр-регистр или чтение</font></TD>
+    <TD ALIGN=left VALIGN=middle><font size="-1"><CODE>D0, D1, D2</CODE></font></TD>
+    <TD ALIGN=left VALIGN=middle><font size="-1">Одна микрооперация</font></TD>
+  </TR>
+  <TR ALIGN=left VALIGN=middle>
+    <TD ALIGN=left VALIGN=middle><font size="-1">Чтение-изменение или запись</font></TD>
+    <TD ALIGN=left VALIGN=middle><font size="-1"><CODE>D0</CODE></font></TD>
+    <TD ALIGN=left VALIGN=middle><font size="-1">Две микрооперации</font></TD>
+  </TR>
+  <TR ALIGN=left VALIGN=middle>
+    <TD ALIGN=left VALIGN=middle><font size="-1">Чтение-изменение-запись</font></TD>
+    <TD ALIGN=left VALIGN=middle><font size="-1"><CODE>D0</CODE></font></TD>
+    <TD ALIGN=left VALIGN=middle><font size="-1">Четыре микрооперации</font></TD>
+  </TR>
+</TABLE>
+<BR>
+<P><B>Замечание:</B>
+<BR>Только декодер D0 может обрабатывать 
+<A HREF="javascript:parent.showglos('complinstr')"><FONT COLOR="#CC33CC">сложные
+команды</FONT></A>. Когда D0 декодирует сложную команду, D1 и D2 должны
+простаивать. Следует по возможности избегать использования сложных команд.
+<P><font size="+1"><b>П</b></font>опробуйте сгруппировать предлагаемые команды в 
+<A HREF="javascript:parent.showglos('411seq')"><FONT COLOR="#CC33CC">последовательности
+4-1-1</FONT></A>. Пользуйтесь тем, что между этими командами нет зависимостей.
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<a name="rules">
+<H3 ALIGN=center>Правила игры.</H3>
+Заполните декодеры номерами команд и нажмите кнопку <b>"Проверить"</b>, чтобы узнать результат.
+<BR><BR><A HREF="#0">К началу страницы</A>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+</BODY>
+</HTML>
+

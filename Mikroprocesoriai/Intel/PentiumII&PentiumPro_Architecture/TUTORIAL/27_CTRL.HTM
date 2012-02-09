@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 27. Control frame.</TITLE>
+<script language="JavaScript">
+<!--
+var current="none";
+
+function change_checked(value) {
+parent.curchoice=value;
+parent.topframe.location="27_top.htm"; 
+parent.msgframe.location="17_msg0.htm";
+document.control.but.value="Оптимизировать";
+}
+
+function changeloc() {
+if (parent.curchoice=="t" || parent.curchoice=="f") {
+ parent.topframe.location="27_top" + parent.curchoice + ".htm"; 
+parent.msgframe.location="27_msg"  + parent.curchoice + ".htm"; 
+}
+else {
+ parent.topframe.location="27_top.htm";
+parent.msgframe.location="17_msg0.htm";
+document.control.but.value="Оптимизировать";
+   if (current=="t" || current=="f") {
+   parent.curchoice=current;
+}
+}
+
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif" bgcolor="#FFFFCC" text="#000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<center>
+<form name="control">
+<table cellspacing=5>
+<tr>
+<td>
+<b>
+<input name="choice" type="radio" value="t" checked onCLick="change_checked('t')">A >= B
+<input name="choice" type="radio" value="f" onCLick="change_checked('f')">A < B
+</b>
+</td>
+<td>&nbsp;
+</td>
+<td>
+<input name="but" type="button" value="Оптимизировать" onClick="changeloc()">
+</td>
+</tr>
+</table>
+</form>
+</BODY>
+</HTML>
+

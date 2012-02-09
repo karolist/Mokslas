@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3><a href=\"index.htm\">Start here!</a></H3></CENTER>")
+//-->
+</SCRIPT>
+
+<p>
+<big><B>В</B></big> приложениях, связанных с моделированием освещенности объектов, требуется, 
+чтобы <A target="right" HREF="glossary.htm#attenuation">коэффициенты ослабления</A>
+ света за счет атмосферных явлений всегда были не 
+меньше единицы.
+<p>
+<big><B>Д</B></big>ля проверки этих условий программе на языке <b>С</b> требуется выполнение операций 
+сравнения и условного перехода для каждого из полученных коэффициентов 
+<code><font color="#0000cc">Att[i]</font></code>:
+<table border=0 width=150>
+<tr><td align="left"><code><font color="#0000cc">if (Att[i] &lt;1)</font></code></td></tr>	
+<tr><td align="center"><code><font color="#0000cc">xmm[i]=1</font></code></td></tr>
+<tr><td align="left"><code><font color="#0000cc">else</font></code></td></tr>	
+<tr><td align="right"><code><font color="#0000cc">xmm[i]= Att[i]</font></code></td></tr>
+</table>	
+		 
+Если условие выполнено, то в элемент XMM-регистра заносится единица, 
+в противном случае – значение коэффициента ослабления.
+
+</BODY>
+</HTML>

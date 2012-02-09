@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 68. Control frame.</TITLE>
+<script language="JavaScript">
+<!--
+checked_radio="c";
+
+function change_checked(value) {
+checked_radio=value;
+parent.topframe.location="68rt" + value + ".htm"; 
+parent.msgframe.location="17_msg0.htm";
+document.control.but.value="Оптимизировать";
+}
+
+function changeloc() {
+if (checked_radio=="as") {
+ if (parent.curstep==0) {
+  parent.topframe.location="68rtas1.htm"; 
+  parent.msgframe.location="68rmas.htm"; 
+ }
+ else {
+  parent.topframe.location="68rtas.htm"; 
+  parent.msgframe.location="17_msg0.htm";
+  document.control.but.value="Оптимизировать";
+ }
+}
+return true;
+}
+//-->
+</script>
+</HEAD>
+<BODY BACKGROUND="images/backgr3.gif" bgcolor="#FFFFCC" text="#000000">
+
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+
+<center>
+<form name="control">
+<table cellspacing=0 cellpadding=0>
+<tr>
+<td>
+<b>
+<input name="choice" type="radio" value="c" checked onCLick="change_checked('c')">Текст на C </td>
+<td>&nbsp;
+</td>
+<td width="10">&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<input name="choice" type="radio" value="as" onCLick="change_checked('as')"><b>Ассемблерный код
+</b>
+</td>
+<td width="10">&nbsp;
+</td>
+<td>
+<input name="but" type="button" value="Оптимизировать" onClick="changeloc()">
+</td>
+</tr>
+</table>
+</form>
+</BODY>
+</HTML>
+

@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<TITLE>Topic 24</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#CC00CC" VLINK="#CC00CC" ALINK="#CC00CC">
+<SCRIPT language="JavaScript">
+<!--
+if (document.location==parent.document.location)
+document.write("<CENTER><H3>This page is part of the Optimizing for Pentium(R) II and Pentium Pro Processors tutorial. To start the tutorial, please open the <a href=\"start.htm\">START.HTM</a> page in the same directory.</H3></CENTER>")
+//-->
+</SCRIPT>
+<P><font size="+1"><b>П</b></font>роцессоры Pentium® II и Pentium Pro выбирают команды с адреса, полученного в результате предсказания <A HREF="javascript:parent.showglos('branch')">ветвления</a>, декодируют эти команды и осуществляют их упреждающее выполнение.
+
+<P>В случае верного предсказания ветвления процессор получает выигрыш во времени на начальном этапе обработки команды. При неверном предсказании выбранные команды должны быть отброшены, а вместо них должны быть считаны команды с правильного адреса.
+
+<P><font size="+1"><b>П</b></font>овышение точности <A HREF="javascript:parent.showglos('branchpred')">предсказания ветвлений</a> позволяет уменьшить число тактов, теряющихся из-за ошибок предсказания. На процессорах с 12-ступенчатым конвейером такие потери весьма существенны.
+
+<P>Устранение ветвлений освобождает в <A HREF="javascript:parent.showglos('BTB')">буфере адресов ветвления</a> место для хранения истории оставшихся ветвлений, наличие которых обусловлено семантикой программы.
+
+<P><font size="+1"><b>Ц</b></font>ель данного урока - ознакомить Вас со способами устранения некоторых ветвлений и снижения затрат на выполнение оставшихся.
+</BODY>
+</HTML>
+
